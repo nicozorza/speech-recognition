@@ -1,7 +1,7 @@
 import librosa
 import pickle
 import os
-from utils.Database import Database, Label
+from utils.Database import Database, DatabaseItem
 import matplotlib.pyplot as plt
 import numpy as np
 import python_speech_features as features
@@ -9,7 +9,7 @@ import python_speech_features as features
 # Printing parameteres
 show_figures = False
 
-SOURCE_DIR = '../Audio'
+SOURCE_DIR = '../audio'
 WAV_DIR = SOURCE_DIR+'/wav'
 TRANSCRIPTION_DIR = SOURCE_DIR+'/transcription'
 OUT_DIR = SOURCE_DIR
@@ -29,47 +29,27 @@ figure = 0
 # Get the names of each wav file in the directory
 wav_names = os.listdir(WAV_DIR)
 for wav_index in range(len(wav_names)):
-    # Read the wav file
-    signal, fs = librosa.load(WAV_DIR + '/' + wav_names[wav_index])
 
-    # Normalize audio
-    signal = signal / abs(max(signal))
+    # Get filenames
+    wav_filename = WAV_DIR + '/' + wav_names[wav_index]
+    label_filename = TRANSCRIPTION_DIR + '/' + wav_names[wav_index].split(".")[0] + '.txt'
+    
+    # Create database item
+    item = DatabaseItem.fromFile(wav_name=wav_filename,
+                                 label_name=label_filename,
+                                 winlen=frame_length,
+                                 winstep=frame_stride,
+                                 numcep=n_mfcc,
+                                 nfilt=num_filters,
+                                 nfft=fft_points,
+                                 lowfreq=0,
+                                 highfreq=None,
+                                 preemph=preemphasis_coeff)
+    print(item.mfcc)
+    print(item.label)
+    # Add the new data to the database
+    database.append(item)
 
-    # Get the MFCCs coefficients. The size of the matrix is n_mfcc x T, so the dimensions
-    # are not the same for every sample
-    mfcc = features.mfcc(signal,
-                         samplerate=fs,
-                         winlen=frame_length,
-                         winstep=frame_stride,
-                         numcep=n_mfcc,
-                         nfilt=num_filters,
-                         nfft=fft_points,
-                         lowfreq=0,
-                         highfreq=None,
-                         preemph=preemphasis_coeff  # Apply a pre-emphasis filter
-                         )
-
-    # Load transcription
-    trascription_name = wav_names[wav_index].split(".")[0] + '.txt'
-    with open(TRANSCRIPTION_DIR + '/' + trascription_name, 'r') as f:
-        transcription = f.readlines()[0]    # This method assumes that the transcription is in the first line
-        # Delete blanks at the begining and the end of the transcription, transform to lowercase, etc.
-        transcription = ' '.join(transcription.strip().lower().split(' ')[2:]).replace('.', '')
-
-        label = Label(transcription)    # Create Label class from transcription
-
-    print(transcription)
-    print(label.targets)
-    # Delete undesired characters
-    transcription = ''.join(c for c in transcription if c not in '0123456789.,-\n\r')
-    transcription = transcription.strip()   # Delete blanks at the begining and the end of the transcription
-    transcription = transcription.lower()   # Transform to lowercase
-    # # Add the new data to the database
-    # database.append(
-    #     label=int(dir_name),  # The directory name is the same as the label
-    #     mfcc=mfcc
-    # )
-    #
     # Print first MFCC
     if wav_index == 0 and show_figures:
         plt.figure(num=figure, figsize=(2, 2))
