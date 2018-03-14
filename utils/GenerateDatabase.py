@@ -29,7 +29,7 @@ for wav_index in range(len(wav_names)):
 
     # Get filenames
     wav_filename = WAV_DIR + '/' + wav_names[wav_index]
-    label_filename = TRANSCRIPTION_DIR + '/' + wav_names[wav_index].split(".")[0] + '.txt'
+    label_filename = TRANSCRIPTION_DIR + '/' + wav_names[wav_index].split(".")[0] + '.TXT'
     
     # Create database item
     item = DatabaseItem.fromFile(wav_name=wav_filename,
@@ -53,7 +53,7 @@ for wav_index in range(len(wav_names)):
         plt.title(wav_names[wav_index])
         plt.draw()
 
-    print('Wav', wav_index+1, 'completed out of', len(wav_names))
+    print('Wav: ', wav_names[wav_index], '------', wav_index+1, 'completed out of', len(wav_names))
 
 if show_figures:
     plt.show()
@@ -61,10 +61,9 @@ if show_figures:
 # Save the database into a file
 database.save(OUT_DIR + '/' + OUT_FILE)
 
-# Load the database
-database2 = Database.fromFile(OUT_DIR + '/' + OUT_FILE)
-
 if print_debug:
+    # Load the database
+    database2 = Database.fromFile(OUT_DIR + '/' + OUT_FILE)
     print(database.getItemFromIndex(0).getLabelIndices())
     print(database2.getItemFromIndex(0).getLabelIndices())
 
