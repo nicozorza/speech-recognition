@@ -14,24 +14,27 @@ class Label:
     FIRST_INDEX = ord('a') - 1  # 0 is reserved to space
 
     def __init__(self, transcription: str):
-        self.text: str = transcription
+        self.__text: str = transcription
         # Delete blanks at the beginning and the end of the transcription, transform to lowercase,
         # delete numbers in the beginning, etc.
-        self.targets = (' '.join(transcription.strip().lower().split(' ')[2:]).replace('.', '')).replace(' ', '  ').split(' ')
-        self.indices = None
+        self.__targets = (' '.join(transcription.strip().lower().split(' ')[2:]).replace('.', '')).replace(' ', '  ').split(' ')
+        self.__indices = None
+
+    def getTranscription(self) -> str:
+        return self.__text
 
     def toIndex(self) -> np.ndarray:
-        if self.indices is None:
+        if self.__indices is None:
             # Adding blank label
-            index = np.hstack([self.SPACE_TOKEN if x == '' else list(x) for x in self.targets])
+            index = np.hstack([self.SPACE_TOKEN if x == '' else list(x) for x in self.__targets])
             # Transform char into index
             index = np.asarray([self.SPACE_INDEX if x == '<space>' else ord(x) - self.FIRST_INDEX for x in index])
             return index
         else:
-            return self.indices
+            return self.__indices
 
     def __str__(self):
-        return str(self.indices)
+        return str(self.__indices)
 
     @staticmethod
     def fromFile(file_name: str):
@@ -45,10 +48,10 @@ class AudioFeature:
     def __init__(self, audio: np.ndarray, fs: float, normalize_audio=True):
 
         if normalize_audio:
-            self.audio = audio / abs(max(audio))
+            self.__audio = audio / abs(max(audio))
         else:
-            self.audio = audio
-        self.fs = fs
+            self.__audio = audio
+        self.__fs = fs
 
     def getMfcc(self,
                 winlen: float =0.2,
@@ -60,7 +63,7 @@ class AudioFeature:
                 highfreq=None,
                 preemph: float =0.98) -> np.ndarray:
 
-        return features.mfcc(self.audio, samplerate=self.fs, winlen=winlen, winstep=winstep, numcep=numcep,
+        return features.mfcc(self.__audio, samplerate=self.__fs, winlen=winlen, winstep=winstep, numcep=numcep,
                              nfilt=nfilt, nfft=nfft, lowfreq=lowfreq, highfreq=highfreq, preemph=preemph)
 
     def getSpectrogram(self) -> np.ndarray:
@@ -78,11 +81,11 @@ class DatabaseItem(Label, AudioFeature):
         return self
 
     def __init__(self, feature: AudioFeature, label: Label):
-        self.feature = feature
-        self.label = label
+        self.__feature = feature
+        self.__label = label
 
     def getFeature(self) -> AudioFeature:
-        return self.feature
+        return self.__feature
 
     def getMfcc(self,
                 winlen: float = 0.2,
@@ -94,7 +97,7 @@ class DatabaseItem(Label, AudioFeature):
                 highfreq=None,
                 preemph: float = 0.98) -> np.ndarray:
 
-        return self.feature.getMfcc(
+        return self.__feature.getMfcc(
             winlen=winlen, winstep=winstep, numcep=numcep, nfilt=nfilt, nfft=nfft,
             lowfreq=lowfreq, highfreq=highfreq, preemph=preemph)
 
@@ -108,13 +111,16 @@ class DatabaseItem(Label, AudioFeature):
                        highfreq=None,
                        preemph: float = 0.98) -> np.ndarray:                   # TODO implement spectrogram as feature
 
-        return self.feature.getSpectrogram()
+        return self.__feature.getSpectrogram()
 
     def getLabel(self) -> Label:
-        return self.label
+        return self.__label
 
     def getLabelIndices(self) -> np.ndarray:
-        return self.label.toIndex()
+        return self.__label.toIndex()
+
+    def getTranscription(self) -> str:
+        return self.__label.getTranscription()
 
     # def __str__(self):
     #     return 'Label: '+str(self.label)+'\n' + 'Data: '+str(self.mfcc)
@@ -133,33 +139,32 @@ class Database(DatabaseItem):
     def __init__(self, batch_size: int = 50):
         self.__database = []
         self.batch_size = batch_size
-        self.length: int = 0
-
+        self.__length: int = 0
         self.batch_count = 0
         self.batch_plan = None
 
     def append(self, item: DatabaseItem):
         self.__database.append(item)
-        self.length = len(self.__database)
+        self.__length = len(self.__database)
 
     def print(self):
         return self.__database
 
     def getMfccList(self) -> List[np.ndarray]:
         mfcc_list = []
-        for _ in range(self.length):
+        for _ in range(self.__length):
             mfcc_list.append(self.__database[_].getMfcc())
         return mfcc_list
 
     def getSpectrogramList(self) -> List[np.ndarray]:
         spectrogram_list = []
-        for _ in range(self.length):
+        for _ in range(self.__length):
             spectrogram_list.append(self.__database[_].getSpectrogram())
         return spectrogram_list
 
     def getLabelsList(self) -> List[Label]:
         label_list = []
-        for _ in range(self.length):
+        for _ in range(self.__length):
             label_list.append(self.__database[_].getLabel())
         return label_list
 
@@ -183,17 +188,17 @@ class Database(DatabaseItem):
         return self.getRange(start_index, end_index)    # TODO Check this method
 
     def getItemFromIndex(self, index) -> DatabaseItem:
-        if index > self.length:
+        if index > self.__length:
             return None
         return self.__database[index]
 
     def getRange(self, start_index, end_index):
-        if end_index > self.length or start_index > end_index:
+        if end_index > self.__length or start_index > end_index:
             return None
         return Database.fromList(self.__database[start_index:end_index], self.batch_size)
 
     def __len__(self):
-        return self.length
+        return self.__length
 
     def save(self, file_name):
         file = open(file_name, 'wb')

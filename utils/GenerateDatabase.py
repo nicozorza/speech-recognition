@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 # Printing parameteres
 show_figures = False
+print_debug = False
 
 SOURCE_DIR = '../audio'
 WAV_DIR = SOURCE_DIR+'/wav'
@@ -33,11 +34,14 @@ for wav_index in range(len(wav_names)):
     # Create database item
     item = DatabaseItem.fromFile(wav_name=wav_filename,
                                  label_name=label_filename)
-    print(
-        item.getMfcc(winlen=frame_length, winstep=frame_stride, numcep=n_mfcc, nfilt=num_filters,
-                     nfft=fft_points, lowfreq=0, highfreq=None, preemph=preemphasis_coeff)
-    )
-    print(item.label.targets)
+    if print_debug:
+        print(
+            item.getMfcc(winlen=frame_length, winstep=frame_stride, numcep=n_mfcc, nfilt=num_filters,
+                         nfft=fft_points, lowfreq=0, highfreq=None, preemph=preemphasis_coeff)
+        )
+        print(item.getLabelIndices())
+        print(item.getTranscription())
+
     # Add the new data to the database
     database.append(item)
 
@@ -49,7 +53,7 @@ for wav_index in range(len(wav_names)):
         plt.title(wav_names[wav_index])
         plt.draw()
 
-    print('Wav', wav_index+1, 'completed out of', len(wav_names), 'Label: ')
+    print('Wav', wav_index+1, 'completed out of', len(wav_names))
 
 if show_figures:
     plt.show()
@@ -59,8 +63,10 @@ database.save(OUT_DIR + '/' + OUT_FILE)
 
 # Load the database
 database2 = Database.fromFile(OUT_DIR + '/' + OUT_FILE)
-print(database.getItemFromIndex(0).getLabelIndices())
-print(database2.getItemFromIndex(0).getLabelIndices())
+
+if print_debug:
+    print(database.getItemFromIndex(0).getLabelIndices())
+    print(database2.getItemFromIndex(0).getLabelIndices())
 
 print("Database generated")
-print("Number of elements in database: " + str(database.length))
+print("Number of elements in database: " + str(len(database)))
