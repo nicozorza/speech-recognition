@@ -1,11 +1,10 @@
-import librosa
 import numpy as np
 import random
 import string
 import python_speech_features as features
 from typing import List
 import pickle
-
+import scipy.io.wavfile as wav
 from utils.ProjectData import ProjectData
 
 
@@ -74,7 +73,7 @@ class AudioFeature:
     @staticmethod
     def fromFile(wav_name: str, normalize_audio=True):
         # Read the wav file
-        signal, fs = librosa.load(wav_name)
+        fs, signal = wav.read(wav_name)
         return AudioFeature(signal, fs, normalize_audio)
 
 
