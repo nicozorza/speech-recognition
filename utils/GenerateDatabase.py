@@ -10,7 +10,7 @@ print_debug = False
 # Load project data
 project_data = ProjectData()
 
-database = Database()
+database = Database(project_data)
 
 figure = 0
 
@@ -31,6 +31,7 @@ for wav_index in range(len(wav_names)):
                          numcep=project_data.n_mfcc, nfilt=project_data.num_filters, nfft=project_data.fft_points,
                          lowfreq=0, highfreq=None, preemph=project_data.preemphasis_coeff)
         )
+        print(project_data.n_mfcc)
         print(item.getLabelIndices())
         print(item.getTranscription())
 
@@ -58,6 +59,13 @@ if print_debug:
     database2 = Database.fromFile(project_data.DATABASE_FILE)
     print(database.getItemFromIndex(0).getLabelIndices())
     print(database2.getItemFromIndex(0).getLabelIndices())
+    aux = database2.getItemFromIndex(0).getMfcc(winlen=project_data.frame_length, winstep=project_data.frame_stride,
+                             numcep=project_data.n_mfcc, nfilt=project_data.num_filters, nfft=project_data.fft_points,
+                             lowfreq=0, highfreq=None, preemph=project_data.preemphasis_coeff)
+
+    aux2 = database.getItemFromIndex(0).getMfcc(winlen=project_data.frame_length, winstep=project_data.frame_stride,
+                             numcep=project_data.n_mfcc, nfilt=project_data.num_filters, nfft=project_data.fft_points,
+                         lowfreq=0, highfreq=None, preemph=project_data.preemphasis_coeff)
 
 print("Database generated")
 print("Number of elements in database: " + str(len(database)))

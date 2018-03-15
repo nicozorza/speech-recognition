@@ -6,6 +6,8 @@ import python_speech_features as features
 from typing import List
 import pickle
 
+from utils.ProjectData import ProjectData
+
 
 class Label:
     # Constants
@@ -54,14 +56,14 @@ class AudioFeature:
         self.__fs = fs
 
     def getMfcc(self,
-                winlen: float =0.2,
-                winstep: float=0.1,
-                numcep: int=13,
-                nfilt: int =40,
-                nfft: int =1024,
-                lowfreq=0,
-                highfreq=None,
-                preemph: float =0.98) -> np.ndarray:
+                winlen: float,
+                winstep: float,
+                numcep: int,
+                nfilt: int,
+                nfft: int,
+                lowfreq,
+                highfreq,
+                preemph: float) -> np.ndarray:
 
         return features.mfcc(self.__audio, samplerate=self.__fs, winlen=winlen, winstep=winstep, numcep=numcep,
                              nfilt=nfilt, nfft=nfft, lowfreq=lowfreq, highfreq=highfreq, preemph=preemph)
@@ -88,14 +90,14 @@ class DatabaseItem(Label, AudioFeature):
         return self.__feature
 
     def getMfcc(self,
-                winlen: float = 0.2,
-                winstep: float = 0.1,
-                numcep: int = 13,
-                nfilt: int = 40,
-                nfft: int = 1024,
-                lowfreq=0,
-                highfreq=None,
-                preemph: float = 0.98) -> np.ndarray:
+                winlen: float,
+                winstep: float,
+                numcep: int,
+                nfilt: int,
+                nfft: int,
+                lowfreq,
+                highfreq,
+                preemph: float) -> np.ndarray:
 
         return self.__feature.getMfcc(
             winlen=winlen, winstep=winstep, numcep=numcep, nfilt=nfilt, nfft=nfft,
@@ -136,12 +138,13 @@ class DatabaseItem(Label, AudioFeature):
 
 
 class Database(DatabaseItem):
-    def __init__(self, batch_size: int = 50):
-        self.__database = []
+    def __init__(self, project_data: ProjectData, batch_size: int = 50):
+        self.__database: List[DatabaseItem] = []
         self.batch_size = batch_size
         self.__length: int = 0
         self.batch_count = 0
         self.batch_plan = None
+        self.project_data: ProjectData = project_data
 
     def append(self, item: DatabaseItem):
         self.__database.append(item)
@@ -153,7 +156,15 @@ class Database(DatabaseItem):
     def getMfccList(self) -> List[np.ndarray]:
         mfcc_list = []
         for _ in range(self.__length):
-            mfcc_list.append(self.__database[_].getMfcc())
+            mfcc_list.append(self.__database[_].getMfcc(
+                winlen=self.project_data.frame_length,
+                winstep=self.project_data.frame_stride,
+                numcep=self.project_data.n_mfcc,
+                nfilt=self.project_data.num_filters,
+                nfft=self.project_data.fft_points,
+                lowfreq=self.project_data.lowfreq,
+                highfreq=self.project_data.highfreq,
+                preemph=self.project_data.preemphasis_coeff))
         return mfcc_list
 
     def getSpectrogramList(self) -> List[np.ndarray]:

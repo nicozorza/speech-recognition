@@ -18,3 +18,5 @@ class ProjectData:
         self.frame_stride = 0.01  # Slide of the window
         self.fft_points = 1024
         self.num_filters = 40   # Number of filters in the filterbank
+        self.lowfreq = 0
+        self.highfreq = None
