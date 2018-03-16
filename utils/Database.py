@@ -1,10 +1,10 @@
 import numpy as np
 import random
-import string
 import python_speech_features as features
 from typing import List
 import pickle
 import scipy.io.wavfile as wav
+from scipy.signal import spectrogram
 from utils.ProjectData import ProjectData
 
 
@@ -67,8 +67,9 @@ class AudioFeature:
         return features.mfcc(self.__audio, samplerate=self.__fs, winlen=winlen, winstep=winstep, numcep=numcep,
                              nfilt=nfilt, nfft=nfft, lowfreq=lowfreq, highfreq=highfreq, preemph=preemph)
 
-    def getSpectrogram(self) -> np.ndarray:
-        raise NotImplementedError("Should have implemented this")   # TODO implement spectrogram as feature
+    def getSpectrogram(self, nfft: int) -> np.ndarray:
+        _1, _2, spect = spectrogram(x=self.__audio, fs=self.__fs, nfft=nfft)
+        return spect    # TODO Not working properly
 
     @staticmethod
     def fromFile(wav_name: str, normalize_audio=True):
@@ -102,17 +103,8 @@ class DatabaseItem(Label, AudioFeature):
             winlen=winlen, winstep=winstep, numcep=numcep, nfilt=nfilt, nfft=nfft,
             lowfreq=lowfreq, highfreq=highfreq, preemph=preemph)
 
-    def getSpectrogram(self,
-                       winlen: float = 0.2,
-                       winstep: float = 0.1,
-                       numcep: int = 13,
-                       nfilt: int = 40,
-                       nfft: int = 1024,
-                       lowfreq=0,
-                       highfreq=None,
-                       preemph: float = 0.98) -> np.ndarray:                   # TODO implement spectrogram as feature
-
-        return self.__feature.getSpectrogram()
+    def getSpectrogram(self, nfft: int = 1024) -> np.ndarray:
+        return self.__feature.getSpectrogram(nfft=nfft)
 
     def getLabel(self) -> Label:
         return self.__label
@@ -122,9 +114,6 @@ class DatabaseItem(Label, AudioFeature):
 
     def getTranscription(self) -> str:
         return self.__label.getTranscription()
-
-    # def __str__(self):
-    #     return 'Label: '+str(self.label)+'\n' + 'Data: '+str(self.mfcc)
 
     @staticmethod
     def fromFile(wav_name: str, label_name: str):
@@ -166,17 +155,46 @@ class Database(DatabaseItem):
                 preemph=self.project_data.preemphasis_coeff))
         return mfcc_list
 
-    def getSpectrogramList(self) -> List[np.ndarray]:
+    def getMfccArray(self, normalize: bool = True) -> np.ndarray:
+        mfcc_list = self.getMfccList()
+        mfcc_list = np.asarray(mfcc_list)
+        # arr, seq_len = padSequences(mfcc_list)
+        # if normalize:
+        #     return (mfcc_list - np.mean(mfcc_list)) / np.std(mfcc_list)
+        # else:
+        return mfcc_list
+
+    def getSpectrogramList(self, nfft: int = 1024) -> List[np.ndarray]:
         spectrogram_list = []
         for _ in range(self.__length):
-            spectrogram_list.append(self.__database[_].getSpectrogram())
+            spectrogram_list.append(self.__database[_].getSpectrogram(nfft=nfft))
         return spectrogram_list
+
+    def getSpectrogramArray(self, nfft: int = 1024, normalize: bool = True) -> np.ndarray:
+        spect_list = self.getSpectrogramList(nfft=nfft)
+        spect_list = np.asarray(spect_list)
+        # arr, seq_len = padSequences(mfcc_list)
+        # if normalize:
+        #     return (mfcc_list - np.mean(mfcc_list)) / np.std(mfcc_list)
+        # else:
+        return spect_list
 
     def getLabelsList(self) -> List[Label]:
         label_list = []
         for _ in range(self.__length):
             label_list.append(self.__database[_].getLabel())
         return label_list
+
+    def getLabelIndicesList(self) -> List[np.ndarray]:
+        labels_list = self.getLabelsList()
+        index_list = []
+        for _ in range(len(labels_list)):
+            index_list.append(labels_list[_].toIndex())
+        return index_list
+
+    def getLabelsArray(self) -> np.ndarray:
+        index_list = self.getLabelIndicesList()
+        return np.asarray(index_list)
 
     def create_batch_plan(self):
         self.batch_plan = self.__database
