@@ -1,12 +1,12 @@
 import tensorflow as tf
 import tensorlayer as tl
 import time
-from SimpleNetwork.NetworkStructure import NetworkData
+from ctc_network.SimpleNetwork.NetworkStructure import NetworkData
 import os
 from tensorflow.python.framework import graph_io
 import numpy as np
 
-from SimpleNetwork.DataConversion import sparseTupleFrom, padSequences, indexToStr
+from ctc_network.SimpleNetwork.DataConversion import sparseTupleFrom, padSequences, indexToStr
 
 
 class NeuralNetwork():

@@ -5,7 +5,7 @@ from typing import List
 import pickle
 import scipy.io.wavfile as wav
 from scipy.signal import spectrogram
-from utils.ProjectData import ProjectData
+from ctc_network.utils.ProjectData import ProjectData
 
 
 class Label:

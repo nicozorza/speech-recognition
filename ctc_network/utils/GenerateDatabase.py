@@ -1,7 +1,7 @@
 import os
-from utils.Database import Database, DatabaseItem
+from ctc_network.utils.Database import Database, DatabaseItem
 import matplotlib.pyplot as plt
-from utils.ProjectData import ProjectData
+from ctc_network.utils.ProjectData import ProjectData
 
 # Printing parameteres
 show_figures = False

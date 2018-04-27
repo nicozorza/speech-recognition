@@ -1,7 +1,7 @@
 
 class ProjectData:
     def __init__(self):
-        self.SOURCE_DIR = '../audio'
+        self.SOURCE_DIR = '../../audio'
         self.WAV_DIR = self.SOURCE_DIR + '/wav'
         self.TRANSCRIPTION_DIR = self.SOURCE_DIR + '/transcription'
         self.DATABASE_DIR = self.SOURCE_DIR

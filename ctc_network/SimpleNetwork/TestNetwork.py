@@ -1,9 +1,8 @@
 import tensorflow as tf
-from SimpleNetwork.NetworkStructure import NetworkData
-from SimpleNetwork.NeuralNetwork import NeuralNetwork
-from utils.Database import Database
-from utils.ProjectData import ProjectData
-
+from ctc_network.SimpleNetwork.NetworkStructure import NetworkData
+from ctc_network.SimpleNetwork.NeuralNetwork import NeuralNetwork
+from ctc_network.utils.Database import Database
+from ctc_network.utils.ProjectData import ProjectData
 
 # Get project data
 project_data = ProjectData()
