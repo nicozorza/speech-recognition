@@ -165,7 +165,7 @@ class Database(DatabaseItem):
         writer.close()
 
     @staticmethod
-    def fromFile(filename: str, project_data: ProjectData):
+    def fromFile(filename: str, project_data: ProjectData) -> 'Database':
         record_iterator = tf.python_io.tf_record_iterator(path=filename)
         database = Database(project_data)
 

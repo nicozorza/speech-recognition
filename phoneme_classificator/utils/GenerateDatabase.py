@@ -33,30 +33,4 @@ print("Number of elements in database: " + str(len(database)))
 database.save(project_data.DATABASE_FILE)
 print("Database saved in:", project_data.DATABASE_NAME)
 database2 = Database.fromFile(project_data.DATABASE_FILE, project_data)
-# record_iterator = tf.python_io.tf_record_iterator(path=project_data.DATABASE_FILE)
-#
-# for string_record in record_iterator:
-#     example = tf.train.Example()
-#     example.ParseFromString(string_record)
-#
-#     height = int(example.features.feature['seq_len'].int64_list.value[0])
-#
-#     width = int(example.features.feature['nfft'].int64_list.value[0])
-#
-#     img_string = example.features.feature['feature'].float_list.value
-#
-#     annotation_string = (example.features.feature['label'].int64_list.value)
-#
-#     img_1d = np.asarray(img_string, dtype=np.float32)
-#     reconstructed_img = img_1d.reshape((height, width))
-#     aux1=database.getItemFromIndex(0).getFeature().getFeature()[0]
-#     aux2=reconstructed_img[0]
-#
-#
-#     annotation_1d = np.asarray(annotation_string, dtype=np.int64)
-#
-#     print("sd")
-#
-#
-#
-#
+
