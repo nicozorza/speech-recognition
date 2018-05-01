@@ -5,69 +5,70 @@ import collections
 class Phoneme:
 
     phonemes = {
-        "iy": 0,  # Start vowels
-        "ih": 1,
-        "eh": 2,
-        "ey": 3,
-        "ae": 4,
-        "aa": 5,
-        "aw": 6,
-        "ay": 7,
-        "ah": 8,
-        "ao": 9,
-        "oy": 10,
-        "ow": 11,
-        "uh": 12,
-        "uw": 13,
-        "ux": 14,
-        "er": 15,
-        "ax": 16,
-        "ix": 17,
-        "axr": 18,
-        "ax-h": 19,  # Last vowels
+        "h#":   0,  # Start others
+        "epi":  1,
+        "pau":  2,
+        "1":    3,
+        "2":    4,  # Last others
 
-        "l": 20,  # Start semivowels
-        "r": 21,
-        "w": 22,
-        "y": 23,
-        "hh": 24,
-        "hv": 25,
-        "el": 26,  # Last semivowels
+        "iy":   5,  # Start vowels
+        "ih":   6,
+        "eh":   7,
+        "ey":   8,
+        "ae":   9,
+        "aa":   10,
+        "aw":   11,
+        "ay":   12,
+        "ah":   13,
+        "ao":   14,
+        "oy":   15,
+        "ow":   16,
+        "uh":   17,
+        "uw":   18,
+        "ux":   19,
+        "er":   20,
+        "ax":   21,
+        "ix":   22,
+        "axr":  23,
+        "ax-h": 24,  # Last vowels
 
-        "m": 27,  # Start nasals
-        "n": 28,
-        "ng": 29,
-        "em": 30,
-        "en": 31,
-        "eng": 32,
-        "nx": 33,  # Last nasals
+        "l":    25,  # Start semivowels
+        "r":    26,
+        "w":    27,
+        "y":    28,
+        "hh":   29,
+        "hv":   30,
+        "el":   31,  # Last semivowels
 
-        "s": 34,  # Start fricatives
-        "sh": 35,
-        "z": 36,
-        "zh": 37,
-        "f": 38,
-        "th": 39,
-        "v": 40,
-        "dh": 41,  # Last fricatives
+        "m":    32,  # Start nasals
+        "n":    33,
+        "ng":   34,
+        "em":   35,
+        "en":   36,
+        "eng":  37,
+        "nx":   38,  # Last nasals
 
-        "jh": 42,  # Start africates
-        "ch": 43,  # Last africates
+        "s":    39,  # Start fricatives
+        "sh":   40,
+        "z":    41,
+        "zh":   42,
+        "f":    43,
+        "th":   44,
+        "v":    45,
+        "dh":   46,  # Last fricatives
 
-        "b": 44,  # Start stops
-        "d": 45,
-        "g": 46,
-        "p": 47,
-        "t": 48,
-        "k": 49,
-        "dx": 50,
-        "q": 51,  # Last stops
+        "jh":   47,  # Start africates
+        "ch":   48,  # Last africates
 
-        "pau": 52,  # Start others
-        "epi": 53,
-        "h#": 54,
-        "1": 55,
-        "2": 56  # Last others
+        "b":    49,  # Start stops
+        "d":    50,
+        "g":    51,
+        "p":    52,
+        "t":    53,
+        "k":    54,
+        "dx":   55,
+        "q":    56  # Last stops
+
     }
 
     @staticmethod
