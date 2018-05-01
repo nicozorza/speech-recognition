@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6a62531d-3464-45b2-a546-002ac961f893" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/Database" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +20,8 @@
       <file leaf-file-name="GenerateDatabase.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1204">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="330">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -156,12 +151,6 @@
               <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
               <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
               <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -333,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525045586038</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Manged to save database in a tfrecords file">
+      <created>1525188551778</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1525188551778</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -349,7 +345,7 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.24972677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.24972677" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32900432" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5021858" side_tool="true" weight="0.40151516" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
@@ -428,7 +424,8 @@
     <MESSAGE value="Add simple RNN network with CTC. Found it on github and changed it for this project. It doesn't work very well." />
     <MESSAGE value="Move CTC project to its own folder" />
     <MESSAGE value="Start phoneme classificator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start phoneme classificator" />
+    <MESSAGE value="Manged to save database in a tfrecords file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Manged to save database in a tfrecords file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -447,11 +444,6 @@
           <url>file://$PROJECT_DIR$/ctc_network/utils/Database.py</url>
           <line>174</line>
           <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py</url>
-          <line>76</line>
-          <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/utils/Label.py</url>
@@ -826,8 +818,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1204">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="330">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

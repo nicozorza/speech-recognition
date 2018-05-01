@@ -1,24 +1,11 @@
 import os
-import tensorflow as tf
-from PIL import Image
-
 from phoneme_classificator.utils.Database import DatabaseItem, Database
-from phoneme_classificator.utils.Label import Phoneme
 from phoneme_classificator.utils.ProjectData import ProjectData
-import numpy as np
-
-
-# Printing parameteres
-show_figures = False
-print_debug = False
 
 # Load project data
 project_data = ProjectData()
 
 database = Database(project_data)
-
-figure = 0
-
 
 # Get the names of each wav file in the directory
 wav_names = os.listdir(project_data.WAV_DIR)
@@ -41,7 +28,6 @@ for wav_index in range(len(wav_names)):
 
 print("Database generated")
 print("Number of elements in database: " + str(len(database)))
-
 
 # Save the database into a file
 database.save(project_data.DATABASE_FILE)
