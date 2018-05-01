@@ -1,6 +1,7 @@
 import numpy as np
 import collections
 
+
 class Phoneme:
 
     phonemes = {
@@ -71,7 +72,12 @@ class Phoneme:
 
     @staticmethod
     def phonemeToClass(phoneme: str):
-        return Phoneme().phonemes.get(phoneme, -1)
+        return int(Phoneme().phonemes.get(phoneme, -1))
+
+    @staticmethod
+    def classToPhoneme(index: int):
+        phonemes = Phoneme().phonemes
+        return list(phonemes.keys())[list(phonemes.values()).index(index)]
 
 
 class Label:
@@ -104,7 +110,7 @@ class Label:
             return Label(complete_label)
 
     def arrayToClass(self, phonemes_array: np.ndarray) -> np.ndarray:
-        class_array = np.empty(0)
+        class_array = np.empty(0, dtype=int)
         for i in range(len(phonemes_array)):
             class_array = np.append(class_array, Phoneme.phonemeToClass(phonemes_array[i]))
 
@@ -128,3 +134,11 @@ class Label:
             aux_array = np.append(aux_array, most_common_phoneme)
 
         return Label(aux_array)
+
+    @staticmethod
+    def fromClassArray(array: np.ndarray) -> 'Label':
+        phoneme_array = np.empty(0, dtype=str)
+        for i in range(len(array)):
+            phoneme_array = np.append(phoneme_array, Phoneme.classToPhoneme(array[i]))
+
+        return Label(phoneme_array)

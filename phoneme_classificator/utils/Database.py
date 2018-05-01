@@ -1,10 +1,10 @@
 import numpy as np
-import random
-from typing import List
+from typing import List, Tuple
 import pickle
 from phoneme_classificator.utils.ProjectData import ProjectData
 from phoneme_classificator.utils.Label import Label
 from phoneme_classificator.utils.AudioFeature import AudioFeature
+import tensorflow as tf
 
 
 class DatabaseItem(Label, AudioFeature):
@@ -42,9 +42,9 @@ class DatabaseItem(Label, AudioFeature):
         return self.__label.getPhonemes()
 
     @staticmethod
-    def fromFile(wav_name: str, label_name: str, window_len: int, win_stride: int) -> 'DatabaseItem':
+    def fromFile(wav_name: str, label_name: str, nfft: int, window_len: int, win_stride: int) -> 'DatabaseItem':
         # Get features
-        feature = AudioFeature.fromFile(wav_name, window_len, win_stride)
+        feature = AudioFeature.fromFile(wav_name, nfft, window_len, win_stride)
         sampling_rate = feature.getSamplingRate()/1000
         # Get label
         label = Label.fromFile(label_name).widowedLabel(int(window_len*sampling_rate), int(win_stride*sampling_rate))
@@ -78,19 +78,11 @@ class Database(DatabaseItem):
     # def print(self):
     #     return self.__database
     #
-    # def getMfccList(self) -> List[np.ndarray]:
-    #     mfcc_list = []
-    #     for _ in range(self.__length):
-    #         mfcc_list.append(self.__database[_].getMfcc(
-    #             winlen=self.project_data.frame_length,
-    #             winstep=self.project_data.frame_stride,
-    #             numcep=self.project_data.n_mfcc,
-    #             nfilt=self.project_data.num_filters,
-    #             nfft=self.project_data.fft_points,
-    #             lowfreq=self.project_data.lowfreq,
-    #             highfreq=self.project_data.highfreq,
-    #             preemph=self.project_data.preemphasis_coeff))
-    #     return mfcc_list
+    def getFeatureList(self) -> List[Tuple[np.ndarray, np.ndarray, None]]:
+        feature_list = []
+        for _ in range(self.__length):
+            feature_list.append(self.__database[_].getFeature().getFeature())
+        return feature_list
     #
     # def getMfccArray(self, normalize: bool = True) -> np.ndarray:
     #     mfcc_list = self.getMfccList()
@@ -115,13 +107,19 @@ class Database(DatabaseItem):
     #     #     return (mfcc_list - np.mean(mfcc_list)) / np.std(mfcc_list)
     #     # else:
     #     return spect_list
-    #
-    # def getLabelsList(self) -> List[Label]:
-    #     label_list = []
-    #     for _ in range(self.__length):
-    #         label_list.append(self.__database[_].getLabel())
-    #     return label_list
-    #
+
+    def getLabelsList(self) -> List[np.ndarray]:
+        label_list = []
+        for _ in range(self.__length):
+            label_list.append(self.__database[_].getLabel().getPhonemes())
+        return label_list
+
+    def getLabelsClassesList(self) -> List[np.ndarray]:
+        label_list = []
+        for _ in range(self.__length):
+            label_list.append(self.__database[_].getLabel().getPhonemesClass())
+        return label_list
+
     # def getLabelIndicesList(self) -> List[np.ndarray]:
     #     labels_list = self.getLabelsList()
     #     index_list = []
@@ -145,9 +143,50 @@ class Database(DatabaseItem):
         return self.__length
 
     def save(self, file_name):
-        file = open(file_name, 'wb')
-        pickle.dump(self, file, pickle.HIGHEST_PROTOCOL)
-        file.close()
+
+        writer = tf.python_io.TFRecordWriter(file_name)
+
+        for _ in range(self.__length):
+            feature = self.getItemFromIndex(_).getFeature().getFeature()
+            feature_array = np.asarray(feature).reshape(-1)
+            label_array = np.array(self.getItemFromIndex(_).getLabel().getPhonemesClass())
+
+            # Get feature shape
+            seq_len, nfft = np.shape(feature)
+
+            tfrecord_item = tf.train.Example(
+                features=tf.train.Features(feature={
+                    'nfft': self.__int64_feature(nfft),
+                    'seq_len': self.__int64_feature(seq_len),
+                    'feature': self.__floats_feature(feature_array),
+                    'label': self.__int64_list_feature(label_array)}
+                ))
+            writer.write(tfrecord_item.SerializeToString())
+        writer.close()
+
+    # @staticmethod
+    # def fromFile(filename: str, project_data: ProjectData):
+    #     record_iterator = tf.python_io.tf_record_iterator(path=filename)
+    #     database = Database(project_data)
+    #
+    #     for record in record_iterator:
+    #         example = tf.train.Example()
+    #         example.ParseFromString(record)
+    #
+    #         seq_len = int(example.features.feature['seq_len'].int64_list.value[0])
+    #
+    #         nfft = int(example.features.feature['nfft'].int64_list.value[0])
+    #
+    #         feature_array = np.asarray(example.features.feature['feature'].float_list.value, dtype=np.float64)
+    #         feature_matrix = feature_array.reshape((seq_len, nfft))
+    #         feature = AudioFeature.fromFeature(feature_matrix, nfft)
+    #
+    #         label_array = np.asarray(example.features.feature['label'].int64_list.value, dtype=np.int64)
+    #         label = Label.fromClassArray(label_array)
+    #
+    #         database.append(DatabaseItem(feature, label))
+    #
+    #     return database
 
     @staticmethod
     def fromList(input_list: List[DatabaseItem], projectData: ProjectData) -> 'Database':
@@ -158,9 +197,17 @@ class Database(DatabaseItem):
         return database
 
     @staticmethod
-    def fromFile(file_name: str) -> 'Database':
-        # Load the database
-        file = open(file_name, 'rb')
-        data = pickle.load(file)
-        file.close()
-        return data
+    def __bytes_feature(value):
+        return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
+
+    @staticmethod
+    def __int64_feature(value):
+        return tf.train.Feature(int64_list=tf.train.Int64List(value=[value]))
+
+    @staticmethod
+    def __int64_list_feature(value):
+        return tf.train.Feature(int64_list=tf.train.Int64List(value=value))
+
+    @staticmethod
+    def __floats_feature(value):
+        return tf.train.Feature(float_list=tf.train.FloatList(value=value))

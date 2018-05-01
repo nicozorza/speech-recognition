@@ -3,28 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6a62531d-3464-45b2-a546-002ac961f893" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/Database" beforeDir="false" afterPath="$PROJECT_DIR$/audio/Database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/FixWav/FixWav.sh" beforeDir="false" afterPath="$PROJECT_DIR$/audio/FixWav/FixWav.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/transcription/SA1.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/transcription/SA2.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/transcription/SI1573.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/transcription/SI2203.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/transcription/SI943.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/transcription/SX133.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/transcription/SX223.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/transcription/SX313.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/transcription/SX403.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/transcription/SX43.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SA1.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/audio/wav/SA1.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SA2.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/audio/wav/SA2.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1573.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2203.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI943.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX133.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX223.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX313.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX403.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX43.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/Database" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,8 +25,8 @@
       <file leaf-file-name="GenerateDatabase.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="1204">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -53,32 +37,8 @@
       <file leaf-file-name="Database.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2493">
-              <caret line="155" column="42" selection-start-line="155" selection-start-column="42" selection-end-line="155" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AudioFeature.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Label.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Label.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="108" column="91" selection-start-line="108" selection-start-column="11" selection-end-line="108" selection-end-column="91" />
+            <state relative-caret-position="2300">
+              <caret line="189" selection-start-line="189" selection-end-line="189" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -116,6 +76,8 @@
       <find>lengths</find>
       <find>sess</find>
       <find>train_targets</find>
+      <find>tuple</find>
+      <find>feature</find>
     </findStrings>
     <replaceStrings>
       <replace>indices</replace>
@@ -154,14 +116,14 @@
         <option value="$PROJECT_DIR$/ctc_network/SimpleNetwork/NeuralNetwork.py" />
         <option value="$PROJECT_DIR$/ctc_network/utils/ProjectData.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" />
-        <option value="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" />
+        <option value="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
     <option name="y" value="25" />
     <option name="width" value="1853" />
@@ -364,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524866503260</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Start phoneme classificator">
+      <created>1525045586038</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1525045586038</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -383,40 +352,66 @@
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.24972677" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32900432" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5021858" side_tool="true" weight="0.40151516" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978142" weight="0.19631237" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.329718" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978142" weight="0.45336226" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.329718" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.37635574" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40130153" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978142" weight="0.19631237" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.329718" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.24972677" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32900432" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4978142" visible="true" weight="0.45336226" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.37635574" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40130153" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5021858" side_tool="true" weight="0.40151516" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.329718" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
     </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -432,7 +427,8 @@
     <MESSAGE value="Add new methods" />
     <MESSAGE value="Add simple RNN network with CTC. Found it on github and changed it for this project. It doesn't work very well." />
     <MESSAGE value="Move CTC project to its own folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move CTC project to its own folder" />
+    <MESSAGE value="Start phoneme classificator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start phoneme classificator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -454,8 +450,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="51" />
+          <line>76</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/phoneme_classificator/utils/Label.py</url>
+          <line>143</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -465,37 +466,15 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="52" />
+      <option name="time" value="73" />
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="tfrecord_item.DESCRIPTOR._concrete_class.FEATURES_FIELD_NUMBER" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/SimpleNetwork/NeuralNetwork.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2358">
-          <caret line="131" column="51" lean-forward="true" selection-start-line="131" selection-start-column="51" selection-end-line="131" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#9#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ctc_network/utils/ProjectData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -670,20 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/scipy/signal/spectral.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="781" selection-start-line="781" selection-end-line="781" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ctc_network/SimpleNetwork/DataConversion.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-802">
@@ -748,13 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="57" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -772,17 +730,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/PHONCODE.TXT">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1271">
-          <caret line="112" column="21" selection-start-line="112" selection-start-column="18" selection-end-line="112" selection-end-column="21" />
-          <caret line="113" column="21" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="21" />
-          <caret line="114" column="21" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="21" />
-          <caret line="115" column="21" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="21" />
-          <caret line="116" column="21" selection-start-line="116" selection-start-column="18" selection-end-line="116" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/PHONCODE.TXT" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/typing.pyi">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -804,20 +752,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Label.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1247971763/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="108" column="91" selection-start-line="108" selection-start-column="11" selection-end-line="108" selection-end-column="91" />
+        <state relative-caret-position="378">
+          <caret line="2886" column="30" lean-forward="true" selection-start-line="2886" selection-start-column="30" selection-end-line="2886" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/scipy/signal/spectral.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="427" column="8" selection-start-line="427" selection-start-column="4" selection-end-line="427" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="2373" column="4" selection-start-line="2373" selection-start-column="4" selection-end-line="2373" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1247971763/numpy/core/multiarray.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="958" column="27" selection-start-line="958" selection-start-column="17" selection-end-line="958" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Label.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="2586">
+          <caret line="138" column="22" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="22" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -826,18 +809,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2493">
-          <caret line="155" column="42" selection-start-line="155" selection-start-column="42" selection-end-line="155" selection-end-column="42" />
+        <state relative-caret-position="2300">
+          <caret line="189" selection-start-line="189" selection-end-line="189" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="1204">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
