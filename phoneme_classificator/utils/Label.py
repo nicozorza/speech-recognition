@@ -2,73 +2,78 @@ import numpy as np
 import collections
 
 
-class Phoneme:
+class Phoneme:  # TODO group similar labels to reduce complexity
 
     phonemes = {
-        "h#":   0,  # Start others
-        "epi":  1,
-        "pau":  2,
-        "1":    3,
-        "2":    4,  # Last others
+        "h#":   0,
 
-        "iy":   5,  # Start vowels
-        "ih":   6,
-        "eh":   7,
-        "ey":   8,
-        "ae":   9,
-        "aa":   10,
-        "aw":   11,
-        "ay":   12,
-        "ah":   13,
-        "ao":   14,
-        "oy":   15,
-        "ow":   16,
-        "uh":   17,
-        "uw":   18,
-        "ux":   19,
-        "er":   20,
-        "ax":   21,
-        "ix":   22,
-        "axr":  23,
-        "ax-h": 24,  # Last vowels
+        "iy":   1,  # Start vowels
+        "ih":   2,
+        "eh":   3,
+        "ey":   4,
+        "ae":   5,
+        "aa":   6,
+        "aw":   7,
+        "ay":   8,
+        "ah":   9,
+        "ao":   10,
+        "oy":   11,
+        "ow":   12,
+        "uh":   13,
+        "uw":   14,
+        "ux":   15,
+        "er":   16,
+        "ax":   17,
+        "ix":   18,
+        "axr":  19,
+        "ax-h": 20,  # Last vowels
 
-        "l":    25,  # Start semivowels
-        "r":    26,
-        "w":    27,
-        "y":    28,
-        "hh":   29,
-        "hv":   30,
-        "el":   31,  # Last semivowels
+        "l":    21,  # Start semivowels
+        "r":    22,
+        "w":    23,
+        "y":    24,
+        "hh":   25,
+        "hv":   26,
+        "el":   27,  # Last semivowels
 
-        "m":    32,  # Start nasals
-        "n":    33,
-        "ng":   34,
-        "em":   35,
-        "en":   36,
-        "eng":  37,
-        "nx":   38,  # Last nasals
+        "m":    28,  # Start nasals
+        "n":    29,
+        "ng":   30,
+        "em":   31,
+        "en":   32,
+        "eng":  33,
+        "nx":   34,  # Last nasals
 
-        "s":    39,  # Start fricatives
-        "sh":   40,
-        "z":    41,
-        "zh":   42,
-        "f":    43,
-        "th":   44,
-        "v":    45,
-        "dh":   46,  # Last fricatives
+        "s":    35,  # Start fricatives
+        "sh":   36,
+        "z":    37,
+        "zh":   38,
+        "f":    39,
+        "th":   40,
+        "v":    41,
+        "dh":   42,  # Last fricatives
 
-        "jh":   47,  # Start africates
-        "ch":   48,  # Last africates
+        "jh":   43,  # Start africates
+        "ch":   44,  # Last africates
 
-        "b":    49,  # Start stops
-        "d":    50,
-        "g":    51,
-        "p":    52,
-        "t":    53,
-        "k":    54,
-        "dx":   55,
-        "q":    56  # Last stops
+        "b":    45,  # Start stops
+        "d":    46,
+        "g":    47,
+        "p":    48,
+        "t":    49,
+        "k":    50,
+        "dx":   51,
+        "q":    52,  # Last stops
 
+        "epi":  53,  # Start others
+        "pau":  54,
+        "1":    55,
+        "2":    56,  # Last others
+        "kcl":  57,
+        "gcl":  58,
+        "tcl":  59,
+        "dcl":  60,
+        "bcl":  61
     }
 
     @staticmethod
@@ -78,6 +83,7 @@ class Phoneme:
     @staticmethod
     def classToPhoneme(index: int):
         phonemes = Phoneme().phonemes
+        aux = list(phonemes.keys())[list(phonemes.values()).index(index)]
         return list(phonemes.keys())[list(phonemes.values()).index(index)]
 
 

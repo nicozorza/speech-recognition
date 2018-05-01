@@ -164,29 +164,30 @@ class Database(DatabaseItem):
             writer.write(tfrecord_item.SerializeToString())
         writer.close()
 
-    # @staticmethod
-    # def fromFile(filename: str, project_data: ProjectData):
-    #     record_iterator = tf.python_io.tf_record_iterator(path=filename)
-    #     database = Database(project_data)
-    #
-    #     for record in record_iterator:
-    #         example = tf.train.Example()
-    #         example.ParseFromString(record)
-    #
-    #         seq_len = int(example.features.feature['seq_len'].int64_list.value[0])
-    #
-    #         nfft = int(example.features.feature['nfft'].int64_list.value[0])
-    #
-    #         feature_array = np.asarray(example.features.feature['feature'].float_list.value, dtype=np.float64)
-    #         feature_matrix = feature_array.reshape((seq_len, nfft))
-    #         feature = AudioFeature.fromFeature(feature_matrix, nfft)
-    #
-    #         label_array = np.asarray(example.features.feature['label'].int64_list.value, dtype=np.int64)
-    #         label = Label.fromClassArray(label_array)
-    #
-    #         database.append(DatabaseItem(feature, label))
-    #
-    #     return database
+    @staticmethod
+    def fromFile(filename: str, project_data: ProjectData):
+        record_iterator = tf.python_io.tf_record_iterator(path=filename)
+        database = Database(project_data)
+
+        for record in record_iterator:
+
+            example = tf.train.Example()
+            example.ParseFromString(record)
+
+            seq_len = int(example.features.feature['seq_len'].int64_list.value[0])
+
+            nfft = int(example.features.feature['nfft'].int64_list.value[0])
+
+            feature_array = np.asarray(example.features.feature['feature'].float_list.value, dtype=np.float64)
+            feature_matrix = feature_array.reshape((seq_len, nfft))
+            feature = AudioFeature.fromFeature(feature_matrix, nfft)
+
+            label_array = np.asarray(example.features.feature['label'].int64_list.value, dtype=np.int64)
+            label = Label.fromClassArray(label_array)
+
+            database.append(DatabaseItem(feature, label))
+
+        return database
 
     @staticmethod
     def fromList(input_list: List[DatabaseItem], projectData: ProjectData) -> 'Database':

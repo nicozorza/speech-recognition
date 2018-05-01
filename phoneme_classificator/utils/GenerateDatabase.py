@@ -32,7 +32,7 @@ print("Number of elements in database: " + str(len(database)))
 # Save the database into a file
 database.save(project_data.DATABASE_FILE)
 print("Database saved in:", project_data.DATABASE_NAME)
-
+database2 = Database.fromFile(project_data.DATABASE_FILE, project_data)
 # record_iterator = tf.python_io.tf_record_iterator(path=project_data.DATABASE_FILE)
 #
 # for string_record in record_iterator:

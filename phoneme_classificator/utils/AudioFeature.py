@@ -6,14 +6,11 @@ from typing import Tuple
 
 
 class AudioFeature:
-    def __init__(self, audio: np.ndarray, fs: float, nfft: int, window_len: int, win_stride: int, normalize_audio=True):
+    def __init__(self):
+        self.__audio = np.empty(0)
+        self.__feature = np.empty(0)
+        self.__fs = 0
 
-        if normalize_audio:
-            self.__audio = audio / abs(max(audio))
-        else:
-            self.__audio = audio
-        self.__fs = fs
-        _, _, self.__feature = self.log_specgram(nfft, window_len, win_stride)
 
     def getSamplingRate(self) -> float:
         return self.__fs
@@ -50,10 +47,24 @@ class AudioFeature:
     def fromFile(wav_name: str, nfft: int, window_len: int, win_stride: int, normalize_audio=True) -> 'AudioFeature':
         # Read the wav file
         fs, signal = wav.read(wav_name)
-        return AudioFeature(signal, fs, nfft, window_len, win_stride, normalize_audio)
+        return AudioFeature.fromAudio(signal, fs, nfft, window_len, win_stride, normalize_audio)
 
     @staticmethod
     def fromFeature(feature: Tuple[np.ndarray, np.ndarray, None], nfft: int) -> 'AudioFeature':
-        audio_feature = AudioFeature(np.empty(0), 0, nfft, 0, 0)
+        audio_feature = AudioFeature()
         audio_feature.__feature = feature
+
         return audio_feature
+
+    @staticmethod
+    def fromAudio(audio: np.ndarray, fs: float, nfft: int, window_len: int, win_stride: int,
+                     normalize_audio=True) -> 'AudioFeature':
+
+        if normalize_audio:
+            audio = audio / abs(max(audio))
+        feature = AudioFeature()
+        feature.__audio = audio
+        feature.__fs = fs
+        _, _, feature.__feature = feature.log_specgram(nfft, window_len, win_stride)
+
+        return feature
