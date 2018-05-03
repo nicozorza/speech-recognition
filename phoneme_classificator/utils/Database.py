@@ -148,7 +148,6 @@ class Database(DatabaseItem):
 
         for _ in range(self.__length):
             feature = self.getItemFromIndex(_).getFeature().getFeature()
-            feature_array = np.asarray(feature).reshape(-1)
             label_array = np.array(self.getItemFromIndex(_).getLabel().getPhonemesClass())
 
             # Get feature shape
@@ -181,9 +180,6 @@ class Database(DatabaseItem):
         with tf.Session() as sess:
             record_iterator = tf.python_io.tf_record_iterator(path=filename)
             for record in record_iterator:
-
-                example = tf.train.SequenceExample()
-                example.ParseFromString(record)
 
                 context_features = {
                     "seq_len": tf.FixedLenFeature([], dtype=tf.int64),
