@@ -3,7 +3,7 @@ from phoneme_classificator.utils.Label import Phoneme
 class ProjectData:
     def __init__(self):
         # Files data
-        self.SOURCE_DIR = '../../audio'
+        self.SOURCE_DIR = 'audio'
         self.WAV_DIR = self.SOURCE_DIR + '/wav'
         self.TRANSCRIPTION_DIR = self.SOURCE_DIR + '/transcription'
         self.PHONEMES_DIR = self.SOURCE_DIR + '/phonemes'

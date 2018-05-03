@@ -154,38 +154,63 @@ class Database(DatabaseItem):
             # Get feature shape
             seq_len, nfft = np.shape(feature)
 
-            tfrecord_item = tf.train.Example(
-                features=tf.train.Features(feature={
-                    'nfft': self.__int64_feature(nfft),
-                    'seq_len': self.__int64_feature(seq_len),
-                    'feature': self.__floats_feature(feature_array),
-                    'label': self.__int64_list_feature(label_array)}
-                ))
+            label_feat = [tf.train.Feature(int64_list=tf.train.Int64List(value=label_array))]
+            feats_list = [tf.train.Feature(float_list=tf.train.FloatList(value=frame)) for frame in feature]
+
+            feat_dict = {"feature": tf.train.FeatureList(feature=feats_list),
+                         "label": tf.train.FeatureList(feature=label_feat)}
+
+            sequence_feats = tf.train.FeatureLists(feature_list=feat_dict)
+
+            # Context features for the entire sequence
+            seq_len_feat = tf.train.Feature(int64_list=tf.train.Int64List(value=[seq_len]))
+            nfft_feat = tf.train.Feature(int64_list=tf.train.Int64List(value=[nfft]))
+
+            context_feats = tf.train.Features(feature={"seq_len": seq_len_feat, "nfft": nfft_feat})
+
+            tfrecord_item = tf.train.SequenceExample(context=context_feats, feature_lists=sequence_feats)
+
             writer.write(tfrecord_item.SerializeToString())
         writer.close()
 
     @staticmethod
     def fromFile(filename: str, project_data: ProjectData) -> 'Database':
-        record_iterator = tf.python_io.tf_record_iterator(path=filename)
+
         database = Database(project_data)
 
-        for record in record_iterator:
+        with tf.Session() as sess:
+            record_iterator = tf.python_io.tf_record_iterator(path=filename)
+            for record in record_iterator:
 
-            example = tf.train.Example()
-            example.ParseFromString(record)
+                example = tf.train.SequenceExample()
+                example.ParseFromString(record)
 
-            seq_len = int(example.features.feature['seq_len'].int64_list.value[0])
+                context_features = {
+                    "seq_len": tf.FixedLenFeature([], dtype=tf.int64),
+                    "nfft": tf.FixedLenFeature([], dtype=tf.int64)
+                }
+                sequence_features = {
+                    "feature": tf.VarLenFeature(dtype=tf.float32),
+                    "label": tf.VarLenFeature(dtype=tf.int64)
+                }
 
-            nfft = int(example.features.feature['nfft'].int64_list.value[0])
+                context_parsed, sequence_parsed = tf.parse_single_sequence_example(
+                    serialized=record,
+                    context_features=context_features,
+                    sequence_features=sequence_features
+                )
 
-            feature_array = np.asarray(example.features.feature['feature'].float_list.value, dtype=np.float64)
-            feature_matrix = feature_array.reshape((seq_len, nfft))
-            feature = AudioFeature.fromFeature(feature_matrix, nfft)
+                seq_len = sess.run(context_parsed["seq_len"])
+                nfft = sess.run(context_parsed["nfft"])
 
-            label_array = np.asarray(example.features.feature['label'].int64_list.value, dtype=np.int64)
-            label = Label.fromClassArray(label_array)
+                feature_array = sess.run(sequence_parsed["feature"])[1]
+                feature_matrix = feature_array.reshape((seq_len, nfft))
+                feature = AudioFeature.fromFeature(feature_matrix, nfft)
 
-            database.append(DatabaseItem(feature, label))
+                label_array = sess.run(sequence_parsed["label"])[1]
+                label = Label.fromClassArray(label_array)
+
+                database.append(DatabaseItem(feature, label))
 
         return database
 
@@ -196,19 +221,3 @@ class Database(DatabaseItem):
             database.append(input_list[_])
 
         return database
-
-    @staticmethod
-    def __bytes_feature(value):
-        return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
-
-    @staticmethod
-    def __int64_feature(value):
-        return tf.train.Feature(int64_list=tf.train.Int64List(value=[value]))
-
-    @staticmethod
-    def __int64_list_feature(value):
-        return tf.train.Feature(int64_list=tf.train.Int64List(value=value))
-
-    @staticmethod
-    def __floats_feature(value):
-        return tf.train.Feature(float_list=tf.train.FloatList(value=value))
