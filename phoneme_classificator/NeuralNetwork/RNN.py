@@ -1,3 +1,5 @@
+import random
+import numpy as np
 import tensorflow as tf
 from tensorflow.python.training.saver import Saver
 
@@ -17,6 +19,8 @@ class RNNClass:
         self.rnn_cell = None
         self.rnn_outputs = None
         self.dense_output = None
+        self.output_classes = None
+        self.output_one_hot = None
         self.loss = None
         self.correct = None
         self.training_op: tf.Operation = None
@@ -35,7 +39,7 @@ class RNNClass:
                     shape=[None, None, self.network_data.num_features],
                     name="input")
                 self.input_label = tf.placeholder(
-                    dtype=tf.int32,
+                    dtype=tf.int64,
                     shape=[None],
                     name="output")
                 self.input_label_one_hot = tf.one_hot(self.input_label, self.network_data.num_classes, dtype=tf.int32)
@@ -64,12 +68,16 @@ class RNNClass:
                         units=self.network_data.num_dense_units[_],
                         activation=self.network_data.dense_activations[_]
                     )
-            with tf.name_scope("output"):
+            with tf.name_scope("dense_output"):
                 self.dense_output = tf.layers.dense(
                     inputs=self.rnn_outputs,
                     units=self.network_data.num_classes,
-                    activation=tf.nn.softmax
+                    activation=self.network_data.out_activation
                 )
+
+            with tf.name_scope("output_classes"):
+                self.output_classes = tf.argmax(self.dense_output, 2)
+                self.output_one_hot = tf.one_hot(self.output_classes, self.network_data.num_classes, dtype=tf.int32)[0]
 
             with tf.name_scope("loss"):
                 self.loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
@@ -79,9 +87,9 @@ class RNNClass:
 
             with tf.name_scope("correct"):
                 self.correct = tf.cast(
-                    tf.equal(self.dense_output, tf.cast(self.input_label_one_hot, dtype=tf.float32)), tf.int32)
+                    tf.equal(self.output_classes, self.input_label), tf.int32)
                 self.correct = \
-                    tf.reduce_sum(tf.cast(self.correct, tf.float32)) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32))
+                    tf.reduce_sum(tf.cast(self.correct, tf.float32), axis=1) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32))
 
             # define the optimizer
             with tf.name_scope("training"):
@@ -104,7 +112,8 @@ class RNNClass:
               train_features,
               train_labels,
               batch_size,
-              training_epochs):
+              training_epochs,
+              shuffle=True):
 
         sess = tf.Session(graph=self.graph)
 
@@ -117,7 +126,7 @@ class RNNClass:
                 for i in range(len(train_features)):
                     feed_dict = {
                         self.input_feature: train_features[i],
-                        self.seq_len: len(train_features[i]),
+                        self.seq_len: len(train_features[i][0]),
                         self.num_features: self.network_data.num_features,
                         self.input_label: train_labels[i]
                     }
@@ -129,5 +138,26 @@ class RNNClass:
                 loss_ep = loss_ep / n_step
                 acc_ep = acc_ep / n_step
 
+                if shuffle:
+                    aux_list = list(zip(train_features, train_labels))
+                    random.shuffle(aux_list)
+                    train_features, train_labels = zip(*aux_list)
+
                 print("Epoch %d of %d, loss %f, acc %f" % (epoch + 1, training_epochs,  loss_ep, acc_ep))
+
+    def predict(self, feature):
+        sess = tf.Session(graph=self.graph)
+
+        with self.graph.as_default():
+            sess.run(tf.global_variables_initializer())
+            feed_dict = {
+                self.input_feature: feature,
+                self.seq_len: len(feature[0]),
+                self.num_features: self.network_data.num_features,
+            }
+
+            predicted = sess.run(self.output_classes, feed_dict=feed_dict)
+
+            return predicted
+
 

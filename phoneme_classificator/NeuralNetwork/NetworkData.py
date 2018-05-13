@@ -18,6 +18,8 @@ class NetworkData():
         self.num_dense_units: List[int] = list()
         self.dense_activations: List[int] = list()
 
+        self.out_activation = None
+
         self.optimizer: Optimizer = None
 
         self.learning_rate: float = None
