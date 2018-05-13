@@ -73,7 +73,8 @@ class Phoneme:  # TODO group similar labels to reduce complexity
         "gcl":  58,
         "tcl":  59,
         "dcl":  60,
-        "bcl":  61
+        "bcl":  61,
+        "pcl": 62,
     }
 
     @staticmethod
