@@ -109,22 +109,22 @@ class RNNClass:
         sess = tf.Session(graph=self.graph)
 
         with self.graph.as_default():
-
+            sess.run(tf.global_variables_initializer())
             for epoch in range(training_epochs):
                 loss_ep = 0
                 acc_ep = 0
                 n_step = 0
                 for i in range(len(train_features)):
                     feed_dict = {
-                        self.input_feature: train_features,
-                        self.seq_len: len(train_features),
+                        self.input_feature: train_features[i],
+                        self.seq_len: len(train_features[i]),
                         self.num_features: self.network_data.num_features,
-                        self.input_label: train_labels
+                        self.input_label: train_labels[i]
                     }
-                    # loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
-                    loss = sess.run([self.loss], feed_dict=feed_dict)
+                    loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
+                    # loss = sess.run(self.loss, feed_dict=feed_dict)
                     loss_ep += loss
-                    # acc_ep += acc
+                    acc_ep += acc
                     n_step += 1
                 loss_ep = loss_ep / n_step
                 acc_ep = acc_ep / n_step

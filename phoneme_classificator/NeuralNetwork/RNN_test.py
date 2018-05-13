@@ -149,44 +149,67 @@ def parse_test(example):
 database = Database.fromFile(project_data.DATABASE_FILE, project_data)
 
 train_feats = database.getFeatureList()
+train_feats = [np.reshape(feature, [1, len(feature), 513]) for feature in train_feats]
 train_label = database.getLabelsClassesList()
 
-# network.train(
-#     train_features=train_feats,
-#     train_labels=train_label,
-#     training_epochs=10,
-#     batch_size=1
-# )
+network.train(
+    train_features=train_feats,
+    train_labels=train_label,
+    training_epochs=20,
+    batch_size=1
+)
 
 
 
-with network.graph.as_default():
-
-    data = tf.data.TFRecordDataset(project_data.DATABASE_FILE)
-    data = data.map(parse_test)
-    data = data.repeat().batch(1)
-    iterator = data.make_one_shot_iterator()
-    sequence_dict, context_dict = iterator.get_next()
-
-    with tf.Session(graph=network.graph) as sess:
-        sess.run(tf.global_variables_initializer())
-
-        nfft, seq_len, feat, label= sess.run(
-            [context_dict['nfft'], context_dict['seq_len'], sequence_dict["feature"].values, sequence_dict["label"].values])
-        nfft = nfft[0]
-        seq_len = seq_len[0]
-        feat = np.reshape(feat, [1, seq_len, nfft])
-
-        loss = sess.run(
-            network.loss,
-            feed_dict={
-                network.input_feature: feat,
-                network.seq_len: seq_len,
-                network.num_features: nfft,
-                network.input_label: label
-            }
-        )
-        print(loss)
+# with network.graph.as_default():
+#
+#     data = tf.data.TFRecordDataset(project_data.DATABASE_FILE)
+#     data = data.map(parse_test)
+#     data = data.repeat().batch(1)
+#     iterator = data.make_one_shot_iterator()
+#     sequence_dict, context_dict = iterator.get_next()
+#
+#     with tf.Session(graph=network.graph) as sess:
+#         sess.run(tf.initialize_all_variables())
+#         for epoch in range(10):
+#             loss_ep = 0
+#             acc_ep = 0
+#             n_step = 0
+#             for i in range(len(train_feats)):
+#                 feed_dict = {
+#                     network.input_feature: train_feats[i],
+#                     network.seq_len: len(train_feats[i]),
+#                     network.num_features: network_data.num_features,
+#                     network.input_label: train_label[i]
+#                 }
+#                 # loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
+#                 loss = sess.run(network.loss, feed_dict=feed_dict)
+#                 loss_ep += loss
+#                 # acc_ep += acc
+#                 n_step += 1
+#             loss_ep = loss_ep / n_step
+#             acc_ep = acc_ep / n_step
+#
+#             print("Epoch %d of %d, loss %f, acc %f" % (epoch + 1, 10, loss_ep, acc_ep))
+        # sess.run(tf.global_variables_initializer())
+        #
+        # nfft, seq_len, feat, label= sess.run(
+        #     [context_dict['nfft'], context_dict['seq_len'], sequence_dict["feature"].values, sequence_dict["label"].values])
+        # nfft = nfft[0]
+        # seq_len = seq_len[0]
+        # feat = np.reshape(feat, [1, seq_len, nfft])
+        # aux = np.reshape(train_feats[0], [1, seq_len, nfft])
+        #
+        # loss = sess.run(
+        #     network.loss,
+        #     feed_dict={
+        #         network.input_feature: aux,
+        #         network.seq_len: len(train_feats[0]),
+        #         network.num_features: 513,
+        #         network.input_label: train_label[0]
+        #     }
+        # )
+        # print(loss)
 
 # tf.reset_default_graph()
 #
