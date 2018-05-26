@@ -17,8 +17,9 @@ network_data.num_dense_layers = 2
 network_data.num_dense_units = [80, 100]
 network_data.dense_activations = [tf.nn.tanh, tf.nn.tanh]
 network_data.out_activation = tf.nn.relu
-network_data.learning_rate = 0.0001
-network_data.optimizer = tf.train.AdamOptimizer(network_data.learning_rate)
+network_data.learning_rate = 0.001
+network_data.adam_epsilon = 0.00001
+network_data.optimizer = tf.train.AdamOptimizer(learning_rate=network_data.learning_rate, epsilon=network_data.adam_epsilon)
 
 network = RNNClass(network_data)
 network.create_graph()

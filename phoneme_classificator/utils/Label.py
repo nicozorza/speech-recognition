@@ -150,3 +150,6 @@ class Label:
             phoneme_array = np.append(phoneme_array, Phoneme.classToPhoneme(array[i]))
 
         return Label(phoneme_array)
+
+    def __len__(self):
+        return len(self.__phonemes_array)

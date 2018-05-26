@@ -26,12 +26,20 @@ for wav_index in range(len(wav_names)):
     # Add the new data to the database
     database.append(item)
 
+    percentage = wav_index / len(wav_names) * 100
+    print('Completed ' + str(int(percentage)) + '%')
+
 print("Database generated")
 print("Number of elements in database: " + str(len(database)))
 
 # Save the database into a file
 database.save(project_data.DATABASE_FILE)
 print("Database saved in:", project_data.DATABASE_NAME)
+
+database.order_by_length()
+batches=database.get_batches_list(11)
+asd = 1
+
 # database2 = Database.fromFile(project_data.DATABASE_FILE, project_data)
 #
 # import tensorflow as tf

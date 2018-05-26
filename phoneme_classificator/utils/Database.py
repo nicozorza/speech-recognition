@@ -5,6 +5,8 @@ from phoneme_classificator.utils.ProjectData import ProjectData
 from phoneme_classificator.utils.Label import Label
 from phoneme_classificator.utils.AudioFeature import AudioFeature
 import tensorflow as tf
+import operator
+
 
 
 class DatabaseItem(Label, AudioFeature):
@@ -63,6 +65,9 @@ class DatabaseItem(Label, AudioFeature):
             for _ in range(correct_size-actual_len):
                 aux_label = np.append(aux_label, label.getPhonemes()[-1])
             return Label(aux_label)
+
+    def __len__(self):
+        return len(self.__label)
 
 
 class Database(DatabaseItem):
@@ -130,6 +135,33 @@ class Database(DatabaseItem):
     # def getLabelsArray(self) -> np.ndarray:
     #     index_list = self.getLabelIndicesList()
     #     return np.asarray(index_list)
+
+    def order_by_length(self):
+        self.__database = sorted(self.__database, key=lambda x: len(x))
+
+    def get_batches_list(self, batch_size) -> List['Database']:
+        num_batches = int(np.ceil(len(self.__database)/batch_size))
+        batch_list = []
+        for _ in range(num_batches-1):
+            batch_list.append(self.getRange(_*batch_size, (_+1)*batch_size))
+            print(_*batch_size, (_+1)*batch_size)
+
+        batch_list.append(self.getRange(len(self.__database)-batch_size, len(self.__database)))
+        print(len(self.__database)-batch_size, len(self.__database))
+
+        return batch_list
+
+    def get_max_sequence_length(self):
+        max_length = 0
+        for _ in range(len(self.__database)):
+            if len(self.__database[_]) >= max_length:
+                max_length = len(self.__database[_])
+        return max_length
+
+    def pad_sequences(self):
+        max_length = self.get_max_sequence_length()
+        # for _ in range(len(self.__database)):
+        # TODO finish this method
 
     def getItemFromIndex(self, index) -> DatabaseItem:
         if index > self.__length:

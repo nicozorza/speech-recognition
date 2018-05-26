@@ -23,6 +23,7 @@ class NetworkData():
         self.optimizer: Optimizer = None
 
         self.learning_rate: float = None
+        self.adam_epsilon: float = None
 
         # self.layers: List[LayerData] = list()
         # self.cost: Callable[[Any, Any], Any] = None
