@@ -24,26 +24,6 @@ network_data.optimizer = tf.train.AdamOptimizer(learning_rate=network_data.learn
 network = RNNClass(network_data)
 network.create_graph()
 
-
-def parse_test(example):
-    context_features = {
-        "seq_len": tf.FixedLenFeature([], dtype=tf.int64),
-        "nfft": tf.FixedLenFeature([], dtype=tf.int64)
-    }
-    sequence_features = {
-        "feature": tf.VarLenFeature(dtype=tf.float32),
-        "label": tf.VarLenFeature(dtype=tf.int64)
-    }
-
-    context_parsed, sequence_parsed = tf.parse_single_sequence_example(
-        serialized=example,
-        context_features=context_features,
-        sequence_features=sequence_features
-    )
-
-    return sequence_parsed, context_parsed
-
-
 database = Database.fromFile(project_data.DATABASE_FILE, project_data)
 
 train_feats = database.getFeatureList()

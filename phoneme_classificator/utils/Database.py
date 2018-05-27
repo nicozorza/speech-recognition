@@ -1,3 +1,5 @@
+import random
+
 import numpy as np
 from typing import List, Tuple
 import pickle
@@ -6,7 +8,6 @@ from phoneme_classificator.utils.Label import Label
 from phoneme_classificator.utils.AudioFeature import AudioFeature
 import tensorflow as tf
 import operator
-
 
 
 class DatabaseItem(Label, AudioFeature):
@@ -44,12 +45,12 @@ class DatabaseItem(Label, AudioFeature):
         return self.__label.getPhonemes()
 
     @staticmethod
-    def fromFile(wav_name: str, label_name: str, nfft: int, window_len: int, win_stride: int) -> 'DatabaseItem':
+    def fromFile(wav_name: str, label_name: str, nfft: int, window_len: int, win_stride: int, max_len: int=None) -> 'DatabaseItem':
         # Get features
-        feature = AudioFeature.fromFile(wav_name, nfft, window_len, win_stride)
+        feature = AudioFeature.fromFile(wav_name, nfft, window_len, win_stride, max_len=max_len)
         sampling_rate = feature.getSamplingRate()/1000
         # Get label
-        label = Label.fromFile(label_name).widowedLabel(int(window_len*sampling_rate), int(win_stride*sampling_rate))
+        label = Label.fromFile(label_name, max_len).widowedLabel(int(window_len*sampling_rate), int(win_stride*sampling_rate))
         if len(label.getPhonemes()) != len(feature.getFeature()):
             label = DatabaseItem.__adjustSize(label, len(feature.getFeature()))
 
@@ -150,6 +151,9 @@ class Database(DatabaseItem):
         print(len(self.__database)-batch_size, len(self.__database))
 
         return batch_list
+
+    def shuffle_database(self):
+        random.shuffle(self.__database)
 
     def get_max_sequence_length(self):
         max_length = 0

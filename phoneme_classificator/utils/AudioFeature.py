@@ -18,6 +18,9 @@ class AudioFeature:
     def getFeature(self) -> Tuple[np.ndarray, np.ndarray, None]:
         return self.__feature
 
+    def getAudio(self) -> np.ndarray:
+        return self.__audio
+
     def mfcc(self,
                 winlen: float,
                 winstep: float,
@@ -44,9 +47,21 @@ class AudioFeature:
         return freqs, times, np.log(spec.T.astype(np.float32) + eps)
 
     @staticmethod
-    def fromFile(wav_name: str, nfft: int, window_len: int, win_stride: int, normalize_audio=True) -> 'AudioFeature':
+    def fromFile(wav_name: str,
+                 nfft: int,
+                 window_len: int,
+                 win_stride: int,
+                 max_len: int=None,
+                 normalize_audio=True) -> 'AudioFeature':
         # Read the wav file
         fs, signal = wav.read(wav_name)
+        if max_len is not None:
+            if max_len < len(signal):
+                raise ValueError('Invalid audio length.')
+            else:
+                pad_len = max_len-len(signal)
+
+            signal = np.pad(signal, (0, pad_len), 'constant', constant_values=0)
         return AudioFeature.fromAudio(signal, fs, nfft, window_len, win_stride, normalize_audio)
 
     @staticmethod
