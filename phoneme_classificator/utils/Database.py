@@ -176,69 +176,83 @@ class Database(DatabaseItem):
 
     def save(self, file_name):
 
-        writer = tf.python_io.TFRecordWriter(file_name)
+        # Save train and test sets
+        file = open(file_name, 'wb')
+        # Trim the samples to a fixed length
+        pickle.dump(self.__database, file)
+        file.close()
 
-        for _ in range(self.__length):
-            feature = self.getItemFromIndex(_).getFeature().getFeature()
-            label_array = np.array(self.getItemFromIndex(_).getLabel().getPhonemesClass())
-
-            # Get feature shape
-            seq_len, nfft = np.shape(feature)
-
-            label_feat = [tf.train.Feature(int64_list=tf.train.Int64List(value=label_array))]
-            feats_list = [tf.train.Feature(float_list=tf.train.FloatList(value=frame)) for frame in feature]
-
-            feat_dict = {"feature": tf.train.FeatureList(feature=feats_list),
-                         "label": tf.train.FeatureList(feature=label_feat)}
-
-            sequence_feats = tf.train.FeatureLists(feature_list=feat_dict)
-
-            # Context features for the entire sequence
-            seq_len_feat = tf.train.Feature(int64_list=tf.train.Int64List(value=[seq_len]))
-            nfft_feat = tf.train.Feature(int64_list=tf.train.Int64List(value=[nfft]))
-
-            context_feats = tf.train.Features(feature={"seq_len": seq_len_feat, "nfft": nfft_feat})
-
-            tfrecord_item = tf.train.SequenceExample(context=context_feats, feature_lists=sequence_feats)
-
-            writer.write(tfrecord_item.SerializeToString())
-        writer.close()
+        # writer = tf.python_io.TFRecordWriter(file_name)
+        #
+        # for _ in range(self.__length):
+        #     feature = self.getItemFromIndex(_).getFeature().getFeature()
+        #     label_array = np.array(self.getItemFromIndex(_).getLabel().getPhonemesClass())
+        #
+        #     # Get feature shape
+        #     seq_len, nfft = np.shape(feature)
+        #
+        #     label_feat = [tf.train.Feature(int64_list=tf.train.Int64List(value=label_array))]
+        #     feats_list = [tf.train.Feature(float_list=tf.train.FloatList(value=frame)) for frame in feature]
+        #
+        #     feat_dict = {"feature": tf.train.FeatureList(feature=feats_list),
+        #                  "label": tf.train.FeatureList(feature=label_feat)}
+        #
+        #     sequence_feats = tf.train.FeatureLists(feature_list=feat_dict)
+        #
+        #     # Context features for the entire sequence
+        #     seq_len_feat = tf.train.Feature(int64_list=tf.train.Int64List(value=[seq_len]))
+        #     nfft_feat = tf.train.Feature(int64_list=tf.train.Int64List(value=[nfft]))
+        #
+        #     context_feats = tf.train.Features(feature={"seq_len": seq_len_feat, "nfft": nfft_feat})
+        #
+        #     tfrecord_item = tf.train.SequenceExample(context=context_feats, feature_lists=sequence_feats)
+        #
+        #     writer.write(tfrecord_item.SerializeToString())
+        # writer.close()
 
     @staticmethod
     def fromFile(filename: str, project_data: ProjectData) -> 'Database':
 
-        database = Database(project_data)
+        # Load the database
+        file = open(filename, 'rb')
+        data = pickle.load(file)
+        file.close()
 
-        with tf.Session() as sess:
-            record_iterator = tf.python_io.tf_record_iterator(path=filename)
-            for record in record_iterator:
+        database = Database.fromList(data, project_data)
 
-                context_features = {
-                    "seq_len": tf.FixedLenFeature([], dtype=tf.int64),
-                    "nfft": tf.FixedLenFeature([], dtype=tf.int64)
-                }
-                sequence_features = {
-                    "feature": tf.VarLenFeature(dtype=tf.float32),
-                    "label": tf.VarLenFeature(dtype=tf.int64)
-                }
-
-                context_parsed, sequence_parsed = tf.parse_single_sequence_example(
-                    serialized=record,
-                    context_features=context_features,
-                    sequence_features=sequence_features
-                )
-
-                seq_len = sess.run(context_parsed["seq_len"])
-                nfft = sess.run(context_parsed["nfft"])
-
-                feature_array = sess.run(sequence_parsed["feature"])[1]
-                feature_matrix = feature_array.reshape((seq_len, nfft))
-                feature = AudioFeature.fromFeature(feature_matrix, nfft)
-
-                label_array = sess.run(sequence_parsed["label"])[1]
-                label = Label.fromClassArray(label_array)
-
-                database.append(DatabaseItem(feature, label))
+        # with tf.Session() as sess:
+        #     record_iterator = tf.python_io.tf_record_iterator(path=filename)
+        #     for record in record_iterator:
+        #
+        #         context_features = {
+        #             "seq_len": tf.FixedLenFeature([], dtype=tf.int64),
+        #             "nfft": tf.FixedLenFeature([], dtype=tf.int64)
+        #         }
+        #         sequence_features = {
+        #             "feature": tf.VarLenFeature(dtype=tf.float32),
+        #             "label": tf.VarLenFeature(dtype=tf.int64)
+        #         }
+        #
+        #         context_parsed, sequence_parsed = tf.parse_single_sequence_example(
+        #             serialized=record,
+        #             context_features=context_features,
+        #             sequence_features=sequence_features
+        #         )
+        #
+        #         seq_len = sess.run(context_parsed["seq_len"])
+        #         nfft = sess.run(context_parsed["nfft"])
+        #
+        #         feature_array = sess.run(sequence_parsed["feature"])[1]
+        #         feature_matrix = feature_array.reshape((seq_len, nfft))
+        #         feature = AudioFeature.fromFeature(feature_matrix, nfft)
+        #
+        #         label_array = sess.run(sequence_parsed["label"])[1]
+        #         label = Label.fromClassArray(label_array)
+        #
+        #         database.append(DatabaseItem(feature, label))
+        #
+        #     sess.close()
+        #     print("hola")
 
         return database
 

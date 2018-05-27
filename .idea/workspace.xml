@@ -1,86 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a62531d-3464-45b2-a546-002ac961f893" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SA1_2.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SA1_3.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SA2_2.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SA2_3.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SI1027.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SI1224_2.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SI1435_3.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SI1657.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SI1854_2.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SI2065_3.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SI2144_3.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SI594_2.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX127.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX144_2.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX175_3.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX217.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX234_2.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX265_3.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX307.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX324_2.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX355_3.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX37.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX397.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX414_2.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX445_3.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX54_2.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/phonemes/SX85_3.PHN" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SA1_2.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SA1_3.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SA2_2.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SA2_3.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SI1027.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SI1224_2.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SI1435_3.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SI1657.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SI1854_2.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SI2065_3.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SI2144_3.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SI594_2.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX127.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX144_2.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX175_3.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX217.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX234_2.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX265_3.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX307.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX324_2.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX355_3.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX37.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX397.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX414_2.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX445_3.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX54_2.WAV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/wav/SX85_3.WAV" afterDir="false" />
+    <list default="true" id="6a62531d-3464-45b2-a546-002ac961f893" name="Default" comment="WIP: Had to format computer. Pushing last changes because I don't know which ones are important.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/Database.tfrecords" beforeDir="false" afterPath="$PROJECT_DIR$/audio/Database.tfrecords" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SI2203.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SI2203.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SX133.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SX133.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SX223.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SX223.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SX313.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SX313.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SX403.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SX403.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SX43.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/SX43.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SA1.PHN" beforeDir="false" afterPath="$PROJECT_DIR$/audio/phonemes/SA1.PHN" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SA2.PHN" beforeDir="false" afterPath="$PROJECT_DIR$/audio/phonemes/SA2.PHN" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI648.PHN" beforeDir="false" afterPath="$PROJECT_DIR$/audio/phonemes/SI648.PHN" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SA1.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/audio/wav/SA1.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SA2.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/audio/wav/SA2.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI648.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/audio/wav/SI648.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/Database.tfrecords" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GenerateDatabase.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GenerateDatabase.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="100">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -106,68 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Database.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4880">
-              <caret line="251" selection-start-line="251" selection-end-line="251" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Label.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Label.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3080">
-              <caret line="155" selection-start-line="155" selection-end-line="155" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NetworkData.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RNN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2620">
-              <caret line="136" column="17" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectData.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AudioFeature.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+            <state relative-caret-position="4680">
+              <caret line="234" column="9" selection-start-line="234" selection-start-column="9" selection-end-line="234" selection-end-column="9" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -178,8 +48,29 @@
       <file leaf-file-name="RNN_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+            <state relative-caret-position="430">
+              <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RNN.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1052">
+              <caret line="54" column="85" selection-start-line="54" selection-start-column="85" selection-end-line="54" selection-end-column="85" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectData.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -264,70 +155,30 @@
         <option value="$PROJECT_DIR$/ctc_network/SimpleNetwork/NeuralNetwork.py" />
         <option value="$PROJECT_DIR$/ctc_network/utils/ProjectData.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" />
-        <option value="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" />
-        <option value="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" />
+        <option value="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" />
+        <option value="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="25" />
-    <option name="width" value="960" />
-    <option name="height" value="1055" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1303" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="ctc_network" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="ctc_network" type="462c0819:PsiDirectoryNode" />
-              <item name="SimpleNetwork" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
-              <item name="NeuralNetwork" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../speech-recognition2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spoken-digits-recognition" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -567,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526251216587</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="WIP: Had to format computer. Pushing last changes because I don't know which ones are important.">
+      <created>1527304289025</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1527304289025</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -587,7 +445,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5021858" side_tool="true" weight="0.40151516" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.329718" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978142" weight="0.64425164" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4978142" visible="true" weight="0.64425164" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.329718" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
@@ -604,7 +462,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4978142" visible="true" weight="0.64425164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.12282551" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.12282551" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -694,12 +552,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py</url>
-          <line>203</line>
+          <line>209</line>
           <option name="timeStamp" value="134" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py</url>
-          <line>185</line>
+          <line>191</line>
           <option name="timeStamp" value="135" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -708,24 +566,24 @@
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="143" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py</url>
           <line>60</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py</url>
-          <line>134</line>
+          <line>138</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py</url>
           <line>24</line>
           <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="159" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -735,7 +593,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="159" />
+      <option name="time" value="160" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1009,23 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4880">
-          <caret line="251" selection-start-line="251" selection-end-line="251" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="980">
@@ -1056,29 +897,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2620">
-          <caret line="136" column="17" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
+        <state relative-caret-position="1052">
+          <caret line="54" column="85" selection-start-line="54" selection-start-column="85" selection-end-line="54" selection-end-column="85" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py">
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        <state relative-caret-position="100">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="92">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4680">
+          <caret line="234" column="9" selection-start-line="234" selection-start-column="9" selection-end-line="234" selection-end-column="9" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

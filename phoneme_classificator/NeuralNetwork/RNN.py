@@ -17,6 +17,7 @@ class RNNClass:
         self.input_label = None
         self.input_label_one_hot = None
         self.rnn_cell = None
+        self.multi_rrn_cell = None
         self.rnn_outputs = None
         self.dense_output = None
         self.output_classes = None
@@ -50,8 +51,11 @@ class RNNClass:
                     state_is_tuple=True,
                     name="LSTM_cell"
                 )
+
+                self.multi_rrn_cell = tf.nn.rnn_cell.MultiRNNCell([self.rnn_cell] * 1, state_is_tuple=True)
+
                 self.rnn_outputs, _ = tf.nn.dynamic_rnn(
-                    cell=self.rnn_cell,
+                    cell=self.multi_rrn_cell,
                     inputs=self.input_feature,
                     sequence_length=self.seq_len,
                     dtype=tf.float32

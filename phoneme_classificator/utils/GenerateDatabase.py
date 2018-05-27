@@ -36,9 +36,11 @@ print("Number of elements in database: " + str(len(database)))
 database.save(project_data.DATABASE_FILE)
 print("Database saved in:", project_data.DATABASE_NAME)
 
-database.order_by_length()
-batches=database.get_batches_list(11)
-asd = 1
+# database.order_by_length()
+# batches=database.get_batches_list(11)
+#
+# database2 = Database.fromFile(project_data.DATABASE_FILE, project_data)
+# asd = 1
 
 # database2 = Database.fromFile(project_data.DATABASE_FILE, project_data)
 #
