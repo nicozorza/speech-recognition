@@ -10,7 +10,7 @@ class NetworkData():
         self.num_features: int = None
         self.num_classes: int = None
 
-        self.num_cell_units: int = None
+        self.num_cell_units: List[int] = None
 
         self.keep_dropout: float = None
 

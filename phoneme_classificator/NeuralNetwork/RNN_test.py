@@ -11,15 +11,16 @@ network_data = NetworkData()
 network_data.num_classes = 63
 network_data.keep_dropout = 1
 network_data.num_features = 513
-network_data.num_cell_units = 200
+network_data.num_cell_units = [256, 128]
 network_data.keep_dropout = None
-network_data.num_dense_layers = 2
-network_data.num_dense_units = [80, 100]
+network_data.num_dense_layers = 1
+network_data.num_dense_units = [100, 200]
 network_data.dense_activations = [tf.nn.tanh, tf.nn.tanh]
 network_data.out_activation = tf.nn.relu
 network_data.learning_rate = 0.001
-network_data.adam_epsilon = 0.00001
-network_data.optimizer = tf.train.AdamOptimizer(learning_rate=network_data.learning_rate, epsilon=network_data.adam_epsilon)
+network_data.adam_epsilon = 0.001
+network_data.optimizer = tf.train.AdamOptimizer(learning_rate=network_data.learning_rate,
+                                                epsilon=network_data.adam_epsilon)
 
 network = RNNClass(network_data)
 network.create_graph()
@@ -54,7 +55,7 @@ train_label = database.getLabelsClassesList()
 network.train(
     train_features=train_feats,
     train_labels=train_label,
-    training_epochs=100,
+    training_epochs=300,
     batch_size=1
 )
 aux = network.predict(train_feats[0])

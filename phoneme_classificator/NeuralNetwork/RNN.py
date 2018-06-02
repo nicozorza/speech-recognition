@@ -46,13 +46,12 @@ class RNNClass:
                 self.input_label_one_hot = tf.one_hot(self.input_label, self.network_data.num_classes, dtype=tf.int32)
 
             with tf.name_scope("RNN_cell"):
-                self.rnn_cell = tf.nn.rnn_cell.LSTMCell(
-                    num_units=self.network_data.num_cell_units,
-                    state_is_tuple=True,
-                    name="LSTM_cell"
-                )
 
-                self.multi_rrn_cell = tf.nn.rnn_cell.MultiRNNCell([self.rnn_cell] * 1, state_is_tuple=True)
+                self.rnn_cell = [tf.nn.rnn_cell.LSTMCell(num_units=n,
+                                                         state_is_tuple=True
+                                                         ) for n in self.network_data.num_cell_units]
+
+                self.multi_rrn_cell = tf.nn.rnn_cell.MultiRNNCell(self.rnn_cell, state_is_tuple=True)
 
                 self.rnn_outputs, _ = tf.nn.dynamic_rnn(
                     cell=self.multi_rrn_cell,
