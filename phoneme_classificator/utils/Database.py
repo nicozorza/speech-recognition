@@ -17,6 +17,7 @@ class DatabaseItem(Label, AudioFeature):
     def __init__(self, feature: AudioFeature, label: Label):
         self.__feature: AudioFeature = feature
         self.__label: Label = label
+        self.seq_len: int = len(label)
 
     def getFeature(self) -> AudioFeature:
         return self.__feature
@@ -140,17 +141,33 @@ class Database(DatabaseItem):
     def order_by_length(self):
         self.__database = sorted(self.__database, key=lambda x: len(x))
 
-    def get_batches_list(self, batch_size) -> List['Database']:
+    def get_batch_list(self, batch_size) -> List['Database']:
         num_batches = int(np.ceil(len(self.__database)/batch_size))
         batch_list = []
         for _ in range(num_batches-1):
             batch_list.append(self.getRange(_*batch_size, (_+1)*batch_size))
-            print(_*batch_size, (_+1)*batch_size)
+            # print(_*batch_size, (_+1)*batch_size)
 
         batch_list.append(self.getRange(len(self.__database)-batch_size, len(self.__database)))
-        print(len(self.__database)-batch_size, len(self.__database))
+        # print(len(self.__database)-batch_size, len(self.__database))
 
         return batch_list
+
+    def get_feature_matrix_batch(self) -> np.ndarray:
+        feature_list = self.getFeatureList()
+        stacked = np.stack(feature_list)
+        return stacked
+
+    def get_label_matrix_batch(self) -> np.ndarray:
+        label_list = self.getLabelsClassesList()
+        stacked = np.stack(label_list)
+        return stacked
+
+    def get_seqlen_batch(self) -> np.ndarray:
+        len_list = []
+        for _ in range(len(self.__database)):
+            len_list.append(len(self.getItemFromIndex(_)))
+        return np.stack(len_list)
 
     def shuffle_database(self):
         random.shuffle(self.__database)
@@ -163,9 +180,11 @@ class Database(DatabaseItem):
         return max_length
 
     def pad_sequences(self):
-        max_length = self.get_max_sequence_length()
+        # max_length = self.get_max_sequence_length()
         # for _ in range(len(self.__database)):
-        # TODO finish this method
+        #     actual_length = len(self.__database[_])
+        raise NotImplementedError
+        # TODO This method is not the same as padding the audio. Think of a solution
 
     def getItemFromIndex(self, index) -> DatabaseItem:
         if index > self.__length:

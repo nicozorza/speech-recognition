@@ -9,6 +9,7 @@ class NetworkData():
 
         self.num_features: int = None
         self.num_classes: int = None
+        self.max_seq_len: int = None
 
         self.num_cell_units: List[int] = None
 

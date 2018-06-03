@@ -9,6 +9,7 @@ import numpy as np
 project_data = ProjectData()
 network_data = NetworkData()
 network_data.num_classes = 63
+network_data.max_seq_len = 470
 network_data.keep_dropout = 1
 network_data.num_features = 513
 network_data.num_cell_units = [256, 128]
@@ -27,17 +28,11 @@ network.create_graph()
 
 database = Database.fromFile(project_data.DATABASE_FILE, project_data)
 
-train_feats = database.getFeatureList()
-train_feats = [np.reshape(feature, [1, len(feature), 513]) for feature in train_feats]
-train_label = database.getLabelsClassesList()
-
-
 network.train(
-    train_features=train_feats,
-    train_labels=train_label,
-    training_epochs=300,
-    batch_size=1
+    train_database=database,
+    training_epochs=100,
+    batch_size=5
 )
-aux = network.predict(train_feats[0])
+aux = network.predict(database.getItemFromIndex(0).getFeature().getFeature())
 print(aux)
-print(train_label[0])
+print(database.getItemFromIndex(0).getLabel().getPhonemesClass())
