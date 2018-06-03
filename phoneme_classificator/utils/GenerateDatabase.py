@@ -7,6 +7,8 @@ project_data = ProjectData()
 
 database = Database(project_data)
 
+max_length = 75367
+aux_len = 0
 # Get the names of each wav file in the directory
 wav_names = os.listdir(project_data.WAV_DIR)
 for wav_index in range(len(wav_names)):
@@ -21,7 +23,11 @@ for wav_index in range(len(wav_names)):
         label_name=label_filename,
         nfft=project_data.fft_points,
         window_len=project_data.frame_length,
-        win_stride=project_data.frame_stride)
+        win_stride=project_data.frame_stride,
+        max_len=max_length
+    )
+    if len(item.getFeature().getAudio()) >= aux_len:
+        aux_len = len(item.getFeature().getAudio())
 
     # Add the new data to the database
     database.append(item)
@@ -32,11 +38,11 @@ for wav_index in range(len(wav_names)):
 print("Database generated")
 print("Number of elements in database: " + str(len(database)))
 
+print('Maxmium audio length: ' + str(aux_len))
 # Save the database into a file
 database.save(project_data.DATABASE_FILE)
 print("Database saved in:", project_data.DATABASE_NAME)
 
-# database.order_by_length()
 # batches=database.get_batches_list(11)
 #
 # database2 = Database.fromFile(project_data.DATABASE_FILE, project_data)
