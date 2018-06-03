@@ -5,7 +5,7 @@ from typing import List, Tuple
 import pickle
 from phoneme_classificator.utils.ProjectData import ProjectData
 from phoneme_classificator.utils.Label import Label
-from phoneme_classificator.utils.AudioFeature import AudioFeature
+from phoneme_classificator.utils.AudioFeature import AudioFeature, FeatureConfig
 import tensorflow as tf
 import operator
 
@@ -45,12 +45,17 @@ class DatabaseItem(Label, AudioFeature):
         return self.__label.getPhonemes()
 
     @staticmethod
-    def fromFile(wav_name: str, label_name: str, nfft: int, window_len: int, win_stride: int, max_len: int=None) -> 'DatabaseItem':
+    def fromFile(wav_name: str,
+                 label_name: str,
+                 feature_config: FeatureConfig,
+                 max_len: int = None,
+                 feature_type: str = 'spec') -> 'DatabaseItem':
         # Get features
-        feature = AudioFeature.fromFile(wav_name, nfft, window_len, win_stride, max_len=max_len)
+        feature = AudioFeature.fromFile(wav_name, feature_config=feature_config, max_len=max_len)
         sampling_rate = feature.getSamplingRate()/1000
         # Get label
-        label = Label.fromFile(label_name, max_len).widowedLabel(int(window_len*sampling_rate), int(win_stride*sampling_rate))
+        label = Label.fromFile(label_name, max_len)\
+            .widowedLabel(int(feature_config.winlen*sampling_rate), int(feature_config.winstride*sampling_rate))
         if len(label.getPhonemes()) != len(feature.getFeature()):
             label = DatabaseItem.__adjustSize(label, len(feature.getFeature()))
 

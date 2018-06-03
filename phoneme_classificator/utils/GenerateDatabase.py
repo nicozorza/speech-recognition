@@ -1,14 +1,27 @@
 import os
+
+from phoneme_classificator.utils.AudioFeature import FeatureConfig
 from phoneme_classificator.utils.Database import DatabaseItem, Database
 from phoneme_classificator.utils.ProjectData import ProjectData
+
+# Configuration of the features
+feature_config = FeatureConfig()
+feature_config.feature_type = 'mffc'
+feature_config.nfft = 1024
+feature_config.winlen = 20
+feature_config.winstride = 10
+feature_config.preemph = 0.98
+feature_config.num_filters = 26
+feature_config.num_ceps = 13
 
 # Load project data
 project_data = ProjectData()
 
 database = Database(project_data)
 
-max_length = 75367
+max_length = 90010
 aux_len = 0
+aux_label_len = 0
 # Get the names of each wav file in the directory
 wav_names = os.listdir(project_data.WAV_DIR)
 for wav_index in range(len(wav_names)):
@@ -21,13 +34,11 @@ for wav_index in range(len(wav_names)):
     item = DatabaseItem.fromFile(
         wav_name=wav_filename,
         label_name=label_filename,
-        nfft=project_data.fft_points,
-        window_len=project_data.frame_length,
-        win_stride=project_data.frame_stride,
-        max_len=max_length
-    )
+        feature_config=feature_config)
     if len(item.getFeature().getAudio()) >= aux_len:
         aux_len = len(item.getFeature().getAudio())
+    if len(item.getLabel().getPhonemes()) >= aux_label_len:
+        aux_label_len = len(item.getLabel().getPhonemes())
 
     # Add the new data to the database
     database.append(item)
@@ -39,6 +50,8 @@ print("Database generated")
 print("Number of elements in database: " + str(len(database)))
 
 print('Maxmium audio length: ' + str(aux_len))
+print('Maxmium label length: ' + str(aux_label_len))
+
 # Save the database into a file
 database.save(project_data.DATABASE_FILE)
 print("Database saved in:", project_data.DATABASE_NAME)

@@ -2,10 +2,11 @@ from typing import List
 from tensorflow.python.training.optimizer import Optimizer
 
 
-class NetworkData():
+class NetworkData:
     def __init__(self):
 
         self.checkpoint_path: str = None
+        self.model_path: str = None
 
         self.num_features: int = None
         self.num_classes: int = None

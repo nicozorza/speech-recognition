@@ -1,6 +1,8 @@
+import os
 import random
 import numpy as np
 import tensorflow as tf
+from tensorflow.python.framework import graph_io
 from tensorflow.python.training.saver import Saver
 
 from phoneme_classificator.NeuralNetwork.NetworkData import NetworkData
@@ -103,13 +105,22 @@ class RNNClass:
     def save_checkpoint(self, sess: tf.Session):
         if self.network_data.checkpoint_path is not None:
             self.checkpoint_saver.save(sess, self.network_data.checkpoint_path)
+            print('Saving checkpoint')
 
     def load_checkpoint(self, sess: tf.Session):
         if self.network_data.checkpoint_path is not None and tf.gfile.Exists("{}.meta".format(self.network_data.checkpoint_path)):
             self.checkpoint_saver.restore(sess, self.network_data.checkpoint_path)
+            print('Restoring checkpoint')
         else:
             session = tf.Session()
             session.run(tf.initialize_all_variables())
+
+    def save_model(self, sess: tf.Session):
+        if self.network_data.model_path is not None:
+            drive, path_and_file = os.path.splitdrive(self.network_data.model_path)
+            path, file = os.path.split(path_and_file)
+            graph_io.write_graph(sess.graph, path, file, as_text=False)
+            print('Saving model')
 
     def train(self,
               train_features,
@@ -134,7 +145,7 @@ class RNNClass:
                         self.input_label: train_labels[i]
                     }
                     loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
-                    # loss = sess.run(self.loss, feed_dict=feed_dict)
+
                     loss_ep += loss
                     acc_ep += acc
                     n_step += 1
@@ -148,11 +159,15 @@ class RNNClass:
 
                 print("Epoch %d of %d, loss %f, acc %f" % (epoch + 1, training_epochs,  loss_ep, acc_ep))
 
-    def predict(self, feature):
-        sess = tf.Session(graph=self.graph)
+            # save result
+            self.save_checkpoint(sess)
+            self.save_model(sess)
 
-        with self.graph.as_default():
+    def predict(self, feature):
+
+        with tf.Session(graph=self.graph) as sess:
             sess.run(tf.global_variables_initializer())
+            self.load_checkpoint(sess)
             feed_dict = {
                 self.input_feature: feature,
                 self.seq_len: len(feature[0]),
