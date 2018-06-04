@@ -18,8 +18,12 @@ class NetworkData:
         self.num_dense_layers: int = None
         self.num_dense_units: List[int] = list()
         self.dense_activations: List[int] = list()
+        self.dense_regularizers_beta: float = None
+        self.dense_regularizers: List[int] = list()
 
         self.out_activation = None
+        self.out_regularizer_beta: float = None
+        self.out_regularizer = None
 
         self.optimizer: Optimizer = None
 

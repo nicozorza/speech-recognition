@@ -71,13 +71,15 @@ class RNNClass:
                     self.rnn_outputs = tf.layers.dense(
                         inputs=self.rnn_outputs,
                         units=self.network_data.num_dense_units[_],
-                        activation=self.network_data.dense_activations[_]
+                        activation=self.network_data.dense_activations[_],
+                        kernel_regularizer=self.network_data.dense_regularizers[_]
                     )
             with tf.name_scope("dense_output"):
                 self.dense_output = tf.layers.dense(
                     inputs=self.rnn_outputs,
                     units=self.network_data.num_classes,
-                    activation=self.network_data.out_activation
+                    activation=self.network_data.out_activation,
+                    kernel_regularizer=self.network_data.out_regularizer
                 )
 
             with tf.name_scope("output_classes"):
