@@ -163,6 +163,27 @@ class RNNClass:
             self.save_checkpoint(sess)
             self.save_model(sess)
 
+    def validate(self, features, labels):
+        with tf.Session(graph=self.graph) as sess:
+            sess.run(tf.global_variables_initializer())
+            self.load_checkpoint(sess)
+
+            sample_index = 0
+            acum_accuracy = 0
+            for (feature, label) in zip(features, labels):
+                feed_dict = {
+                    self.input_feature: feature,
+                    self.seq_len: len(feature[0]),
+                    self.num_features: self.network_data.num_features,
+                }
+                predicted = sess.run(self.output_classes, feed_dict=feed_dict)
+                accuracy = float(np.mean(np.equal(predicted, label)))
+                print("Index %d of %d, acc %f" % (sample_index + 1, len(labels), accuracy))
+                sample_index += 1
+                acum_accuracy += accuracy
+
+            print("Validation accuracy: %f" % (acum_accuracy/len(labels)))
+
     def predict(self, feature):
 
         with tf.Session(graph=self.graph) as sess:
