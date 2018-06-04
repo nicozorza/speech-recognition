@@ -5,7 +5,7 @@ from typing import List, Tuple
 import pickle
 from phoneme_classificator.utils.ProjectData import ProjectData
 from phoneme_classificator.utils.Label import Label
-from phoneme_classificator.utils.AudioFeature import AudioFeature
+from phoneme_classificator.utils.AudioFeature import AudioFeature, FeatureConfig
 import tensorflow as tf
 import operator
 
@@ -46,12 +46,17 @@ class DatabaseItem(Label, AudioFeature):
         return self.__label.getPhonemes()
 
     @staticmethod
-    def fromFile(wav_name: str, label_name: str, nfft: int, window_len: int, win_stride: int, max_len: int=None) -> 'DatabaseItem':
+    def fromFile(wav_name: str,
+                 label_name: str,
+                 feature_config: FeatureConfig,
+                 max_len: int = None,
+                 feature_type: str = 'spec') -> 'DatabaseItem':
         # Get features
-        feature = AudioFeature.fromFile(wav_name, nfft, window_len, win_stride, max_len=max_len)
+        feature = AudioFeature.fromFile(wav_name, feature_config=feature_config, max_len=max_len)
         sampling_rate = feature.getSamplingRate()/1000
         # Get label
-        label = Label.fromFile(label_name, max_len).widowedLabel(int(window_len*sampling_rate), int(win_stride*sampling_rate))
+        label = Label.fromFile(label_name, max_len)\
+            .widowedLabel(int(feature_config.winlen*sampling_rate), int(feature_config.winstride*sampling_rate))
         if len(label.getPhonemes()) != len(feature.getFeature()):
             label = DatabaseItem.__adjustSize(label, len(feature.getFeature()))
 
@@ -137,6 +142,42 @@ class Database(DatabaseItem):
     # def getLabelsArray(self) -> np.ndarray:
     #     index_list = self.getLabelIndicesList()
     #     return np.asarray(index_list)
+
+    def get_training_sets(self,
+                          training: float,
+                          validation: float,
+                          test: float,
+                          shuffle: bool = True) -> Tuple[List[np.ndarray],List[np.ndarray],List[np.ndarray],List[np.ndarray],List[np.ndarray],List[np.ndarray]]:
+
+        if training+validation+test > 1:
+            raise ValueError("The proporions must sum one")
+
+        if shuffle is True:
+            self.shuffle_database()
+
+        features = self.getFeatureList()
+        features = [np.reshape(feature, [1, len(feature), np.shape(feature)[1]]) for feature in features]
+        labels = self.getLabelsClassesList()
+
+        # Training set
+        start_index = 0
+        end_index = int(len(features)*training)
+        train_feature_set = features[start_index:end_index]
+        train_label_set = labels[start_index:end_index]
+
+        # Validation set
+        start_index += int(len(features)*training)
+        end_index += int(len(features)*validation)
+        val_feature_set = features[start_index:end_index]
+        val_label_set = labels[start_index:end_index]
+
+        # Test set
+        start_index += int(len(features) * validation)
+        end_index += int(len(features) * test)
+        test_feature_set = features[start_index:end_index]
+        test_label_set = labels[start_index:end_index]
+
+        return train_feature_set, train_label_set, val_feature_set, val_label_set, test_feature_set, test_label_set
 
     def order_by_length(self):
         self.__database = sorted(self.__database, key=lambda x: len(x))

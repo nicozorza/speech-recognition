@@ -1,10 +1,12 @@
+import os
 import random
 import numpy as np
 import tensorflow as tf
+from tensorflow.python.framework import graph_io
 from tensorflow.python.training.saver import Saver
 
 from phoneme_classificator.NeuralNetwork.NetworkData import NetworkData
-from phoneme_classificator.utils.Database import Database
+
 
 class RNNClass:
     def __init__(self, network_data: NetworkData):  # , checkpoint_path: str, model_path: str
@@ -37,11 +39,11 @@ class RNNClass:
             with tf.name_scope("input_features"):
                 self.input_feature = tf.placeholder(
                     dtype="float",
-                    shape=[None, self.network_data.max_seq_len, self.network_data.num_features],
+                    shape=[None, None, self.network_data.num_features],
                     name="input")
                 self.input_label = tf.placeholder(
                     dtype=tf.int64,
-                    shape=[None, self.network_data.max_seq_len],
+                    shape=[None],
                     name="output")
                 self.input_label_one_hot = tf.one_hot(self.input_label, self.network_data.num_classes, dtype=tf.int32)
 
@@ -84,7 +86,7 @@ class RNNClass:
 
             with tf.name_scope("loss"):
                 self.loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
-                    logits=self.dense_output,
+                    logits=self.dense_output[0],
                     labels=self.input_label)
                 self.loss = tf.reduce_sum(self.loss) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32))
 
@@ -103,16 +105,26 @@ class RNNClass:
     def save_checkpoint(self, sess: tf.Session):
         if self.network_data.checkpoint_path is not None:
             self.checkpoint_saver.save(sess, self.network_data.checkpoint_path)
+            print('Saving checkpoint')
 
     def load_checkpoint(self, sess: tf.Session):
         if self.network_data.checkpoint_path is not None and tf.gfile.Exists("{}.meta".format(self.network_data.checkpoint_path)):
             self.checkpoint_saver.restore(sess, self.network_data.checkpoint_path)
+            print('Restoring checkpoint')
         else:
             session = tf.Session()
             session.run(tf.initialize_all_variables())
 
+    def save_model(self, sess: tf.Session):
+        if self.network_data.model_path is not None:
+            drive, path_and_file = os.path.splitdrive(self.network_data.model_path)
+            path, file = os.path.split(path_and_file)
+            graph_io.write_graph(sess.graph, path, file, as_text=False)
+            print('Saving model')
+
     def train(self,
-              train_database: Database,
+              train_features,
+              train_labels,
               batch_size,
               training_epochs,
               shuffle=True):
@@ -125,38 +137,58 @@ class RNNClass:
                 loss_ep = 0
                 acc_ep = 0
                 n_step = 0
-                train_database.shuffle_database()
-                batch_list = train_database.get_batch_list(batch_size)
-
-                for i in range(len(batch_list)):
+                for i in range(len(train_features)):
                     feed_dict = {
-                        self.input_feature: batch_list[i].get_feature_matrix_batch(),
-                        self.seq_len: batch_list[i].get_seqlen_batch(),
-                        self.num_features: [self.network_data.num_features]*batch_size,
-                        self.input_label: batch_list[i].get_label_matrix_batch()
+                        self.input_feature: train_features[i],
+                        self.seq_len: len(train_features[i][0]),
+                        self.num_features: self.network_data.num_features,
+                        self.input_label: train_labels[i]
                     }
                     loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
-                    # loss = sess.run(self.loss, feed_dict=feed_dict)
+
                     loss_ep += loss
                     acc_ep += acc
                     n_step += 1
                 loss_ep = loss_ep / n_step
-                acc_ep = np.mean(acc_ep) / n_step
+                acc_ep = acc_ep / n_step
 
-                # if shuffle:
-                #     aux_list = list(zip(train_features, train_labels))
-                #     random.shuffle(aux_list)
-                #     train_features, train_labels = zip(*aux_list)
+                if shuffle:
+                    aux_list = list(zip(train_features, train_labels))
+                    random.shuffle(aux_list)
+                    train_features, train_labels = zip(*aux_list)
 
                 print("Epoch %d of %d, loss %f, acc %f" % (epoch + 1, training_epochs,  loss_ep, acc_ep))
 
-    def predict(self, feature):
-        sess = tf.Session(graph=self.graph)
+            # save result
+            self.save_checkpoint(sess)
+            self.save_model(sess)
 
-        feature = np.reshape(feature, [1, len(feature), self.network_data.num_features])
-
-        with self.graph.as_default():
+    def validate(self, features, labels):
+        with tf.Session(graph=self.graph) as sess:
             sess.run(tf.global_variables_initializer())
+            self.load_checkpoint(sess)
+
+            sample_index = 0
+            acum_accuracy = 0
+            for (feature, label) in zip(features, labels):
+                feed_dict = {
+                    self.input_feature: feature,
+                    self.seq_len: len(feature[0]),
+                    self.num_features: self.network_data.num_features,
+                }
+                predicted = sess.run(self.output_classes, feed_dict=feed_dict)
+                accuracy = float(np.mean(np.equal(predicted, label)))
+                print("Index %d of %d, acc %f" % (sample_index + 1, len(labels), accuracy))
+                sample_index += 1
+                acum_accuracy += accuracy
+
+            print("Validation accuracy: %f" % (acum_accuracy/len(labels)))
+
+    def predict(self, feature):
+
+        with tf.Session(graph=self.graph) as sess:
+            sess.run(tf.global_variables_initializer())
+            self.load_checkpoint(sess)
             feed_dict = {
                 self.input_feature: feature,
                 self.seq_len: len(feature[0]),
