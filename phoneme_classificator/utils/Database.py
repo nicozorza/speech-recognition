@@ -179,6 +179,34 @@ class Database(DatabaseItem):
 
         return train_feature_set, train_label_set, val_feature_set, val_label_set, test_feature_set, test_label_set
 
+    def get_training_databases(self,
+                                   training: float,
+                                   validation: float,
+                                   test: float,
+                                   shuffle: bool = True) -> Tuple['Database', 'Database', 'Database']:
+        if training+validation+test > 1:
+            raise ValueError("The proporions must sum one")
+
+        if shuffle is True:
+            self.shuffle_database()
+
+        # Training set
+        start_index = 0
+        end_index = int(len(self.__database)*training)
+        train_database = self.getRange(start_index, end_index)
+
+        # Validation set
+        start_index += int(len(self.__database)*training)
+        end_index += int(len(self.__database)*validation)
+        val_database = self.getRange(start_index, end_index)
+
+        # Test set
+        start_index += int(len(self.__database) * validation)
+        end_index += int(len(self.__database) * test)
+        test_database = self.getRange(start_index, end_index)
+
+        return train_database, val_database, test_database
+
     def order_by_length(self):
         self.__database = sorted(self.__database, key=lambda x: len(x))
 

@@ -11,6 +11,7 @@ network_data = NetworkData()
 network_data.model_path = project_data.MODEL_PATH
 network_data.checkpoint_path = project_data.CHECKPOINT_PATH
 network_data.num_classes = 63
+network_data.max_seq_len = 562
 network_data.keep_dropout = 1
 network_data.num_features = 13
 network_data.num_cell_units = [64]
@@ -28,15 +29,14 @@ network.create_graph()
 
 database = Database.fromFile(project_data.DATABASE_FILE, project_data)
 
-train_feats, train_labels, val_feats, val_labels, _, _ = database.get_training_sets(0.9, 0.1, 0.0)
+train_database, val_database, _ = database.get_training_databases(0.9, 0.1, 0.0)
 network.train(
-    train_features=train_feats,
-    train_labels=train_labels,
-    training_epochs=200,
-    batch_size=1
+    train_database=train_database,
+    training_epochs=30,
+    batch_size=20
 )
 
-network.validate(val_feats, val_labels)
+network.validate(val_database)
 
-print(network.predict(val_feats[0]))
-print(val_labels[0])
+print(network.predict(val_database.getItemFromIndex(0).getFeature().getFeature()))
+print(val_database.getItemFromIndex(0).getLabel().getPhonemesClass())

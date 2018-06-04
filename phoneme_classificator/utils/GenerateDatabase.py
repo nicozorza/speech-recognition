@@ -34,7 +34,9 @@ for wav_index in range(len(wav_names)):
     item = DatabaseItem.fromFile(
         wav_name=wav_filename,
         label_name=label_filename,
-        feature_config=feature_config)
+        feature_config=feature_config,
+        max_len=max_length
+    )
     if len(item.getFeature().getAudio()) >= aux_len:
         aux_len = len(item.getFeature().getAudio())
     if len(item.getLabel().getPhonemes()) >= aux_label_len:

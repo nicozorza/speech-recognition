@@ -68,6 +68,7 @@ class AudioFeature:
                  normalize_audio=True) -> 'AudioFeature':
         # Read the wav file
         fs, signal = wav.read(wav_name)
+        print(len(signal))
         if max_len is not None:
             if max_len < len(signal):
                 raise ValueError('Invalid audio length.')
