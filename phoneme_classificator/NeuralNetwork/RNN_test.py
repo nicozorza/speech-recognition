@@ -20,8 +20,8 @@ network_data.num_features = 13
 
 network_data.num_cell_units = [64]
 
-network_data.num_dense_layers = 0
-network_data.num_dense_units = []
+network_data.num_dense_layers = 1
+network_data.num_dense_units = [100]
 network_data.dense_activations = [tf.nn.tanh] * network_data.num_dense_layers
 network_data.dense_regularizers_beta = 0.5
 network_data.dense_regularizers = [l2_regularizer(network_data.dense_regularizers_beta)]
@@ -30,7 +30,7 @@ network_data.out_activation = tf.nn.relu
 network_data.out_regularizer_beta = 0.5
 network_data.out_regularizer = l2_regularizer(network_data.out_regularizer_beta)
 
-network_data.keep_dropout = 1
+network_data.keep_dropout = None
 
 network_data.learning_rate = 0.01
 network_data.adam_epsilon = 0.01
@@ -50,8 +50,8 @@ network.train(
     training_epochs=1,
     batch_size=1
 )
-
-network.validate(val_feats, val_labels)
-
-print(network.predict(val_feats[0]))
-print(val_labels[0])
+#
+# network.validate(val_feats, val_labels)
+#
+# print(network.predict(val_feats[0]))
+# print(val_labels[0])

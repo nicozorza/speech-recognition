@@ -3,14 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6a62531d-3464-45b2-a546-002ac961f893" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.meta" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/model/model" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/model/model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +25,8 @@
       <file leaf-file-name="RNN_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+            <state relative-caret-position="272">
+              <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -39,8 +37,26 @@
       <file leaf-file-name="RNN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="144" column="88" selection-start-line="144" selection-start-column="88" selection-end-line="144" selection-end-column="88" />
+            <state relative-caret-position="870">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NetworkData.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectData.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -193,14 +209,6 @@
               <item name="out" type="462c0819:PsiDirectoryNode" />
               <item name="tensorboard" type="462c0819:PsiDirectoryNode" />
               <item name="train" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="tensorboard" type="462c0819:PsiDirectoryNode" />
-              <item name="validation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
@@ -480,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528056898781</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Add tensorboard methods to plot the graph, loss and accuracy">
+      <created>1528169415321</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1528169415321</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -494,15 +509,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.20664206" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.20664206" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32900432" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5021858" side_tool="true" weight="0.40151516" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5034265" side_tool="true" weight="0.64425164" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978142" weight="0.64425164" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" weight="0.64425164" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3286334" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49762782" weight="0.3286334" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40130153" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -515,9 +531,9 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978142" weight="0.64425164" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" weight="0.64425164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.20664206" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.20664206" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -525,8 +541,8 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40130153" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32900432" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5021858" side_tool="true" weight="0.40151516" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49762782" visible="true" weight="0.3286334" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5034265" side_tool="true" weight="0.64425164" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -587,7 +603,8 @@
     <MESSAGE value="WIP: Had to format computer. Pushing last changes because I don't know which ones are important." />
     <MESSAGE value="Changed the tfrecord file to a regular file. Tensorflow does not free the gpu resources, so I changed it to use the resources for the training" />
     <MESSAGE value="Changed specgram to MFCC. Fixed predicting error (was reseting the graph)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed specgram to MFCC. Fixed predicting error (was reseting the graph)" />
+    <MESSAGE value="Add tensorboard methods to plot the graph, loss and accuracy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tensorboard methods to plot the graph, loss and accuracy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -629,7 +646,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py</url>
-          <line>100</line>
+          <line>106</line>
           <option name="timeStamp" value="182" />
         </line-breakpoint>
       </breakpoints>
@@ -640,7 +657,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="183" />
+      <option name="time" value="184" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -937,36 +954,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="66" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3380">
           <caret line="178" selection-start-line="178" selection-end-line="178" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -978,10 +971,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="144" column="88" selection-start-line="144" selection-start-column="88" selection-end-line="144" selection-end-column="88" />
+        <state relative-caret-position="870">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
         </state>
       </provider>
     </entry>

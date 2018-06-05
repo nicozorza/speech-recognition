@@ -41,6 +41,8 @@ class RNNClass:
                     dtype="float",
                     shape=[None, None, self.network_data.num_features],
                     name="input")
+                tf.summary.image('feature', [tf.transpose(self.input_feature)])
+            with tf.name_scope("input_labels"):
                 self.input_label = tf.placeholder(
                     dtype=tf.int64,
                     shape=[None],
@@ -48,10 +50,10 @@ class RNNClass:
                 self.input_label_one_hot = tf.one_hot(self.input_label, self.network_data.num_classes, dtype=tf.int32)
 
             with tf.name_scope("RNN_cell"):
-
-                self.rnn_cell = [tf.nn.rnn_cell.LSTMCell(num_units=n,
-                                                         state_is_tuple=True
-                                                         ) for n in self.network_data.num_cell_units]
+                self.rnn_cell = [tf.nn.rnn_cell.LSTMCell(num_units=self.network_data.num_cell_units[_],
+                                                         state_is_tuple=True,
+                                                         name='LSTM_{}'.format(_)
+                                                         ) for _ in range(len(self.network_data.num_cell_units))]
 
                 self.multi_rrn_cell = tf.nn.rnn_cell.MultiRNNCell(self.rnn_cell, state_is_tuple=True)
 
@@ -59,7 +61,8 @@ class RNNClass:
                     cell=self.multi_rrn_cell,
                     inputs=self.input_feature,
                     sequence_length=self.seq_len,
-                    dtype=tf.float32
+                    dtype=tf.float32,
+                    scope="RNN_cell"
                 )
 
             with tf.name_scope("dropout"):
@@ -72,14 +75,17 @@ class RNNClass:
                         inputs=self.rnn_outputs,
                         units=self.network_data.num_dense_units[_],
                         activation=self.network_data.dense_activations[_],
-                        kernel_regularizer=self.network_data.dense_regularizers[_]
+                        kernel_regularizer=self.network_data.dense_regularizers[_],
+                        name='dense_layer_{}'.format(_)
                     )
+
             with tf.name_scope("dense_output"):
                 self.dense_output = tf.layers.dense(
                     inputs=self.rnn_outputs,
                     units=self.network_data.num_classes,
                     activation=self.network_data.out_activation,
-                    kernel_regularizer=self.network_data.out_regularizer
+                    kernel_regularizer=self.network_data.out_regularizer,
+                    name='dense_output'
                 )
 
             with tf.name_scope("output_classes"):
