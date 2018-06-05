@@ -7,6 +7,7 @@ class NetworkData:
 
         self.checkpoint_path: str = None
         self.model_path: str = None
+        self.tensorboard_path: str = None
 
         self.num_features: int = None
         self.num_classes: int = None

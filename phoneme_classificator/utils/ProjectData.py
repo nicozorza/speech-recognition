@@ -15,6 +15,8 @@ class ProjectData:
         self.CHECKPOINT_PATH = self.OUT_DIR + '/' + 'checkpoint/'
         self.MODEL_PATH = self.OUT_DIR + '/' + 'model/model'
 
+        self.TENSORBOARD_PATH = self.OUT_DIR + '/' + 'tensorboard/'
+
         # Neural network data
         self.num_classes = len(Phoneme.phonemes)
 

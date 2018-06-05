@@ -91,12 +91,14 @@ class RNNClass:
                     logits=self.dense_output[0],
                     labels=self.input_label)
                 self.loss = tf.reduce_sum(self.loss) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32))
+                tf.summary.scalar('loss', self.loss)
 
             with tf.name_scope("correct"):
                 self.correct = tf.cast(
                     tf.equal(self.output_classes, self.input_label), tf.int32)
                 self.correct = \
                     tf.reduce_sum(tf.cast(self.correct, tf.float32), axis=1) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32))
+                tf.summary.scalar('accuracy', tf.reduce_mean(self.correct))
 
             # define the optimizer
             with tf.name_scope("training"):
@@ -131,10 +133,23 @@ class RNNClass:
               training_epochs,
               shuffle=True):
 
-        sess = tf.Session(graph=self.graph)
-
         with self.graph.as_default():
+            sess = tf.Session(graph=self.graph)
             sess.run(tf.global_variables_initializer())
+
+            if self.network_data.tensorboard_path is not None:
+                # Set up tensorboard summaries and saver
+                if tf.gfile.Exists(self.network_data.tensorboard_path) is not True:
+                    tf.gfile.MkDir(self.network_data.tensorboard_path)
+                else:
+                    tf.gfile.DeleteRecursively(self.network_data.tensorboard_path + '/')
+
+            merged_summary = tf.summary.merge_all()
+            train_writer = tf.summary.FileWriter("{}train".format(self.network_data.tensorboard_path), self.graph)
+            train_writer.add_graph(sess.graph)
+            # val_writer = tf.summary.FileWriter("{}validation".format(self.network_data.tensorboard_path), self.graph)
+            # val_writer.add_graph(sess.graph)
+
             for epoch in range(training_epochs):
                 loss_ep = 0
                 acc_ep = 0
@@ -146,6 +161,11 @@ class RNNClass:
                         self.num_features: self.network_data.num_features,
                         self.input_label: train_labels[i]
                     }
+
+                    if i == 0 and self.network_data.tensorboard_path is not None:
+                        s = sess.run(merged_summary, feed_dict=feed_dict)
+                        train_writer.add_summary(s, epoch)
+
                     loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
 
                     loss_ep += loss
@@ -164,6 +184,8 @@ class RNNClass:
             # save result
             self.save_checkpoint(sess)
             self.save_model(sess)
+
+            sess.close()
 
     def validate(self, features, labels):
         with tf.Session(graph=self.graph) as sess:
@@ -186,6 +208,8 @@ class RNNClass:
 
             print("Validation accuracy: %f" % (acum_accuracy/len(labels)))
 
+            sess.close()
+
     def predict(self, feature):
 
         with tf.Session(graph=self.graph) as sess:
@@ -198,6 +222,8 @@ class RNNClass:
             }
 
             predicted = sess.run(self.output_classes, feed_dict=feed_dict)
+
+            sess.close()
 
             return predicted
 

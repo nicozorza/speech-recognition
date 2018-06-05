@@ -13,11 +13,12 @@ project_data = ProjectData()
 network_data = NetworkData()
 network_data.model_path = project_data.MODEL_PATH
 network_data.checkpoint_path = project_data.CHECKPOINT_PATH
+network_data.tensorboard_path = project_data.TENSORBOARD_PATH
 
 network_data.num_classes = 63
 network_data.num_features = 13
 
-network_data.num_cell_units = [128]
+network_data.num_cell_units = [64]
 
 network_data.num_dense_layers = 0
 network_data.num_dense_units = []
@@ -46,7 +47,7 @@ train_feats, train_labels, val_feats, val_labels, _, _ = database.get_training_s
 network.train(
     train_features=train_feats,
     train_labels=train_labels,
-    training_epochs=40,
+    training_epochs=1,
     batch_size=1
 )
 
