@@ -135,9 +135,9 @@ class RNNClass:
     def train(self,
               train_features,
               train_labels,
-              batch_size,
-              training_epochs,
-              shuffle=True):
+              batch_size: int,
+              training_epochs: int,
+              shuffle: bool=True):
 
         with self.graph.as_default():
             sess = tf.Session(graph=self.graph)
@@ -145,16 +145,14 @@ class RNNClass:
 
             if self.network_data.tensorboard_path is not None:
                 # Set up tensorboard summaries and saver
-                if tf.gfile.Exists(self.network_data.tensorboard_path) is not True:
-                    tf.gfile.MkDir(self.network_data.tensorboard_path)
+                if tf.gfile.Exists(self.network_data.tensorboard_path + '/train') is not True:
+                    tf.gfile.MkDir(self.network_data.tensorboard_path + '/train')
                 else:
-                    tf.gfile.DeleteRecursively(self.network_data.tensorboard_path + '/')
+                    tf.gfile.DeleteRecursively(self.network_data.tensorboard_path + '/train')
 
             merged_summary = tf.summary.merge_all()
             train_writer = tf.summary.FileWriter("{}train".format(self.network_data.tensorboard_path), self.graph)
             train_writer.add_graph(sess.graph)
-            # val_writer = tf.summary.FileWriter("{}validation".format(self.network_data.tensorboard_path), self.graph)
-            # val_writer.add_graph(sess.graph)
 
             for epoch in range(training_epochs):
                 loss_ep = 0
@@ -193,8 +191,101 @@ class RNNClass:
 
             sess.close()
 
+    def train_validate(self,
+                       train_features,
+                       train_labels,
+                       val_features,
+                       val_labels,
+                       batch_size: int,
+                       training_epochs: int,
+                       shuffle: bool=True):
+
+        with self.graph.as_default():
+            sess = tf.Session(graph=self.graph)
+            sess.run(tf.global_variables_initializer())
+
+            if self.network_data.tensorboard_path is not None:
+                # Set up tensorboard summaries and saver
+                if tf.gfile.Exists(self.network_data.tensorboard_path + '/train') is not True:
+                    tf.gfile.MkDir(self.network_data.tensorboard_path + '/train')
+                else:
+                    tf.gfile.DeleteRecursively(self.network_data.tensorboard_path + '/train')
+                # Set up tensorboard summaries and saver
+                if tf.gfile.Exists(self.network_data.tensorboard_path + '/validation') is not True:
+                    tf.gfile.MkDir(self.network_data.tensorboard_path + '/validation')
+                else:
+                    tf.gfile.DeleteRecursively(self.network_data.tensorboard_path + '/validation')
+
+            merged_summary = tf.summary.merge_all()
+            train_writer = tf.summary.FileWriter("{}train".format(self.network_data.tensorboard_path), self.graph)
+            train_writer.add_graph(sess.graph)
+            val_writer = tf.summary.FileWriter("{}validation".format(self.network_data.tensorboard_path), self.graph)
+            val_writer.add_graph(sess.graph)
+
+            val_loss = 0
+            val_acc = 0
+            for epoch in range(training_epochs):
+                loss_ep = 0
+                acc_ep = 0
+                n_step = 0
+                for i in range(len(train_features)):
+                    feed_dict = {
+                        self.input_feature: train_features[i],
+                        self.seq_len: len(train_features[i][0]),
+                        self.num_features: self.network_data.num_features,
+                        self.input_label: train_labels[i]
+                    }
+
+                    if i == 0 and self.network_data.tensorboard_path is not None:
+                        s = sess.run(merged_summary, feed_dict=feed_dict)
+                        train_writer.add_summary(s, epoch)
+
+                    loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
+
+                    loss_ep += loss
+                    acc_ep += acc
+                    n_step += 1
+
+                if self.network_data.tensorboard_path is not None:
+                    # rand_index = random.randrange(0, len(val_labels))
+                    rand_index = 5
+                    val_feat = val_features[rand_index]
+                    val_label = val_labels[rand_index]
+                    val_feed_dict = {
+                        self.input_feature: val_feat,
+                        self.seq_len: len(val_feat[0]),
+                        self.num_features: self.network_data.num_features,
+                        self.input_label: val_label
+                    }
+                    s, val_loss, _, val_acc = sess.run([merged_summary, self.loss, self.training_op, self.correct],
+                                                       feed_dict=val_feed_dict)
+                    val_writer.add_summary(s, epoch)
+
+                loss_ep = loss_ep / n_step
+                acc_ep = acc_ep / n_step
+
+                if shuffle:
+                    aux_list = list(zip(train_features, train_labels))
+                    random.shuffle(aux_list)
+                    train_features, train_labels = zip(*aux_list)
+
+                print("Epoch %d of %d, train_loss %f, train_acc %f, val_loss %f, val_acc %f" % (
+                    epoch + 1,
+                    training_epochs,
+                    loss_ep, acc_ep,
+                    val_loss,
+                    val_acc
+                ))
+
+            # save result
+            self.save_checkpoint(sess)
+            self.save_model(sess)
+
+            sess.close()
+
     def validate(self, features, labels):
-        with tf.Session(graph=self.graph) as sess:
+        with self.graph.as_default():
+            sess = tf.Session(graph=self.graph)
             sess.run(tf.global_variables_initializer())
             self.load_checkpoint(sess)
 
@@ -205,13 +296,13 @@ class RNNClass:
                     self.input_feature: feature,
                     self.seq_len: len(feature[0]),
                     self.num_features: self.network_data.num_features,
+                    self.input_label: label
                 }
-                predicted = sess.run(self.output_classes, feed_dict=feed_dict)
-                accuracy = float(np.mean(np.equal(predicted, label)))
+                accuracy = sess.run(self.correct, feed_dict=feed_dict)
+
                 print("Index %d of %d, acc %f" % (sample_index + 1, len(labels), accuracy))
                 sample_index += 1
                 acum_accuracy += accuracy
-
             print("Validation accuracy: %f" % (acum_accuracy/len(labels)))
 
             sess.close()

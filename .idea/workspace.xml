@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a62531d-3464-45b2-a546-002ac961f893" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.meta" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/model/model" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/model/model" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/tensorboard/train/events.out.tfevents.1528172106.nicozorza" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,12 +22,12 @@
     <favorites_list name="speech-recognition" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="RNN_test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="92">
-              <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+              <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -31,8 +38,8 @@
       <file leaf-file-name="RNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="80" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="450">
+              <caret line="261" selection-start-line="261" selection-end-line="261" />
             </state>
           </provider>
         </entry>
@@ -58,7 +65,7 @@
       <file leaf-file-name="file_io.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/lib/io/file_io.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
+            <state relative-caret-position="8460">
               <caret line="437" column="4" selection-start-line="437" selection-start-column="4" selection-end-line="437" selection-end-column="4" />
             </state>
           </provider>
@@ -165,6 +172,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,13 +216,20 @@
               <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
               <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
               <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="tensorboard" type="462c0819:PsiDirectoryNode" />
+              <item name="validation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -496,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528172055508</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Add a tensorboard example to check later">
+      <created>1528172841909</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1528172841909</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -519,7 +541,7 @@
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49657354" visible="true" weight="0.64425164" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.3286334" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.3275488" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40130153" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -532,7 +554,7 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" weight="0.64425164" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49657354" visible="true" weight="0.64425164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.20664206" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -542,8 +564,8 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40130153" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" visible="true" weight="0.3286334" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5028993" side_tool="true" visible="true" weight="0.3286334" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.3275488" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5028993" side_tool="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -580,7 +602,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change attributes to private" />
     <MESSAGE value="Add multiple file management" />
     <MESSAGE value="Add project data as class" />
     <MESSAGE value="Add saving network fields" />
@@ -605,7 +626,8 @@
     <MESSAGE value="Changed specgram to MFCC. Fixed predicting error (was reseting the graph)" />
     <MESSAGE value="Add tensorboard methods to plot the graph, loss and accuracy" />
     <MESSAGE value="Add MFCC matrix to tensorboard images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add MFCC matrix to tensorboard images" />
+    <MESSAGE value="Add a tensorboard example to check later" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a tensorboard example to check later" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -645,11 +667,6 @@
           <line>113</line>
           <option name="timeStamp" value="176" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py</url>
-          <line>106</line>
-          <option name="timeStamp" value="182" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -658,7 +675,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="184" />
+      <option name="time" value="185" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -967,7 +984,7 @@
     </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/lib/io/file_io.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="8460">
           <caret line="437" column="4" selection-start-line="437" selection-start-column="4" selection-end-line="437" selection-end-column="4" />
         </state>
       </provider>
@@ -988,15 +1005,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="450">
+          <caret line="261" selection-start-line="261" selection-end-line="261" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
