@@ -64,6 +64,7 @@ class RNNClass:
                     dtype=tf.float32,
                     scope="RNN_cell"
                 )
+                tf.summary.histogram('RNN', self.rnn_outputs)
 
             with tf.name_scope("dropout"):
                 if self.network_data.keep_dropout is not None:
@@ -78,6 +79,7 @@ class RNNClass:
                         kernel_regularizer=self.network_data.dense_regularizers[_],
                         name='dense_layer_{}'.format(_)
                     )
+                    tf.summary.histogram('dense_layer', self.rnn_outputs)
 
             with tf.name_scope("dense_output"):
                 self.dense_output = tf.layers.dense(
@@ -87,6 +89,7 @@ class RNNClass:
                     kernel_regularizer=self.network_data.out_regularizer,
                     name='dense_output'
                 )
+                tf.summary.histogram('dense_output', self.dense_output)
 
             with tf.name_scope("output_classes"):
                 self.output_classes = tf.argmax(self.dense_output, 2)
@@ -246,7 +249,7 @@ class RNNClass:
                     acc_ep += acc
                     n_step += 1
 
-                if self.network_data.tensorboard_path is not None:
+                if self.network_data.tensorboard_path is not None:     # TODO Change it to validate with all the samples
                     # rand_index = random.randrange(0, len(val_labels))
                     rand_index = 5
                     val_feat = val_features[rand_index]
