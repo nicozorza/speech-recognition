@@ -16,12 +16,12 @@ network_data.checkpoint_path = project_data.CHECKPOINT_PATH
 network_data.tensorboard_path = project_data.TENSORBOARD_PATH
 
 network_data.num_classes = 63
-network_data.num_features = 13
+network_data.num_features = 26
 
-network_data.num_cell_units = [64]
+network_data.num_cell_units = [32, 32, 32, 32, 32]
 
 network_data.num_dense_layers = 0
-network_data.num_dense_units = []
+network_data.num_dense_units = [100]
 network_data.dense_activations = [tf.nn.tanh] * network_data.num_dense_layers
 network_data.dense_regularizers_beta = 0.5
 network_data.dense_regularizers = [l2_regularizer(network_data.dense_regularizers_beta)]
@@ -41,15 +41,21 @@ network_data.optimizer = tf.train.AdamOptimizer(learning_rate=network_data.learn
 network = RNNClass(network_data)
 network.create_graph()
 
-database = Database.fromFile(project_data.DATABASE_FILE, project_data)
+train_database = Database.fromFile(project_data.TRAIN_DATABASE_FILE, project_data)
+val_database = Database.fromFile(project_data.VAL_DATABASE_FILE, project_data)
 
-train_feats, train_labels, val_feats, val_labels, _, _ = database.get_training_sets(0.9, 0.1, 0.0)
-network.train_validate(
+# TODO Add a different method for this
+train_feats, train_labels, _, _, _, _ = train_database.get_training_sets(1.0, 0.0, 0.0)
+val_feats, val_labels, _, _, _, _ = val_database.get_training_sets(1.0, 0.0, 0.0)
+
+network.train(
     train_features=train_feats,
     train_labels=train_labels,
-    val_features=val_feats,
-    val_labels=val_labels,
-    training_epochs=1000,
+    restore_run=True,
+    save_partial=True,
+    save_freq=10,
+    use_tensorboard=False,
+    training_epochs=2,
     batch_size=1
 )
 
