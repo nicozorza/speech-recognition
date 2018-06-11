@@ -204,7 +204,6 @@
       <change beforePath="$PROJECT_DIR$/audio/wav/SX87_7.WAV" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/wav/SX89_9.WAV" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/wav/SX91_1.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" afterDir="false" />
@@ -212,8 +211,6 @@
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/model/model" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/model/model" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/tensorboard/train/events.out.tfevents.1528254425.nicozorza" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/tensorboard/validation/events.out.tfevents.1528254425.nicozorza" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -227,11 +224,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RNN_test.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RNN_test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+            <state relative-caret-position="289">
+              <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -239,11 +236,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GenerateDatabase.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GenerateDatabase.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="42" column="38" lean-forward="true" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+            <state relative-caret-position="490">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
@@ -263,8 +260,17 @@
       <file leaf-file-name="RNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1256">
-              <caret line="215" selection-start-line="215" selection-end-line="215" />
+            <state relative-caret-position="4270">
+              <caret line="272" column="23" selection-start-line="272" selection-start-column="23" selection-end-line="272" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="writer.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/summary/writer/writer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="290" column="6" selection-start-line="290" selection-start-column="6" selection-end-line="290" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -310,15 +316,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="280">
               <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="file_io.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/lib/io/file_io.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8460">
-              <caret line="437" column="4" selection-start-line="437" selection-start-column="4" selection-end-line="437" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -407,9 +404,9 @@
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" />
-        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" />
-        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" />
+        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" />
+        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" />
       </list>
     </option>
   </component>
@@ -423,7 +420,50 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
+              <item name="NeuralNetwork" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="tensorboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../spoken-digits-recognition" />
@@ -725,7 +765,21 @@
       <option name="project" value="LOCAL" />
       <updated>1528343309490</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Save different databases for training, validating and testing">
+      <created>1528757013448</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1528757013448</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Add time estimation. Add previous session restoring. Add parcial session saving. Add separate databases for training and validating. Prevent tensorboard to update every epoch.">
+      <created>1528760481011</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1528760481011</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -739,7 +793,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.20664206" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286334" />
@@ -749,7 +802,7 @@
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" weight="0.89045554" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.3264642" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" visible="true" weight="0.3264642" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40130153" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -809,8 +862,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add saving network fields" />
-    <MESSAGE value="Fix feature generation problem" />
     <MESSAGE value="Change librosa wav read for scipy.io.wavfile because gives better results" />
     <MESSAGE value="Add new methods" />
     <MESSAGE value="Add simple RNN network with CTC. Found it on github and changed it for this project. It doesn't work very well." />
@@ -834,7 +885,9 @@
     <MESSAGE value="Add a tensorboard example to check later" />
     <MESSAGE value="Add train_validate method" />
     <MESSAGE value="Add tensorboard histograms" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tensorboard histograms" />
+    <MESSAGE value="Save different databases for training, validating and testing" />
+    <MESSAGE value="Add time estimation. Add previous session restoring. Add parcial session saving. Add separate databases for training and validating. Prevent tensorboard to update every epoch." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add time estimation. Add previous session restoring. Add parcial session saving. Add separate databases for training and validating. Prevent tensorboard to update every epoch." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -891,13 +944,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/python_speech_features/sigproc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/matplotlib/transforms.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1247971763/_sqlite3.py" />
     <entry file="file:///usr/local/lib/python3.6/dist-packages/google/protobuf/message.py">
@@ -1209,27 +1255,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/summary/writer/writer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="290" column="6" selection-start-line="290" selection-start-column="6" selection-end-line="290" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1256">
-          <caret line="215" selection-start-line="215" selection-end-line="215" />
+        <state relative-caret-position="4270">
+          <caret line="272" column="23" selection-start-line="272" selection-start-column="23" selection-end-line="272" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+        <state relative-caret-position="289">
+          <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="42" column="38" lean-forward="true" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
         </state>
       </provider>
     </entry>
