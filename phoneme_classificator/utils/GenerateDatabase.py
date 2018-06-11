@@ -11,8 +11,8 @@ feature_config.nfft = 1024
 feature_config.winlen = 20
 feature_config.winstride = 10
 feature_config.preemph = 0.98
-feature_config.num_filters = 26
-feature_config.num_ceps = 13
+feature_config.num_filters = 48
+feature_config.num_ceps = 26
 
 # Load project data
 project_data = ProjectData()
@@ -53,8 +53,11 @@ print('Maxmium audio length: ' + str(aux_len))
 print('Maxmium label length: ' + str(aux_label_len))
 
 # Save the database into a file
-database.save(project_data.DATABASE_FILE)
-print("Database saved in:", project_data.DATABASE_NAME)
+train_database, val_database, test_database = database.get_training_databases(0.9, 0.1, 0.0)
+train_database.save(project_data.TRAIN_DATABASE_FILE)
+val_database.save(project_data.VAL_DATABASE_FILE)
+test_database.save(project_data.TEST_DATABASE_FILE)
+print("Databases saved")
 
 # batches=database.get_batches_list(11)
 #
