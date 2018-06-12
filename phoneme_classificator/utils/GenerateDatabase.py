@@ -1,8 +1,20 @@
 import os
 
+import matplotlib.pyplot as plt
+import numpy as np
 from phoneme_classificator.utils.AudioFeature import FeatureConfig
 from phoneme_classificator.utils.Database import DatabaseItem, Database
 from phoneme_classificator.utils.ProjectData import ProjectData
+
+# Filter audios
+filter_by_len = True
+max_audio_len = 50000
+min_audio_len = 35000
+
+# Plot audio characteristics
+show_plots = True
+audio_lengths = []
+feature_lengths = []
 
 # Configuration of the features
 feature_config = FeatureConfig()
@@ -19,9 +31,6 @@ project_data = ProjectData()
 
 database = Database(project_data)
 
-max_length = 90010
-aux_len = 0
-aux_label_len = 0
 # Get the names of each wav file in the directory
 wav_names = os.listdir(project_data.WAV_DIR)
 for wav_index in range(len(wav_names)):
@@ -35,11 +44,15 @@ for wav_index in range(len(wav_names)):
         wav_name=wav_filename,
         label_name=label_filename,
         feature_config=feature_config)
-    if len(item.getFeature().getAudio()) >= aux_len:
-        aux_len = len(item.getFeature().getAudio())
-    if len(item.getLabel().getPhonemes()) >= aux_label_len:
-        aux_label_len = len(item.getLabel().getPhonemes())
 
+    audio_lengths.append(len(item.getFeature().getAudio()))
+    feature_lengths.append(len(item.getFeature().getFeature()))
+
+    if filter_by_len:
+        audio_len = len(item.getFeature().getAudio())
+        if audio_len > max_audio_len or audio_len < min_audio_len:
+            print('Audio ({}) discarded by length filter'.format(wav_names[wav_index]))
+            continue
     # Add the new data to the database
     database.append(item)
 
@@ -49,8 +62,8 @@ for wav_index in range(len(wav_names)):
 print("Database generated")
 print("Number of elements in database: " + str(len(database)))
 
-print('Maxmium audio length: ' + str(aux_len))
-print('Maxmium label length: ' + str(aux_label_len))
+print('Maxmium audio length: ' + str(max(audio_lengths)))
+print('Maxmium label length: ' + str(max(feature_lengths)))
 
 # Save the database into a file
 train_database, val_database, test_database = database.get_training_databases(0.9, 0.1, 0.0)
@@ -59,53 +72,19 @@ val_database.save(project_data.VAL_DATABASE_FILE)
 test_database.save(project_data.TEST_DATABASE_FILE)
 print("Databases saved")
 
-# batches=database.get_batches_list(11)
-#
-# database2 = Database.fromFile(project_data.DATABASE_FILE, project_data)
-# asd = 1
+if show_plots:
+    fig = plt.figure()
 
-# database2 = Database.fromFile(project_data.DATABASE_FILE, project_data)
-#
-# import tensorflow as tf
-#
-# def parse_test(example):
-#     context_features = {
-#         "seq_len": tf.FixedLenFeature([], dtype=tf.int64),
-#         "nfft": tf.FixedLenFeature([], dtype=tf.int64)
-#     }
-#     sequence_features = {
-#         "feature": tf.VarLenFeature(dtype=tf.float32),
-#         "label": tf.VarLenFeature(dtype=tf.int64)
-#     }
-#
-#     context_parsed, sequence_parsed = tf.parse_single_sequence_example(
-#         serialized=example,
-#         context_features=context_features,
-#         sequence_features=sequence_features
-#     )
-#
-#     return sequence_parsed, context_parsed
+    fig_1 = fig.add_subplot(211)
+    # if filter_by_len:
+    fig_1.plot(range(len(audio_lengths)), audio_lengths)
+    if filter_by_len:
+        fig_1.axhline(y=max_audio_len, color='r', linestyle='-', xmin=0, xmax=len(audio_lengths))
+        fig_1.axhline(y=min_audio_len, color='r', linestyle='-', xmin=0, xmax=len(audio_lengths))
+    fig_1.set_title('Audio lengths')
 
-# data = tf.data.TFRecordDataset(project_data.DATABASE_FILE)
-# data = data.map(parse_test)
-# data = data.repeat().shuffle(buffer_size=3).batch(3)
-#
-# iterator = data.make_one_shot_iterator()
-# feature_dict = iterator.get_next()
-# with tf.Session() as sess:
-#
-#     sequence, context = sess.run(feature_dict)
-#     print([context])
-#     aa=sequence["label"]
-#     bb=context["seq_len"]
-#     asd = 2
-#
-#     X = tf.placeholder(dtype=tf.float32, shape=[None, None])
-#     seq_length = tf.placeholder(tf.int32, [None])
-#
-#     basic_cell = tf.nn.rnn_cell.BasicRNNCell(num_units=100)
-#     outputs, states = tf.nn.dynamic_rnn(basic_cell, X, sequence_length=seq_length, dtype=tf.float32)
-#
-#     sess.run(tf.global_variables_initializer())
-#     h_t, h_final = tf.nn.dynamic_rnn(basic_cell, X)  # all h:s and the final state
+    fig_2 = fig.add_subplot(212)
+    fig_2.plot(range(len(feature_lengths)), feature_lengths)
+    fig_2.set_title('Feature lengths')
 
+    plt.show()
