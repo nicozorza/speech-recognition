@@ -38,11 +38,14 @@ class DatabaseItem(Label, AudioFeature):
     def getLabel(self) -> Label:
         return self.__label
 
-    def getPhonemesClass(self) -> np.ndarray:
-        return self.__label.getPhonemesClass()
+    def get_windowed_phonemes_class(self) -> np.ndarray:
+        return self.__label.get_windowed_phonemes_class()
 
-    def getPhonemes(self) -> np.ndarray:
-        return self.__label.getPhonemes()
+    def get_windowed_phonemes(self) -> np.ndarray:
+        return self.__label.get_windowed_phonemes()
+
+    def get_audio_len(self):
+        return len(self.__feature.getAudio())
 
     @staticmethod
     def fromFile(wav_name: str,
@@ -54,23 +57,10 @@ class DatabaseItem(Label, AudioFeature):
         feature = AudioFeature.fromFile(wav_name, feature_config=feature_config, max_len=max_len)
         sampling_rate = feature.getSamplingRate()/1000
         # Get label
-        label = Label.fromFile(label_name, max_len)\
-            .widowedLabel(int(feature_config.winlen*sampling_rate), int(feature_config.winstride*sampling_rate))
-        if len(label.getPhonemes()) != len(feature.getFeature()):
-            label = DatabaseItem.__adjustSize(label, len(feature.getFeature()))
+        label = Label.fromFile(label_name, feature.get_audio_len())
+        label.windowLabel(int(feature_config.winlen*sampling_rate), int(feature_config.winstride*sampling_rate))
 
         return DatabaseItem(feature, label)
-
-    @staticmethod
-    def __adjustSize(label: Label, correct_size: int) -> Label:
-        actual_len = len(label.getPhonemes())
-        if actual_len > correct_size:
-            return Label(label.getPhonemes()[:correct_size])
-        else:
-            aux_label = label.getPhonemes()
-            for _ in range(correct_size-actual_len):
-                aux_label = np.append(aux_label, label.getPhonemes()[-1])
-            return Label(aux_label)
 
     def __len__(self):
         return len(self.__label)
@@ -122,13 +112,13 @@ class Database(DatabaseItem):
     def getLabelsList(self) -> List[np.ndarray]:
         label_list = []
         for _ in range(self.__length):
-            label_list.append(self.__database[_].getLabel().getPhonemes())
+            label_list.append(self.__database[_].getLabel().get_windowed_phonemes())
         return label_list
 
     def getLabelsClassesList(self) -> List[np.ndarray]:
         label_list = []
         for _ in range(self.__length):
-            label_list.append(self.__database[_].getLabel().getPhonemesClass())
+            label_list.append(self.__database[_].getLabel().get_windowed_phonemes_class())
         return label_list
 
     # def getLabelIndicesList(self) -> List[np.ndarray]:
@@ -206,6 +196,9 @@ class Database(DatabaseItem):
 
         return train_database, val_database, test_database
 
+    def order_by_audio_length(self):
+        self.__database.sort(key=lambda x: x.get_audio_len())
+
     def order_by_length(self):
         self.__database = sorted(self.__database, key=lambda x: len(x))
 
@@ -220,6 +213,9 @@ class Database(DatabaseItem):
         print(len(self.__database)-batch_size, len(self.__database))
 
         return batch_list
+
+    def create_batch_plan(self, batch_size: int):
+        self.order_by_audio_length()
 
     def shuffle_database(self):
         random.shuffle(self.__database)

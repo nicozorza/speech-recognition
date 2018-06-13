@@ -36,6 +36,9 @@ class AudioFeature:
     def getAudio(self) -> np.ndarray:
         return self.__audio
 
+    def get_audio_len(self):
+        return len(self.__audio)
+
     def mfcc(self,
                 winlen: float,
                 winstep: float,

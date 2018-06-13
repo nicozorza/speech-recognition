@@ -92,11 +92,19 @@ class Label:
     def __init__(self, phonemes_array: np.ndarray):
         self.__phonemes_array: np.ndarray = phonemes_array
         self.__phonemes_class_array: np.ndarray = self.arrayToClass(phonemes_array)
+        self.__phonemes_windowed_array: np.ndarray = None
+        self.__phonemes_windowed_class_array: np.ndarray = None
 
-    def getPhonemes(self) -> np.ndarray:
+    def get_windowed_phonemes(self) -> np.ndarray:
+        return self.__phonemes_windowed_array
+
+    def get_windowed_phonemes_class(self) -> np.ndarray:
+        return self.__phonemes_windowed_class_array
+
+    def get_complete_phonemes(self) -> np.ndarray:
         return self.__phonemes_array
 
-    def getPhonemesClass(self) -> np.ndarray:
+    def get_complete_phonemes_class(self) -> np.ndarray:
         return self.__phonemes_class_array
 
     @staticmethod
@@ -133,7 +141,7 @@ class Label:
 
         return class_array
 
-    def widowedLabel(self, win_len: int, win_stride: int) -> 'Label':
+    def windowLabel(self, win_len: int, win_stride: int):
         start: int = 0
         end: int = start + win_len
         aux_array = np.empty(0)
@@ -150,7 +158,8 @@ class Label:
             most_common_phoneme = collections.Counter(windowed).most_common(1)[0][0]
             aux_array = np.append(aux_array, most_common_phoneme)
 
-        return Label(aux_array)
+        self.__phonemes_windowed_array = aux_array
+        self.__phonemes_windowed_class_array = self.arrayToClass(aux_array)
 
     @staticmethod
     def fromClassArray(array: np.ndarray) -> 'Label':
