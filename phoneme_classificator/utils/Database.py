@@ -216,6 +216,30 @@ class Database(DatabaseItem):
 
     def create_batch_plan(self, batch_size: int):
         self.order_by_audio_length()
+        num_batches = int(np.ceil(len(self.__database) / batch_size))
+        batch_list = []
+        for _ in range(num_batches-1):
+            batch_database = self.getRange(_*batch_size, (_+1)*batch_size)
+            max_audio_len = batch_database.getItemFromIndex(-1).get_audio_len()
+            aux_database = Database(self.project_data)
+            for i in range(len(batch_database)):
+                item = batch_database.getItemFromIndex(i)
+                feature_config = item.getFeature().get_feature_config()
+                sampling_rate = item.getFeature().getSamplingRate()
+                feature = AudioFeature().fromAudio(
+                    audio=item.getFeature().getAudio(),
+                    fs=sampling_rate,
+                    feature_config=feature_config,
+                    max_len=max_audio_len
+                )
+                label = Label.fromPhonemesArray(item.getLabel().get_complete_phonemes(), max_audio_len)
+                label.windowLabel(int(feature_config.winlen * sampling_rate),
+                                  int(feature_config.winstride * sampling_rate))
+                aux_database.append(DatabaseItem(feature, label))
+
+            batch_list.append(aux_database)
+
+        return batch_list
 
     def shuffle_database(self):
         random.shuffle(self.__database)

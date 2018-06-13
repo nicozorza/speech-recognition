@@ -7,7 +7,7 @@ from typing import Tuple
 
 class FeatureConfig:
     def __init__(self):
-        self.feature_type: str = 'spec'     # 'mffc'
+        self.feature_type: str = 'spec'     # 'mfcc'
         self.nfft: int = 1024
         self.winlen: int = 20
         self.winstride: int = 10
@@ -25,7 +25,7 @@ class AudioFeature:
         self.__audio = np.empty(0)
         self.__feature = np.empty(0)
         self.__fs = 0
-
+        self.__feature_config = None
 
     def getSamplingRate(self) -> float:
         return self.__fs
@@ -36,8 +36,11 @@ class AudioFeature:
     def getAudio(self) -> np.ndarray:
         return self.__audio
 
-    def get_audio_len(self):
+    def get_audio_len(self) -> int:
         return len(self.__audio)
+
+    def get_feature_config(self) -> FeatureConfig:
+        return self.__feature_config
 
     def mfcc(self,
                 winlen: float,
@@ -88,19 +91,34 @@ class AudioFeature:
         return audio_feature
 
     @staticmethod
-    def fromAudio(audio: np.ndarray, fs: float, feature_config: FeatureConfig,
-                     normalize_audio=True) -> 'AudioFeature':
+    def fromAudio(audio: np.ndarray,
+                  fs: float,
+                  feature_config: FeatureConfig,
+                  normalize_audio=True,
+                  max_len: int=None) -> 'AudioFeature':
 
         if normalize_audio:
             audio = audio / abs(max(audio))
+
+        if max_len is not None:
+            if max_len < len(audio):
+                raise ValueError('Invalid audio length.')
+            else:
+                pad_len = max_len-len(audio)
+
+            audio = np.pad(audio, (0, pad_len), 'constant', constant_values=0)
+
         feature = AudioFeature()
         feature.__audio = audio
         feature.__fs = fs
-        if feature_config.feature_type is 'spec':
+        feature.__feature_config = feature_config
+
+        # TODO Check this string comparison
+        if feature_config.feature_type.startswith('spec'):
             _, _, feature.__feature = feature.log_specgram(nfft=feature_config.nfft,
                                                            window_size=feature_config.winlen,
                                                            step_size=feature_config.winstride)
-        elif feature_config.feature_type is 'mffc':
+        elif feature_config.feature_type.startswith('mfcc'):
             if feature_config.highfreq is None:
                 feature_config.highfreq = fs/2
             feature.__feature = feature.mfcc(numcep=feature_config.num_ceps,

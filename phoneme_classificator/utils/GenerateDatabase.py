@@ -18,7 +18,7 @@ feature_lengths = []
 
 # Configuration of the features
 feature_config = FeatureConfig()
-feature_config.feature_type = 'mffc'
+feature_config.feature_type = 'mfcc'
 feature_config.nfft = 1024
 feature_config.winlen = 20
 feature_config.winstride = 10
@@ -67,9 +67,9 @@ print('Maxmium label length: ' + str(max(feature_lengths)))
 
 # Save the database into a file
 train_database, val_database, test_database = database.get_training_databases(0.9, 0.1, 0.0)
-# train_database.save(project_data.TRAIN_DATABASE_FILE)
-# val_database.save(project_data.VAL_DATABASE_FILE)
-# test_database.save(project_data.TEST_DATABASE_FILE)
+train_database.save(project_data.TRAIN_DATABASE_FILE)
+val_database.save(project_data.VAL_DATABASE_FILE)
+test_database.save(project_data.TEST_DATABASE_FILE)
 print("Databases saved")
 
 if show_plots:

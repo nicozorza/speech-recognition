@@ -123,16 +123,21 @@ class Label:
             for i in range(len(phonemes)):
                 complete_label = np.concatenate((complete_label, Label.__parsePhonemeLabel(phonemes[i])), axis=0)
 
-            if max_len is not None:
-                if max_len < len(complete_label):
-                    raise ValueError('Invalid label length.')
-                else:
-                    pad_len = max_len - len(complete_label)
+            return Label.fromPhonemesArray(complete_label, max_len)
 
-                    aux_array = np.repeat('h#', pad_len)
-                    complete_label = np.append(complete_label, aux_array)
+    @staticmethod
+    def fromPhonemesArray(phonemes: np.ndarray, max_len: int = None) -> 'Label':
 
-            return Label(complete_label)
+        if max_len is not None:
+            if max_len < len(phonemes):
+                raise ValueError('Invalid label length.')
+            else:
+                pad_len = max_len - len(phonemes)
+
+                aux_array = np.repeat('h#', pad_len)
+                phonemes = np.append(phonemes, aux_array)
+
+        return Label(phonemes)
 
     def arrayToClass(self, phonemes_array: np.ndarray) -> np.ndarray:
         class_array = np.empty(0, dtype=int)
