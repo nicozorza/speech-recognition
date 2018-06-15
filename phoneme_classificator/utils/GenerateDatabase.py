@@ -12,7 +12,7 @@ max_audio_len = 50000
 min_audio_len = 35000
 
 # Plot audio characteristics
-show_plots = True
+show_plots = False
 audio_lengths = []
 feature_lengths = []
 
@@ -77,14 +77,14 @@ if show_plots:
 
     fig_1 = fig.add_subplot(211)
     # if filter_by_len:
-    fig_1.plot(range(len(audio_lengths)), audio_lengths)
+    fig_1.plot(range(len(audio_lengths)), sorted(audio_lengths,key=int))
     if filter_by_len:
         fig_1.axhline(y=max_audio_len, color='r', linestyle='-', xmin=0, xmax=len(audio_lengths))
         fig_1.axhline(y=min_audio_len, color='r', linestyle='-', xmin=0, xmax=len(audio_lengths))
     fig_1.set_title('Audio lengths')
 
     fig_2 = fig.add_subplot(212)
-    fig_2.plot(range(len(feature_lengths)), feature_lengths)
+    fig_2.plot(range(len(feature_lengths)), sorted(feature_lengths,key= int))
     fig_2.set_title('Feature lengths')
 
     plt.show()

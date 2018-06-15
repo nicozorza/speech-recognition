@@ -101,6 +101,13 @@ class Label:
     def get_windowed_phonemes_class(self) -> np.ndarray:
         return self.__phonemes_windowed_class_array
 
+    # TODO Setting methods shouldn't exist. I added them to correct other error. This also needs a review
+    def set_windowed_phonemes(self, array: np.ndarray):
+        self.__phonemes_windowed_array = array
+
+    def set_windowed_phonemes_class(self, array: np.ndarray):
+        self.__phonemes_windowed_class_array = array
+
     def get_complete_phonemes(self) -> np.ndarray:
         return self.__phonemes_array
 

@@ -33,7 +33,7 @@ network_data.out_regularizer = l2_regularizer(network_data.out_regularizer_beta)
 network_data.keep_dropout = None
 
 network_data.learning_rate = 0.01
-network_data.adam_epsilon = 0.01
+network_data.adam_epsilon = 0.005
 network_data.optimizer = tf.train.AdamOptimizer(learning_rate=network_data.learning_rate,
                                                 epsilon=network_data.adam_epsilon)
 ###########################################################################################################
@@ -45,18 +45,17 @@ train_database = Database.fromFile(project_data.TRAIN_DATABASE_FILE, project_dat
 val_database = Database.fromFile(project_data.VAL_DATABASE_FILE, project_data)
 
 # TODO Add a different method for this
-train_feats, train_labels, _, _, _, _ = train_database.get_training_sets(1.0, 0.0, 0.0)
 val_feats, val_labels, _, _, _, _ = val_database.get_training_sets(1.0, 0.0, 0.0)
 
 network.train(
-    train_features=train_feats,
-    train_labels=train_labels,
+    train_database=train_database,
+    batch_size=10,
     restore_run=True,
     save_partial=True,
     save_freq=10,
     use_tensorboard=False,
-    training_epochs=2,
-    batch_size=1
+    # tensorboard_freq=1,
+    training_epochs=100,
 )
 
 network.validate(val_feats, val_labels)

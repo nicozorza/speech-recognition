@@ -1,6 +1,7 @@
 import os
 import random
 import time
+from typing import List
 
 import numpy as np
 import tensorflow as tf
@@ -8,6 +9,7 @@ from tensorflow.python.framework import graph_io
 from tensorflow.python.training.saver import Saver
 
 from phoneme_classificator.NeuralNetwork.NetworkData import NetworkData
+from phoneme_classificator.utils.Database import Database
 
 
 class RNNClass:
@@ -44,11 +46,10 @@ class RNNClass:
                     dtype="float",
                     shape=[None, None, self.network_data.num_features],
                     name="input")
-                tf.summary.image('feature', [tf.transpose(self.input_feature)])
             with tf.name_scope("input_labels"):
                 self.input_label = tf.placeholder(
                     dtype=tf.int64,
-                    shape=[None],
+                    shape=[None, None],
                     name="output")
                 self.input_label_one_hot = tf.one_hot(self.input_label, self.network_data.num_classes, dtype=tf.int32)
 
@@ -100,16 +101,16 @@ class RNNClass:
 
             with tf.name_scope("loss"):
                 self.loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
-                    logits=self.dense_output[0],
+                    logits=self.dense_output,
                     labels=self.input_label)
-                self.loss = tf.reduce_sum(self.loss) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32))
+                self.loss = tf.reduce_mean(tf.reduce_sum(self.loss) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32)))
                 tf.summary.scalar('loss', self.loss)
 
             with tf.name_scope("correct"):
                 self.correct = tf.cast(
                     tf.equal(self.output_classes, self.input_label), tf.int32)
                 self.correct = \
-                    tf.reduce_sum(tf.cast(self.correct, tf.float32), axis=1) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32))
+                    tf.reduce_mean(tf.reduce_sum(tf.cast(self.correct, tf.float32), axis=1) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32)))
                 tf.summary.scalar('accuracy', tf.reduce_mean(self.correct))
 
             # define the optimizer
@@ -140,8 +141,7 @@ class RNNClass:
             # print('Saving model')
 
     def train(self,
-              train_features,
-              train_labels,
+              train_database: Database,
               batch_size: int,
               training_epochs: int,
               restore_run: bool = True,
@@ -150,6 +150,8 @@ class RNNClass:
               shuffle: bool=True,
               use_tensorboard: bool = False,
               tensorboard_freq: int = 50):
+
+        batch_plan = train_database.create_batch_plan(batch_size)
 
         with self.graph.as_default():
             sess = tf.Session(graph=self.graph)
@@ -175,12 +177,12 @@ class RNNClass:
                 loss_ep = 0
                 acc_ep = 0
                 n_step = 0
-                for i in range(len(train_features)):
+                for i in range(len(batch_plan)):
                     feed_dict = {
-                        self.input_feature: train_features[i],
-                        self.seq_len: len(train_features[i][0]),
+                        self.input_feature: np.stack(batch_plan[i].getFeatureList()),
+                        self.seq_len: len(batch_plan[i].getFeatureList()[0]),
                         self.num_features: self.network_data.num_features,
-                        self.input_label: train_labels[i]
+                        self.input_label: np.stack(batch_plan[i].getLabelsClassesList())
                     }
 
                     loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
@@ -193,12 +195,12 @@ class RNNClass:
 
                 if use_tensorboard:
                     if epoch % tensorboard_freq == 0 and self.network_data.tensorboard_path is not None:
-                        random_index = random.randint(0, len(train_features))
+                        random_index = random.randint(0, len(batch_plan)-1)
                         tensorboard_feed_dict = {
-                            self.input_feature: train_features[random_index],
-                            self.seq_len: len(train_features[random_index][0]),
+                            self.input_feature: np.stack(batch_plan[random_index].getFeatureList()),
+                            self.seq_len: len(batch_plan[random_index].getFeatureList()[0]),
                             self.num_features: self.network_data.num_features,
-                            self.input_label: train_labels[random_index]
+                            self.input_label: np.stack(batch_plan[random_index].getLabelsClassesList())
                         }
                         s = sess.run(self.merged_summary, feed_dict=tensorboard_feed_dict)
                         train_writer.add_summary(s, epoch)
@@ -209,9 +211,9 @@ class RNNClass:
                         self.save_model(sess)
 
                 if shuffle:
-                    aux_list = list(zip(train_features, train_labels))
-                    random.shuffle(aux_list)
-                    train_features, train_labels = zip(*aux_list)
+                    for _ in range(len(batch_plan)):
+                        batch_plan[_].shuffle_database()
+                    random.shuffle(batch_plan)
 
                 print("Epoch %d of %d, loss %f, acc %f, epoch time %.2fmin, ramaining time %.2fmin" %
                       (epoch + 1,
@@ -356,7 +358,7 @@ class RNNClass:
                     self.input_feature: features[i],
                     self.seq_len: len(features[i][0]),
                     self.num_features: self.network_data.num_features,
-                    self.input_label: labels[i]
+                    self.input_label: [labels[i]]
                 }
                 accuracy = sess.run(self.correct, feed_dict=feed_dict)
 

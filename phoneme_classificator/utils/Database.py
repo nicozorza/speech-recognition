@@ -60,6 +60,11 @@ class DatabaseItem(Label, AudioFeature):
         label = Label.fromFile(label_name, feature.get_audio_len())
         label.windowLabel(int(feature_config.winlen*sampling_rate), int(feature_config.winstride*sampling_rate))
 
+        # TODO Windowed labels had one more item than features. Need to correct this.
+        if len(feature.getFeature()) != len(label.get_windowed_phonemes()):
+            label.set_windowed_phonemes(label.get_windowed_phonemes()[0:len(feature.getFeature())])
+            label.set_windowed_phonemes_class(label.get_windowed_phonemes_class()[0:len(feature.getFeature())])
+
         return DatabaseItem(feature, label)
 
     def __len__(self):
@@ -214,7 +219,7 @@ class Database(DatabaseItem):
 
         return batch_list
 
-    def create_batch_plan(self, batch_size: int):
+    def create_batch_plan(self, batch_size: int) -> List['Database']:
         self.order_by_audio_length()
         num_batches = int(np.ceil(len(self.__database) / batch_size))
         batch_list = []
@@ -233,8 +238,14 @@ class Database(DatabaseItem):
                     max_len=max_audio_len
                 )
                 label = Label.fromPhonemesArray(item.getLabel().get_complete_phonemes(), max_audio_len)
-                label.windowLabel(int(feature_config.winlen * sampling_rate),
-                                  int(feature_config.winstride * sampling_rate))
+                label.windowLabel(win_len=int(feature_config.winlen * sampling_rate / 1000),
+                                  win_stride=int(feature_config.winstride * sampling_rate / 1000))
+
+                # TODO Windowed labels had one more item than features. Need to correct this.
+                if len(feature.getFeature()) != len(label.get_windowed_phonemes()):
+                    label.set_windowed_phonemes(label.get_windowed_phonemes()[0:len(feature.getFeature())])
+                    label.set_windowed_phonemes_class(label.get_windowed_phonemes_class()[0:len(feature.getFeature())])
+
                 aux_database.append(DatabaseItem(feature, label))
 
             batch_list.append(aux_database)
