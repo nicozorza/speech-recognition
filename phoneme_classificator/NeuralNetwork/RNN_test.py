@@ -16,26 +16,26 @@ network_data.checkpoint_path = project_data.CHECKPOINT_PATH
 network_data.tensorboard_path = project_data.TENSORBOARD_PATH
 
 network_data.num_classes = 63
-network_data.num_features = 26
+network_data.num_features = 14
 
-network_data.num_cell_units = [32, 32, 32, 32, 32]
+network_data.num_cell_units = [128]
 
 network_data.num_dense_layers = 0
 network_data.num_dense_units = [100]
 network_data.dense_activations = [tf.nn.tanh] * network_data.num_dense_layers
-network_data.dense_regularizers_beta = 0.5
+network_data.dense_regularizers_beta = 0.8
 network_data.dense_regularizers = [l2_regularizer(network_data.dense_regularizers_beta)]
 
 network_data.out_activation = tf.nn.relu
-network_data.out_regularizer_beta = 0.5
+network_data.out_regularizer_beta = 0.8
 network_data.out_regularizer = l2_regularizer(network_data.out_regularizer_beta)
 
-network_data.keep_dropout = None
+network_data.keep_dropout = 0.5
 
 network_data.learning_rate = 0.01
-network_data.adam_epsilon = 0.005
-network_data.optimizer = tf.train.AdamOptimizer(learning_rate=network_data.learning_rate,
-                                                epsilon=network_data.adam_epsilon)
+network_data.adam_epsilon = 0.05
+network_data.optimizer = tf.train.MomentumOptimizer(learning_rate=network_data.learning_rate,
+                                                    momentum=network_data.adam_epsilon)
 ###########################################################################################################
 
 network = RNNClass(network_data)
@@ -53,8 +53,8 @@ network.train(
     restore_run=True,
     save_partial=True,
     save_freq=10,
-    use_tensorboard=False,
-    # tensorboard_freq=1,
+    use_tensorboard=True,
+    tensorboard_freq=20,
     training_epochs=100,
 )
 
