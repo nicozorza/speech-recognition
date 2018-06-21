@@ -18,6 +18,9 @@ class FeatureConfig:
         self.lowfreq: float = 0
         self.highfreq: float = None
         self.preemph: float = 0.98
+        self.ceplifter: int = 22
+        self.appendEnergy: bool = True
+        self.winfunc = np.hamming
 
 
 class AudioFeature:
@@ -50,10 +53,14 @@ class AudioFeature:
                 nfft: int,
                 lowfreq,
                 highfreq,
-                preemph: float) -> np.ndarray:
+                preemph: float,
+                ceplifter: int,
+                appendEnergy: bool,
+                winfunc) -> np.ndarray:
 
         return features.mfcc(self.__audio, samplerate=self.__fs, winlen=winlen, winstep=winstep, numcep=numcep,
-                             nfilt=nfilt, nfft=nfft, lowfreq=lowfreq, highfreq=highfreq, preemph=preemph)
+                             nfilt=nfilt, nfft=nfft, lowfreq=lowfreq, highfreq=highfreq, preemph=preemph,
+                             ceplifter=ceplifter, appendEnergy=appendEnergy, winfunc=winfunc)
 
     def log_specgram(self, nfft=1024, window_size=20, step_size=10, eps=1e-10) -> Tuple[np.ndarray, np.ndarray, None]:
         nperseg = int(round(window_size * self.__fs / 1e3))
@@ -128,7 +135,11 @@ class AudioFeature:
                                              lowfreq=feature_config.lowfreq,
                                              highfreq=feature_config.highfreq,
                                              preemph=feature_config.preemph,
-                                             nfilt=feature_config.num_filters)
+                                             nfilt=feature_config.num_filters,
+                                             ceplifter=feature_config.ceplifter,
+                                             appendEnergy=feature_config.appendEnergy,
+                                             winfunc=feature_config.winfunc
+                                             )
         else:
             raise ValueError("Wrong feature type. Only MFCC and spectogram are available.")
 
