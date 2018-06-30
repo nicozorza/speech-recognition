@@ -7,7 +7,7 @@ from typing import Tuple
 
 class FeatureConfig:
     def __init__(self):
-        self.feature_type: str = 'spec'     # 'mffc'
+        self.feature_type: str = 'spec'     # 'mfcc'
         self.nfft: int = 1024
         self.winlen: int = 20
         self.winstride: int = 10
@@ -96,7 +96,7 @@ class AudioFeature:
             _, _, feature.__feature = feature.log_specgram(nfft=feature_config.nfft,
                                                            window_size=feature_config.winlen,
                                                            step_size=feature_config.winstride)
-        elif feature_config.feature_type is 'mffc':
+        elif feature_config.feature_type is 'mfcc':
             if feature_config.highfreq is None:
                 feature_config.highfreq = fs/2
             feature.__feature = feature.mfcc(numcep=feature_config.num_ceps,

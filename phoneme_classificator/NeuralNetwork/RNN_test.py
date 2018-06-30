@@ -16,9 +16,10 @@ network_data.checkpoint_path = project_data.CHECKPOINT_PATH
 network_data.tensorboard_path = project_data.TENSORBOARD_PATH
 
 network_data.num_classes = 63
-network_data.num_features = 26
+network_data.num_features = 13
 
-network_data.num_cell_units = [32, 32, 32, 32, 32]
+network_data.num_cell_units = [128]
+network_data.rnn_regularizer = 0.5
 
 network_data.num_dense_layers = 0
 network_data.num_dense_units = [100]
@@ -48,13 +49,17 @@ val_database = Database.fromFile(project_data.VAL_DATABASE_FILE, project_data)
 train_feats, train_labels, _, _, _, _ = train_database.get_training_sets(1.0, 0.0, 0.0)
 val_feats, val_labels, _, _, _, _ = val_database.get_training_sets(1.0, 0.0, 0.0)
 
-network.train(
+network.train_validate(
     train_features=train_feats,
     train_labels=train_labels,
+    val_features=val_feats,
+    val_labels=val_labels,
+    val_freq=10,
     restore_run=False,
     save_partial=True,
     save_freq=10,
     use_tensorboard=False,
+    tensorboard_freq=10,
     training_epochs=200,
     batch_size=20
 )

@@ -5,16 +5,302 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/TrainDatabase" beforeDir="false" afterPath="$PROJECT_DIR$/audio/TrainDatabase" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/ValidationDatabase" beforeDir="false" afterPath="$PROJECT_DIR$/audio/ValidationDatabase" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SA1.PHN" beforeDir="false" afterPath="$PROJECT_DIR$/audio/phonemes/SA1.PHN" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SA2.PHN" beforeDir="false" afterPath="$PROJECT_DIR$/audio/phonemes/SA2.PHN" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1818.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1826.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1832.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1862.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1868.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1877.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1881.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1928.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1936.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1986.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1999.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2001.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2013.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2017.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2031.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2032.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2050.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2087.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2100.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2138.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2154.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2156.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2157.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2218.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2229.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2236.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2244.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2256.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2336.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2341.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX105.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX108.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX111.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX116.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX120.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX123.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX125.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX128.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX144.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX146.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX148.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX15.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX158.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX163.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX168.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX179.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX18.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX180.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX182.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX183.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX186.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX195.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX198.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX201.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX206.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX21.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX210.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX213.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX218.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX231.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX234.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX236.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX238.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX248.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX249.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX250.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX253.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX255.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX256.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX257.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX258.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX26.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX260.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX261.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX264.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX266.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX269.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX270.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX272.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX273.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX276.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX285.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX288.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX291.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX296.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX30.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX300.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX302.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX303.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX307.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX32.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX322.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX326.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX328.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX33.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX338.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX339.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX340.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX345.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX35.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX351.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX354.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX356.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX360.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX378.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX38.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX381.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX386.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX390.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX392.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX393.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX414.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX416.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX436.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX444.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX446.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX46.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX51.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX56.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX59.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX62.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX68.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX70.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX73.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX75.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX76.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX77.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX78.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX80.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX81.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX84.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX86.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX89.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX90.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX93.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX96.PHN" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SA1.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SA2.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/audio/wav/SA2.WAV" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1023.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1228.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1247.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1371.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1409.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1803.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1818.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1826.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1832.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1862.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1868.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1877.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1881.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1928.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1936.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1986.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI1999.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2001.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2013.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2017.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2031.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2032.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2050.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2087.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2100.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2138.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2154.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2156.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2157.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2218.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2229.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2236.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2244.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2256.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2336.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI2341.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI668.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI828.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI926.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SI973.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX105.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX108.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX111.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX116.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX120.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX123.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX125.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX128.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX144.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX146.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX148.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX15.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX158.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX163.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX168.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX179.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX18.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX180.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX182.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX183.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX186.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX195.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX198.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX201.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX206.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX21.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX210.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX213.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX218.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX231.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX234.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX236.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX238.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX248.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX249.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX250.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX253.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX255.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX256.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX257.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX258.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX26.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX260.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX261.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX264.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX266.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX269.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX270.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX272.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX273.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX276.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX285.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX288.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX291.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX296.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX30.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX300.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX302.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX303.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX307.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX32.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX322.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX326.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX328.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX33.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX338.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX339.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX340.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX345.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX35.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX351.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX354.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX356.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX360.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX378.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX38.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX381.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX386.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX390.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX392.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX393.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX414.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX416.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX436.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX444.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX446.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX46.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX51.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX56.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX59.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX62.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX68.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX70.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX73.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX75.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX76.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX77.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX78.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX80.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX81.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX84.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX86.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX89.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX90.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX93.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/wav/SX96.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.meta" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/model/model" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/model/model" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/tensorboard/train/events.out.tfevents.1528761016.nicozorza" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +314,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RNN_test.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RNN_test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+            <state relative-caret-position="490">
+              <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -64,8 +350,8 @@
       <file leaf-file-name="GenerateDatabase.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="52" column="63" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
+            <state relative-caret-position="420">
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -76,8 +362,8 @@
       <file leaf-file-name="AudioFeature.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1400">
-              <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+            <state relative-caret-position="450">
+              <caret line="98" column="48" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -85,14 +371,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RNN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1896">
-              <caret line="209" column="42" selection-start-line="209" selection-start-column="42" selection-end-line="209" selection-end-column="42" />
+            <state relative-caret-position="20">
+              <caret line="363" column="96" selection-start-line="363" selection-start-column="96" selection-end-line="363" selection-end-column="96" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NetworkData.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -148,7 +443,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="create_batch_plan" />
+        <entry key="$PROJECT_DIR$" value="phoneme_classificator" />
       </map>
     </option>
   </component>
@@ -176,14 +471,14 @@
         <option value="$PROJECT_DIR$/ctc_network/utils/Database.py" />
         <option value="$PROJECT_DIR$/ctc_network/SimpleNetwork/NeuralNetwork.py" />
         <option value="$PROJECT_DIR$/ctc_network/utils/ProjectData.py" />
-        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" />
-        <option value="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" />
-        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" />
-        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" />
+        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" />
+        <option value="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" />
+        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" />
+        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" />
       </list>
     </option>
   </component>
@@ -556,7 +851,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528760481011</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Trim audios to have the same length">
+      <created>1530331184551</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1530331184551</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -570,15 +872,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.20664206" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5028993" side_tool="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49657354" visible="true" weight="0.89045554" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" weight="0.89045554" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.32575756" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.3253796" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40130153" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -591,7 +894,7 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" visible="true" weight="0.89045554" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49657354" visible="true" weight="0.89045554" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.20664206" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -601,7 +904,7 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40130153" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.32575756" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.3253796" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5028993" side_tool="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286334" />
@@ -639,7 +942,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change librosa wav read for scipy.io.wavfile because gives better results" />
     <MESSAGE value="Add new methods" />
     <MESSAGE value="Add simple RNN network with CTC. Found it on github and changed it for this project. It doesn't work very well." />
     <MESSAGE value="Move CTC project to its own folder" />
@@ -664,7 +966,8 @@
     <MESSAGE value="Add tensorboard histograms" />
     <MESSAGE value="Save different databases for training, validating and testing" />
     <MESSAGE value="Add time estimation. Add previous session restoring. Add parcial session saving. Add separate databases for training and validating. Prevent tensorboard to update every epoch." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add time estimation. Add previous session restoring. Add parcial session saving. Add separate databases for training and validating. Prevent tensorboard to update every epoch." />
+    <MESSAGE value="Trim audios to have the same length" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trim audios to have the same length" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -706,18 +1009,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py</url>
-          <line>194</line>
+          <line>201</line>
           <option name="timeStamp" value="190" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py</url>
-          <line>197</line>
+          <line>204</line>
           <option name="timeStamp" value="194" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py</url>
-          <line>105</line>
-          <option name="timeStamp" value="195" />
+          <line>344</line>
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py</url>
+          <line>150</line>
+          <option name="timeStamp" value="197" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -727,7 +1035,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="196" />
+      <option name="time" value="198" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -983,13 +1291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/rnn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8740">
@@ -1035,16 +1336,6 @@
     <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/nn.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Label.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2360">
@@ -1062,32 +1353,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="280">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="52" column="63" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
+        <state relative-caret-position="420">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="98" column="48" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1896">
-          <caret line="209" column="42" selection-start-line="209" selection-start-column="42" selection-end-line="209" selection-end-column="42" />
+        <state relative-caret-position="20">
+          <caret line="363" column="96" selection-start-line="363" selection-start-column="96" selection-end-line="363" selection-end-column="96" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>

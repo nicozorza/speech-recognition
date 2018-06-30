@@ -13,7 +13,7 @@ class NetworkData:
         self.num_classes: int = None
 
         self.num_cell_units: List[int] = None
-
+        self.rnn_regularizer: float = 0
         self.keep_dropout: float = None
 
         self.num_dense_layers: int = None

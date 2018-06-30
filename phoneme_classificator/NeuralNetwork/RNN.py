@@ -26,6 +26,7 @@ class RNNClass:
         self.dense_output = None
         self.output_classes = None
         self.output_one_hot = None
+        self.logits_loss = None
         self.loss = None
         self.correct = None
         self.training_op: tf.Operation = None
@@ -99,10 +100,16 @@ class RNNClass:
                 self.output_one_hot = tf.one_hot(self.output_classes, self.network_data.num_classes, dtype=tf.int32)[0]
 
             with tf.name_scope("loss"):
+                rnn_loss = 0
+                for var in tf.trainable_variables():
+                    if var.name.startswith('RNN_cell') and 'kernel' in var.name:
+                        rnn_loss += tf.nn.l2_loss(var)
+
                 self.loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
                     logits=self.dense_output,
                     labels=self.input_label)
-                self.loss = tf.reduce_mean(tf.reduce_sum(self.loss) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32)))
+                logits_loss = tf.reduce_mean(tf.reduce_sum(self.loss) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32)))
+                self.loss = logits_loss + self.network_data.rnn_regularizer * rnn_loss
                 tf.summary.scalar('loss', self.loss)
 
             with tf.name_scope("correct"):
@@ -143,7 +150,7 @@ class RNNClass:
     def create_batch(self, input_list, batch_size):
         num_batches = int(np.ceil(len(input_list) / batch_size))
         batch_list = []
-        for _ in range(num_batches - 1):
+        for _ in range(num_batches):
             if (_ + 1) * batch_size < len(input_list):
                 aux = input_list[_ * batch_size:(_ + 1) * batch_size]
             else:
@@ -213,11 +220,13 @@ class RNNClass:
                 if use_tensorboard:
                     if epoch % tensorboard_freq == 0 and self.network_data.tensorboard_path is not None:
                         random_index = random.randint(0, len(train_features))
+                        feature = train_features[random_index]
+                        label = train_labels[random_index]
                         tensorboard_feed_dict = {
-                            self.input_feature: train_features[random_index],
-                            self.seq_len: len(train_features[random_index][0]),
+                            self.input_feature: np.reshape(feature, [1, len(feature), np.shape(feature)[1]]),
+                            self.seq_len: len(train_features[random_index]),
                             self.num_features: self.network_data.num_features,
-                            self.input_label: train_labels[random_index]
+                            self.input_label: np.reshape(label, [1, len(label)])
                         }
                         s = sess.run(self.merged_summary, feed_dict=tensorboard_feed_dict)
                         train_writer.add_summary(s, epoch)
@@ -290,61 +299,80 @@ class RNNClass:
 
             val_loss = 0
             val_acc = 0
+
+            train_database = list(zip(train_features, train_labels))
+            val_database = list(zip(val_features, val_labels))
             for epoch in range(training_epochs):
                 epoch_time = time.time()
                 loss_ep = 0
                 acc_ep = 0
                 n_step = 0
-                for i in range(len(train_features)):
-                    feed_dict = {
-                        self.input_feature: train_features[i],
-                        self.seq_len: len(train_features[i][0]),
-                        self.num_features: self.network_data.num_features,
-                        self.input_label: train_labels[i]
-                    }
 
-                    if use_tensorboard:
-                        if epoch % tensorboard_freq == 0 and self.network_data.tensorboard_path is not None:
-                            random_index = random.randint(0, len(train_features))
-                            tensorboard_feed_dict = {
-                                self.input_feature: train_features[random_index],
-                                self.seq_len: len(train_features[random_index][0]),
-                                self.num_features: self.network_data.num_features,
-                                self.input_label: train_labels[random_index]
-                            }
-                            s = sess.run(self.merged_summary, feed_dict=tensorboard_feed_dict)
-                            train_writer.add_summary(s, epoch)
+                for batch in self.create_batch(train_database, batch_size):
+                    batch_features, batch_labeles = zip(*batch)
+
+                    feed_dict = {
+                        self.input_feature: np.stack(batch_features),
+                        self.seq_len: len(batch_features[0]),
+                        self.num_features: self.network_data.num_features,
+                        self.input_label: np.stack(batch_labeles)
+                    }
 
                     loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
 
                     loss_ep += loss
                     acc_ep += acc
                     n_step += 1
-
-                if epoch % val_freq == 0:       # TODO Change it to validate with all the samples
-                    # rand_index = random.randrange(0, len(val_labels))
-                    rand_index = 5
-                    val_feat = val_features[rand_index]
-                    val_label = val_labels[rand_index]
-                    val_feed_dict = {
-                        self.input_feature: val_feat,
-                        self.seq_len: len(val_feat[0]),
-                        self.num_features: self.network_data.num_features,
-                        self.input_label: val_label
-                    }
-                    val_loss, _, val_acc = sess.run([self.loss, self.training_op, self.correct],
-                                                    feed_dict=val_feed_dict)
-                    if use_tensorboard:
-                        s = sess.run([self.merged_summary], feed_dict=val_feed_dict)
-                        val_writer.add_summary(s, epoch)
-
                 loss_ep = loss_ep / n_step
                 acc_ep = acc_ep / n_step
 
+                if use_tensorboard:
+                    if epoch % tensorboard_freq == 0 and self.network_data.tensorboard_path is not None:
+                        random_index = random.randint(0, len(train_features))
+                        feature = train_features[random_index]
+                        label = train_labels[random_index]
+                        tensorboard_feed_dict = {
+                            self.input_feature: np.reshape(feature, [1, len(feature), np.shape(feature)[1]]),
+                            self.seq_len: len(train_features[random_index]),
+                            self.num_features: self.network_data.num_features,
+                            self.input_label: np.reshape(label, [1, len(label)])
+                        }
+                        s = sess.run(self.merged_summary, feed_dict=tensorboard_feed_dict)
+                        train_writer.add_summary(s, epoch)
+
+                if epoch % val_freq == 0:
+                    batch = self.create_batch(val_database, len(val_database))[0]
+                    batch_val_features, batch_val_labeles = zip(*batch)
+
+                    val_feed_dict = {
+                        self.input_feature: np.stack(batch_val_features),
+                        self.seq_len: len(batch_val_features[0]),
+                        self.num_features: self.network_data.num_features,
+                        self.input_label: np.stack(batch_val_labeles)
+                    }
+
+                    val_loss, val_acc = sess.run([self.loss, self.correct], feed_dict=val_feed_dict)
+
+                    if use_tensorboard:
+                        if self.network_data.tensorboard_path is not None:
+                            random_index = random.randint(0, len(val_database))
+                            val_feature, val_labeles = zip(*val_database[random_index])
+                            tensorboard_val_feed_dict = {
+                                self.input_feature: np.reshape(val_feature, [1, len(val_feature), np.shape(val_feature)[1]]),
+                                self.seq_len: len(train_features[random_index]),
+                                self.num_features: self.network_data.num_features,
+                                self.input_label: np.reshape(val_labeles, [1, len(val_labeles)])
+                            }
+                            s = sess.run(self.merged_summary, feed_dict=tensorboard_val_feed_dict)
+                            val_writer.add_summary(s, epoch)
+
                 if shuffle:
-                    aux_list = list(zip(train_features, train_labels))
-                    random.shuffle(aux_list)
-                    train_features, train_labels = zip(*aux_list)
+                    random.shuffle(train_database)
+
+                if save_partial:
+                    if epoch % save_freq == 0:
+                        self.save_checkpoint(sess)
+                        self.save_model(sess)
 
                 print("Epoch %d of %d, train_loss %f, train_acc %f, val_loss %f, val_acc %f, epoch time %.2fmin, ramaining time %.2fmin" %
                       (epoch + 1,

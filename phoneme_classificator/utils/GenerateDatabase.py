@@ -20,13 +20,13 @@ feature_lengths = []
 
 # Configuration of the features
 feature_config = FeatureConfig()
-feature_config.feature_type = 'mffc'
+feature_config.feature_type = 'mfcc'
 feature_config.nfft = 1024
-feature_config.winlen = 20
+feature_config.winlen = 25
 feature_config.winstride = 10
 feature_config.preemph = 0.98
-feature_config.num_filters = 48
-feature_config.num_ceps = 26
+feature_config.num_filters = 26
+feature_config.num_ceps = 13
 
 # Load project data
 project_data = ProjectData()
