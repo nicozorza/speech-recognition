@@ -117,7 +117,7 @@ class Label:
 
             if max_len is not None:
                 if max_len < len(complete_label):
-                    raise ValueError('Invalid label length.')
+                    complete_label = complete_label[0:max_len]
                 else:
                     pad_len = max_len - len(complete_label)
 

@@ -155,7 +155,7 @@ class Database(DatabaseItem):
             self.shuffle_database()
 
         features = self.getFeatureList()
-        features = [np.reshape(feature, [1, len(feature), np.shape(feature)[1]]) for feature in features]
+        features = [np.reshape(feature, [len(feature), np.shape(feature)[1]]) for feature in features]
         labels = self.getLabelsClassesList()
 
         # Training set

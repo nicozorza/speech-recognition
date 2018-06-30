@@ -51,12 +51,12 @@ val_feats, val_labels, _, _, _, _ = val_database.get_training_sets(1.0, 0.0, 0.0
 network.train(
     train_features=train_feats,
     train_labels=train_labels,
-    restore_run=True,
+    restore_run=False,
     save_partial=True,
     save_freq=10,
     use_tensorboard=False,
-    training_epochs=2,
-    batch_size=1
+    training_epochs=200,
+    batch_size=20
 )
 
 network.validate(val_feats, val_labels)

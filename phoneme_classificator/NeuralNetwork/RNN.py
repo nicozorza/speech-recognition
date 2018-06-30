@@ -48,7 +48,7 @@ class RNNClass:
             with tf.name_scope("input_labels"):
                 self.input_label = tf.placeholder(
                     dtype=tf.int64,
-                    shape=[None],
+                    shape=[None, None],
                     name="output")
                 self.input_label_one_hot = tf.one_hot(self.input_label, self.network_data.num_classes, dtype=tf.int32)
 
@@ -100,16 +100,17 @@ class RNNClass:
 
             with tf.name_scope("loss"):
                 self.loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
-                    logits=self.dense_output[0],
+                    logits=self.dense_output,
                     labels=self.input_label)
-                self.loss = tf.reduce_sum(self.loss) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32))
+                self.loss = tf.reduce_mean(tf.reduce_sum(self.loss) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32)))
                 tf.summary.scalar('loss', self.loss)
 
             with tf.name_scope("correct"):
                 self.correct = tf.cast(
                     tf.equal(self.output_classes, self.input_label), tf.int32)
                 self.correct = \
-                    tf.reduce_sum(tf.cast(self.correct, tf.float32), axis=1) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32))
+                    tf.reduce_mean(tf.reduce_sum(tf.cast(self.correct, tf.float32), axis=1) / tf.reduce_sum(
+                        tf.cast(self.seq_len, tf.float32)))
                 tf.summary.scalar('accuracy', tf.reduce_mean(self.correct))
 
             # define the optimizer
@@ -138,6 +139,19 @@ class RNNClass:
             path, file = os.path.split(path_and_file)
             graph_io.write_graph(sess.graph, path, file, as_text=False)
             # print('Saving model')
+
+    def create_batch(self, input_list, batch_size):
+        num_batches = int(np.ceil(len(input_list) / batch_size))
+        batch_list = []
+        for _ in range(num_batches - 1):
+            if (_ + 1) * batch_size < len(input_list):
+                aux = input_list[_ * batch_size:(_ + 1) * batch_size]
+            else:
+                aux = input_list[len(input_list)-batch_size:len(input_list)]
+
+            batch_list.append(aux)
+
+        return batch_list
 
     def train(self,
               train_features,
@@ -175,12 +189,17 @@ class RNNClass:
                 loss_ep = 0
                 acc_ep = 0
                 n_step = 0
-                for i in range(len(train_features)):
+
+                database = list(zip(train_features, train_labels))
+
+                for batch in self.create_batch(database, batch_size):
+                    batch_features, batch_labeles = zip(*batch)
+
                     feed_dict = {
-                        self.input_feature: train_features[i],
-                        self.seq_len: len(train_features[i][0]),
+                        self.input_feature: np.stack(batch_features),
+                        self.seq_len: len(batch_features[0]),
                         self.num_features: self.network_data.num_features,
-                        self.input_label: train_labels[i]
+                        self.input_label: np.stack(batch_labeles)
                     }
 
                     loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
@@ -351,12 +370,15 @@ class RNNClass:
 
             sample_index = 0
             acum_accuracy = 0
-            for i in range(len(features)):
+
+            database = list(zip(features, labels))
+            for item in self.create_batch(database, 1):
+                feature, label = zip(*item)
                 feed_dict = {
-                    self.input_feature: features[i],
-                    self.seq_len: len(features[i][0]),
+                    self.input_feature: feature,
+                    self.seq_len: len(features[0]),
                     self.num_features: self.network_data.num_features,
-                    self.input_label: labels[i]
+                    self.input_label: label
                 }
                 accuracy = sess.run(self.correct, feed_dict=feed_dict)
 
@@ -369,6 +391,7 @@ class RNNClass:
 
     def predict(self, feature):
 
+        feature = np.reshape(feature, [1, len(feature), np.shape(feature)[1]])
         with tf.Session(graph=self.graph) as sess:
             sess.run(tf.global_variables_initializer())
             self.load_checkpoint(sess)

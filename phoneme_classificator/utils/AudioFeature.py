@@ -70,11 +70,10 @@ class AudioFeature:
         fs, signal = wav.read(wav_name)
         if max_len is not None:
             if max_len < len(signal):
-                raise ValueError('Invalid audio length.')
+                signal = signal[0:max_len]
             else:
                 pad_len = max_len-len(signal)
-
-            signal = np.pad(signal, (0, pad_len), 'constant', constant_values=0)
+                signal = np.pad(signal, (0, pad_len), 'constant', constant_values=0)
         return AudioFeature.fromAudio(signal, fs, feature_config, normalize_audio)
 
     @staticmethod

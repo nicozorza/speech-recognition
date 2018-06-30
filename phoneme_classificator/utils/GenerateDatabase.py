@@ -7,9 +7,11 @@ from phoneme_classificator.utils.Database import DatabaseItem, Database
 from phoneme_classificator.utils.ProjectData import ProjectData
 
 # Filter audios
-filter_by_len = True
+filter_by_len = False
 max_audio_len = 50000
 min_audio_len = 35000
+
+trim_audio_len = 17408
 
 # Plot audio characteristics
 show_plots = True
@@ -43,7 +45,9 @@ for wav_index in range(len(wav_names)):
     item = DatabaseItem.fromFile(
         wav_name=wav_filename,
         label_name=label_filename,
-        feature_config=feature_config)
+        feature_config=feature_config,
+        max_len=trim_audio_len
+    )
 
     audio_lengths.append(len(item.getFeature().getAudio()))
     feature_lengths.append(len(item.getFeature().getFeature()))
@@ -64,6 +68,8 @@ print("Number of elements in database: " + str(len(database)))
 
 print('Maxmium audio length: ' + str(max(audio_lengths)))
 print('Maxmium label length: ' + str(max(feature_lengths)))
+print('Minimum audio length: ' + str(min(audio_lengths)))
+print('Minimum label length: ' + str(min(feature_lengths)))
 
 # Save the database into a file
 train_database, val_database, test_database = database.get_training_databases(0.9, 0.1, 0.0)
