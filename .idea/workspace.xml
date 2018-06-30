@@ -2,1638 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a62531d-3464-45b2-a546-002ac961f893" name="Default" comment="Add batch running. Database implementation should be corrected. It's a little villa">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/ValidationDatabase" beforeDir="false" afterPath="$PROJECT_DIR$/audio/ValidationDatabase" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SA1.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SA2.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1005.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1006.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1007.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1008.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1011.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1012.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1014.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1016.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1017.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1018.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1020.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1021.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1022.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1023.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1025.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1027.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1028.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1031.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1032.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1034.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1035.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1036.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1041.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1042.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1044.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1045.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1046.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1047.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1048.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1049.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1050.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1051.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1052.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1053.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1054.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1055.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1056.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1057.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1058.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1059.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1060.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1061.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1062.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1063.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1064.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1065.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1066.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1067.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1068.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1069.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1070.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1071.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1072.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1073.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1074.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1075.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1076.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1077.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1078.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1079.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1080.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1081.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1082.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1083.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1086.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1087.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1095.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1096.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1097.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1098.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1101.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1102.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1104.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1106.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1107.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1110.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1111.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1112.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1113.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1115.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1117.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1118.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1119.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1120.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1121.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1122.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1123.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1125.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1126.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1131.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1132.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1134.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1135.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1136.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1137.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1138.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1139.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1140.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1141.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1142.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1143.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1145.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1147.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1148.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1149.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1150.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1151.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1152.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1153.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1154.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1155.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1156.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1157.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1158.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1159.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1160.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1161.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1162.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1163.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1164.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1165.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1166.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1167.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1168.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1169.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1170.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1171.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1172.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1173.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1176.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1177.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1185.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1186.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1187.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1188.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1191.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1192.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1194.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1196.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1197.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1200.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1201.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1202.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1203.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1205.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1206.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1207.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1208.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1209.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1210.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1211.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1212.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1215.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1216.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1221.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1222.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1224.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1225.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1226.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1227.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1228.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1229.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1231.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1232.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1233.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1234.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1235.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1236.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1237.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1238.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1239.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1240.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1241.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1242.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1243.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1244.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1245.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1246.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1247.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1248.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1249.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1250.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1251.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1252.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1253.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1254.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1255.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1256.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1257.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1258.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1259.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1260.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1261.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1262.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1263.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1266.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1267.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1269.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1271.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1274.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1275.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1276.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1277.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1278.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1281.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1282.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1284.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1286.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1287.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1290.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1291.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1292.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1293.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1295.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1297.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1298.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1299.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1300.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1302.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1305.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1306.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1311.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1312.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1313.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1314.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1315.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1316.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1317.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1318.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1319.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1320.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1321.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1322.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1323.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1324.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1325.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1326.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1327.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1328.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1329.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1331.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1332.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1333.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1334.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1335.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1336.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1337.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1338.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1339.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1340.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1341.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1342.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1343.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1344.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1345.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1346.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1347.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1348.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1349.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1350.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1351.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1352.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1353.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1356.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1357.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1358.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1365.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1366.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1367.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1368.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1371.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1372.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1374.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1376.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1377.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1380.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1381.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1382.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1383.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1385.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1387.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1388.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1389.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1391.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1392.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1393.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1395.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1396.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1401.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1402.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1404.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1405.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1406.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1407.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1408.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1409.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1410.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1411.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1412.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1413.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1414.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1415.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1416.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1417.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1418.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1419.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1420.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1421.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1422.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1424.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1426.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1427.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1428.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1429.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1430.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1431.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1432.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1433.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1434.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1435.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1436.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1437.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1438.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1439.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1440.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1441.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1442.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1443.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1446.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1447.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1455.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1456.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1457.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1458.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1461.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1462.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1464.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1465.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1466.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1467.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1468.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1470.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1471.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1472.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1475.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1477.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1478.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1479.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1480.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1481.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1482.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1485.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1486.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1491.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1492.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1494.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1495.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1497.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1498.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1499.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1500.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1501.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1503.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1504.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1505.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1506.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1507.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1508.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1509.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1510.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1511.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1512.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1513.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1514.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1515.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1516.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1517.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1518.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1519.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1520.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1521.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1522.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1524.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1525.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1526.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1527.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1528.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1529.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1530.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1531.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1532.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1533.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1536.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1537.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1545.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1546.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1547.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1548.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1551.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1552.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1554.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1556.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1557.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1558.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1560.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1561.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1562.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1563.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1565.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1567.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1568.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1569.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1570.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1571.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1572.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1575.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1576.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1581.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1582.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1585.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1586.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1588.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1589.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1590.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1591.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1592.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1593.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1594.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1595.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1596.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1597.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1598.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1599.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1600.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1601.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1602.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1603.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1604.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1605.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1606.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1607.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1608.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1609.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1611.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1612.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1613.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1614.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1615.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1616.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1617.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1618.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1619.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1620.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1621.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1622.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1623.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1626.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1627.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1635.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1636.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1637.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1638.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1641.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1642.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1644.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1646.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1647.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1650.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1651.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1652.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1654.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1655.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1657.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1658.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1659.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1660.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1661.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1662.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1665.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1666.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1668.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1671.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1672.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1674.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1675.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1676.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1677.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1678.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1679.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1680.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1681.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1682.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1683.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1684.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1685.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1686.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1687.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1688.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1689.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1690.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1691.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1692.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1693.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1694.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1695.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1696.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1697.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1698.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1699.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1700.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1701.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1702.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1703.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1704.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1705.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1706.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1707.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1708.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1709.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1710.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1711.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1712.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1713.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1717.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1719.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1724.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1725.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1726.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1727.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1728.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1731.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1732.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1734.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1736.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1737.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1738.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1740.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1741.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1742.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1743.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1745.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1747.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1748.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1749.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1751.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1752.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1755.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1756.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1760.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1761.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1762.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1763.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1764.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1765.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1766.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1767.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1768.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1769.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1770.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1771.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1772.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1773.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1774.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1775.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1776.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1777.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1778.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1779.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1780.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1781.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1782.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1783.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1784.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1785.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1786.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1787.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1788.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1789.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1790.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1792.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1793.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1794.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1795.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1796.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1797.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1798.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1799.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1800.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1801.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1802.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1803.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1804.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1805.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1806.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1807.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1815.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI1816.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI453.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI454.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI456.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI457.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI463.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI465.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI466.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI467.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI468.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI471.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI472.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI474.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI476.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI477.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI480.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI481.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI482.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI483.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI485.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI486.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI487.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI488.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI489.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI490.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI491.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI492.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI495.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI496.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI501.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI502.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI504.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI505.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI506.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI507.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI508.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI509.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI510.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI511.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI512.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI513.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI514.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI515.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI516.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI517.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI518.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI520.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI521.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI523.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI524.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI525.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI526.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI527.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI528.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI529.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI531.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI532.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI533.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI534.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI535.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI536.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI537.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI538.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI539.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI540.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI541.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI542.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI543.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI546.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI547.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI552.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI555.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI556.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI557.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI558.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI559.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI561.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI562.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI564.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI566.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI567.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI570.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI571.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI572.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI573.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI574.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI575.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI577.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI578.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI579.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI580.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI581.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI582.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI585.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI586.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI588.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI589.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI591.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI592.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI594.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI595.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI597.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI598.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI599.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI600.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI601.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI603.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI604.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI605.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI606.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI607.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI608.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI609.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI610.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI611.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI612.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI613.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI614.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI615.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI616.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI617.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI618.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI619.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI620.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI621.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI622.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI623.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI624.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI625.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI626.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI627.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI628.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI629.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI630.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI631.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI632.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI633.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI636.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI637.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI645.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI646.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI647.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI648.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI650.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI651.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI652.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI654.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI655.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI656.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI657.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI658.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI660.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI661.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI662.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI663.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI665.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI667.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI668.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI669.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI670.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI671.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI672.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI675.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI676.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI679.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI681.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI682.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI684.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI685.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI686.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI687.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI688.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI689.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI691.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI692.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI693.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI694.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI695.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI696.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI697.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI698.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI699.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI700.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI701.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI702.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI703.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI704.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI705.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI706.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI707.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI708.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI709.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI710.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI711.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI712.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI713.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI714.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI715.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI716.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI717.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI718.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI719.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI720.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI721.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI722.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI723.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI726.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI727.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI735.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI736.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI737.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI738.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI741.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI742.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI744.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI746.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI747.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI748.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI750.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI751.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI752.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI753.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI755.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI757.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI758.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI759.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI760.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI761.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI762.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI765.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI766.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI771.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI772.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI774.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI775.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI777.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI778.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI779.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI780.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI781.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI782.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI783.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI784.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI785.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI786.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI787.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI788.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI789.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI790.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI791.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI792.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI793.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI794.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI795.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI796.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI797.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI798.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI799.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI800.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI801.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI802.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI803.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI804.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI805.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI806.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI807.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI808.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI809.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI810.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI811.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI812.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI813.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI814.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI815.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI816.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI817.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI825.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI826.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI827.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI828.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI831.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI832.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI834.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI836.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI837.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI840.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI841.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI842.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI843.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI845.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI847.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI848.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI849.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI850.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI851.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI852.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI855.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI856.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI861.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI862.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI864.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI865.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI866.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI867.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI868.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI870.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI871.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI872.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI873.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI874.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI875.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI876.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI877.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI878.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI879.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI880.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI881.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI882.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI883.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI884.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI885.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI886.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI887.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI888.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI889.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI890.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI892.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI893.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI895.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI896.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI897.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI898.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI899.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI900.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI901.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI902.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI903.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI906.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI907.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI914.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI915.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI916.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI917.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI918.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI921.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI922.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI924.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI926.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI927.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI930.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI931.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI932.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI935.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI937.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI938.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI939.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI940.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI942.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI945.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI946.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI951.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI952.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI954.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI955.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI956.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI957.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI958.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI959.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI960.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI961.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI962.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI963.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI964.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI965.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI966.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI968.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI969.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI970.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI971.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI972.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI973.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI974.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI975.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI976.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI977.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI978.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI979.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI980.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI981.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI982.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI983.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI984.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI985.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI986.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI987.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI988.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI989.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI990.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI991.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI993.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI996.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/phonemes/SI997.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SA2.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1008.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1012.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1017.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1022.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1028.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1031.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1032.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1034.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1042.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1046.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1049.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1061.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1066.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1067.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1070.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1072.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1074.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1083.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1095.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1107.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1111.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1119.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1122.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1125.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1131.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1140.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1143.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1148.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1151.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1158.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1159.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1161.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1167.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1169.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1171.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1173.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1185.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1187.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1188.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1191.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1192.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1194.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1200.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1203.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1205.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1224.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1238.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1242.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1243.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1245.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1249.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1252.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1254.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1261.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1262.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1266.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1269.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1274.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1277.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1292.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1295.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1314.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1329.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1341.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1344.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1345.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1348.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1351.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1352.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1365.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1374.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1382.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1393.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1405.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1406.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1407.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1414.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1415.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1416.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1427.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1470.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1475.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1479.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1481.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1486.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1492.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1494.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1497.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1498.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1500.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1503.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1506.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1511.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1513.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1514.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1515.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1520.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1522.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1525.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1526.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1527.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1530.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1531.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1532.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1533.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1546.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1547.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1548.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1560.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1562.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1563.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1565.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1568.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1569.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1575.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1576.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1581.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1582.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1585.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1590.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1592.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1593.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1595.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1603.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1604.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1606.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1607.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1612.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1614.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1615.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1617.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1618.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1620.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1621.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1623.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1626.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1627.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1635.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1636.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1637.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1641.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1642.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1644.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1650.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1651.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1652.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1654.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1655.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1658.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1660.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1661.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1662.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1665.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1668.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1674.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1675.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1678.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1679.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1681.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1682.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1683.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1685.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1687.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1689.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1690.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1693.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1694.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1696.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1697.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1699.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1700.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1701.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1702.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1703.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1705.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1706.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1708.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1709.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1710.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1711.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1713.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1717.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1719.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1724.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1725.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1727.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1728.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1732.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1736.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1737.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1745.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1748.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1749.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1763.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1764.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1765.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1766.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1768.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1769.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1770.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1773.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1774.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1777.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1779.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1781.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1783.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1785.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1786.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1787.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1789.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1790.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1793.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1794.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1795.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1796.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1799.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1804.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI1805.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI453.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI463.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI465.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI466.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI468.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI471.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI474.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI480.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI485.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI486.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI487.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI492.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI495.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI504.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI506.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI508.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI510.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI512.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI513.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI514.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI534.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI535.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI538.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI539.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI552.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI555.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI557.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI559.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI573.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI574.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI577.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI580.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI588.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI592.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI594.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI595.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI597.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI601.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI603.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI606.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI607.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI611.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI612.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI618.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI619.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI621.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI625.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI627.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI628.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI645.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI646.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI652.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI656.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI660.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI662.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI671.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI672.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI676.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI681.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI685.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI686.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI692.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI703.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI706.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI713.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI717.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI719.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI720.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI721.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI722.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI727.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI738.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI750.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI755.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI757.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI762.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI765.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI766.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI775.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI777.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI778.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI780.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI783.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI784.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI786.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI787.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI793.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI795.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI802.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI804.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI815.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI832.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI840.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI847.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI850.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI856.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI876.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI877.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI878.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI882.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI886.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI887.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI896.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI897.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI898.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI899.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI901.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI914.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI917.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI924.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI946.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI961.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI965.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI966.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI971.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI974.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI986.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/asd/wav/SI993.WAV" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/phonemes/SA1.PHN" beforeDir="false" afterPath="$PROJECT_DIR$/audio/phonemes/SA1.PHN" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/phonemes/SA2.PHN" beforeDir="false" afterPath="$PROJECT_DIR$/audio/phonemes/SA2.PHN" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1818.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1826.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1832.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1862.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1868.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1877.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1881.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1928.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1936.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1986.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1999.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2001.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2013.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2017.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2031.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2032.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2050.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2087.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2100.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2138.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2154.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2156.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2157.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2218.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2229.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2236.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2244.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2256.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2336.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2341.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX105.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX108.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX111.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX116.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX120.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX123.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX125.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX128.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX144.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX146.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX148.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX15.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX158.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX163.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX168.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX179.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX18.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX180.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX182.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX183.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX186.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX195.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX198.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX201.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX206.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX21.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX210.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX213.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX218.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX231.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX234.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX236.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX238.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX248.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX249.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX250.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX253.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX255.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX256.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX257.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX258.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX26.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX260.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX261.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX264.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX266.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX269.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX270.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX272.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX273.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX276.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX285.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX288.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX291.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX296.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX30.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX300.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX302.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX303.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX307.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX32.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX322.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX326.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX328.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX33.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX338.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX339.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX340.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX345.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX35.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX351.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX354.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX356.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX360.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX378.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX38.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX381.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX386.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX390.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX392.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX393.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX414.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX416.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX436.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX444.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX446.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX46.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX51.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX56.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX59.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX62.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX68.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX70.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX73.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX75.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX76.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX77.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX78.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX80.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX81.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX84.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX86.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX89.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX90.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX93.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX96.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SA1.WAV" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/wav/SA2.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/audio/wav/SA2.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1023.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1228.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1247.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1371.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1409.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1803.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1818.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1826.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1832.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1862.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1868.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1877.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1881.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1928.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1936.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1986.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1999.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2001.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2013.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2017.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2031.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2032.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2050.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2087.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2100.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2138.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2154.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2156.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2157.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2218.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2229.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2236.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2244.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2256.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2336.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2341.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI668.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI828.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI926.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI973.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX105.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX108.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX111.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX116.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX120.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX123.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX125.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX128.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX144.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX146.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX148.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX15.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX158.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX163.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX168.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX179.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX18.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX180.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX182.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX183.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX186.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX195.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX198.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX201.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX206.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX21.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX210.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX213.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX218.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX231.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX234.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX236.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX238.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX248.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX249.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX250.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX253.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX255.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX256.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX257.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX258.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX26.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX260.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX261.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX264.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX266.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX269.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX270.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX272.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX273.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX276.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX285.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX288.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX291.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX296.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX30.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX300.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX302.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX303.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX307.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX32.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX322.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX326.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX328.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX33.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX338.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX339.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX340.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX345.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX35.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX351.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX354.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX356.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX360.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX378.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX38.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX381.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX386.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX390.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX392.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX393.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX414.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX416.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX436.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX444.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX446.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX46.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX51.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX56.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX59.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX62.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX68.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX70.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX73.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX75.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX76.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX77.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX78.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX80.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX81.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX84.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX86.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX89.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX90.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX93.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX96.WAV" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.meta" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/model/model" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/model/model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/tensorboard/train/events.out.tfevents.1528947836.nicozorza" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/tensorboard/train/events.out.tfevents.1529294505.nicozorza" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -1647,25 +27,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GenerateDatabase.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
+      <file leaf-file-name="RNN_test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+            <state relative-caret-position="750">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="nn_ops.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/nn_ops.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="execute.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/eager/execute.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1380">
+              <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nn.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/nn.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file leaf-file-name="Database.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+            <state relative-caret-position="1040">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenerateDatabase.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1674,28 +89,10 @@
       <file leaf-file-name="AudioFeature.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-970">
-              <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.6/dist-packages/python_speech_features/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="42" selection-start-line="8" selection-start-column="64" selection-end-line="9" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RNN_test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state relative-caret-position="1560">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1704,29 +101,17 @@
       <file leaf-file-name="RNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1120">
-              <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2020">
+              <caret line="112" column="84" selection-start-line="112" selection-start-column="84" selection-end-line="112" selection-end-column="84" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rnn.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/rnn.py">
+      <file leaf-file-name="NetworkData.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8740">
-              <caret line="454" column="4" selection-start-line="454" selection-start-column="4" selection-end-line="454" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rnn_cell_impl.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/rnn_cell_impl.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16400">
-              <caret line="847" column="6" selection-start-line="847" selection-start-column="6" selection-end-line="847" selection-end-column="6" />
+            <state relative-caret-position="500">
+              <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -1810,13 +195,13 @@
         <option value="$PROJECT_DIR$/ctc_network/utils/Database.py" />
         <option value="$PROJECT_DIR$/ctc_network/SimpleNetwork/NeuralNetwork.py" />
         <option value="$PROJECT_DIR$/ctc_network/utils/ProjectData.py" />
-        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" />
+        <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" />
       </list>
     </option>
@@ -1831,13 +216,10 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../klipper/klippy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Trabajo/IBIPS" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -2232,13 +614,13 @@
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.20664206" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5028993" side_tool="true" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" weight="0.70607376" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" weight="0.70607376" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.3264642" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.643167" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.643167" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -2249,19 +631,19 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" weight="0.70607376" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.20664206" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.20664206" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" weight="0.70607376" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.643167" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.3264642" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5028993" side_tool="true" weight="0.3286334" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
@@ -2364,17 +746,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py</url>
-          <line>60</line>
+          <line>61</line>
           <option name="timeStamp" value="206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py</url>
-          <line>362</line>
+          <line>369</line>
           <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py</url>
-          <line>47</line>
+          <line>48</line>
           <option name="timeStamp" value="208" />
         </line-breakpoint>
       </breakpoints>
@@ -2394,21 +776,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/PHONCODE.TXT" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/typing.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="312" column="8" selection-start-line="312" selection-start-column="8" selection-end-line="312" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.6/collections/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="541" column="8" selection-start-line="541" selection-start-column="8" selection-end-line="541" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ctc_network/utils/Database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -2571,13 +938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/nn_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="1963" column="4" selection-start-line="1963" selection-start-column="4" selection-end-line="1963" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/math_ops.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -2627,13 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -2678,15 +1031,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Label.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="103" column="105" selection-start-line="103" selection-start-column="105" selection-end-line="103" selection-end-column="105" />
+        <state relative-caret-position="2400">
+          <caret line="121" column="53" selection-start-line="121" selection-start-column="53" selection-end-line="121" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+        <state relative-caret-position="1040">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -2714,37 +1067,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-970">
-          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+        <state relative-caret-position="1560">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        <state relative-caret-position="380">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2020">
+          <caret line="112" column="84" selection-start-line="112" selection-start-column="84" selection-end-line="112" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/nn.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/eager/execute.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/gen_nn_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="2794" column="141" selection-start-line="2794" selection-start-column="45" selection-end-line="2794" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/nn_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        <state relative-caret-position="750">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
