@@ -37,7 +37,7 @@ class RNNClass:
 
         with self.graph.as_default():
             with tf.name_scope("input_context"):
-                self.seq_len = tf.placeholder(tf.int32, name="sequence_length")
+                self.seq_len = tf.placeholder(tf.int32, shape=[None], name="sequence_length")
                 self.num_features = tf.placeholder(tf.int32, name="num_features")
 
             with tf.name_scope("input_features"):
@@ -54,21 +54,46 @@ class RNNClass:
                 self.input_label_one_hot = tf.one_hot(self.input_label, self.network_data.num_classes, dtype=tf.int32)
 
             with tf.name_scope("RNN_cell"):
-                self.rnn_cell = [tf.nn.rnn_cell.LSTMCell(num_units=self.network_data.num_cell_units[_],
-                                                         state_is_tuple=True,
-                                                         name='LSTM_{}'.format(_),
-                                                         activation=self.network_data.cell_activation[_]
-                                                         ) for _ in range(len(self.network_data.num_cell_units))]
+                if self.network_data.is_bidirectional:
+                    # Forward direction cell:
+                    lstm_fw_cell = [tf.nn.rnn_cell.LSTMCell(num_units=self.network_data.num_fw_cell_units[_],
+                                                            state_is_tuple=True,
+                                                            name='FW_LSTM_{}'.format(_),
+                                                            activation=self.network_data.cell_fw_activation[_]
+                                                            ) for _ in range(len(self.network_data.num_fw_cell_units))]
+                    # Backward direction cell:
+                    lstm_bw_cell = [tf.nn.rnn_cell.LSTMCell(num_units=self.network_data.num_bw_cell_units[_],
+                                                            state_is_tuple=True,
+                                                            name='BW_LSTM_{}'.format(_),
+                                                            activation=self.network_data.cell_bw_activation[_]
+                                                            ) for _ in range(len(self.network_data.num_bw_cell_units))]
 
-                self.multi_rrn_cell = tf.nn.rnn_cell.MultiRNNCell(self.rnn_cell, state_is_tuple=True)
+                    self.rnn_outputs, output_state_fw, output_state_bw = tf.contrib.rnn.stack_bidirectional_dynamic_rnn(
+                        cells_fw=lstm_fw_cell,
+                        cells_bw=lstm_bw_cell,
+                        inputs=self.input_feature,
+                        dtype=tf.float32,
+                        time_major=False,
+                        sequence_length=self.seq_len,
+                        scope="RNN_cell")
 
-                self.rnn_outputs, _ = tf.nn.dynamic_rnn(
-                    cell=self.multi_rrn_cell,
-                    inputs=self.input_feature,
-                    sequence_length=self.seq_len,
-                    dtype=tf.float32,
-                    scope="RNN_cell"
-                )
+                    # self.rnn_outputs = tf.concat([forward_output, backward_output], axis=2)
+                else:
+                    self.rnn_cell = [tf.nn.rnn_cell.LSTMCell(num_units=self.network_data.num_cell_units[_],
+                                                             state_is_tuple=True,
+                                                             name='LSTM_{}'.format(_),
+                                                             activation=self.network_data.cell_activation[_]
+                                                             ) for _ in range(len(self.network_data.num_cell_units))]
+
+                    self.multi_rrn_cell = tf.nn.rnn_cell.MultiRNNCell(self.rnn_cell, state_is_tuple=True)
+
+                    self.rnn_outputs, _ = tf.nn.dynamic_rnn(
+                        cell=self.multi_rrn_cell,
+                        inputs=self.input_feature,
+                        sequence_length=self.seq_len,
+                        dtype=tf.float32,
+                        scope="RNN_cell"
+                    )
                 tf.summary.histogram('RNN', self.rnn_outputs)
 
             with tf.name_scope("dropout"):
@@ -113,7 +138,7 @@ class RNNClass:
                 loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
                     logits=self.dense_output,
                     labels=self.input_label)
-                logits_loss = tf.reduce_mean(tf.reduce_sum(loss) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32)))
+                logits_loss = tf.reduce_mean(tf.reduce_sum(loss) / tf.reduce_mean(tf.cast(self.seq_len, tf.float32)))
                 self.loss = logits_loss \
                             + self.network_data.rnn_regularizer * rnn_loss \
                             + self.network_data.dense_regularizer * dense_loss
@@ -123,7 +148,7 @@ class RNNClass:
                 self.correct = tf.cast(
                     tf.equal(self.output_classes, self.input_label), tf.int32)
                 self.correct = \
-                    tf.reduce_mean(tf.reduce_sum(tf.cast(self.correct, tf.float32), axis=1) / tf.reduce_sum(
+                    tf.reduce_mean(tf.reduce_sum(tf.cast(self.correct, tf.float32), axis=1) / tf.reduce_mean(
                         tf.cast(self.seq_len, tf.float32)))
                 tf.summary.scalar('accuracy', tf.reduce_mean(self.correct))
 
@@ -211,7 +236,7 @@ class RNNClass:
 
                     feed_dict = {
                         self.input_feature: np.stack(batch_features),
-                        self.seq_len: len(batch_features[0]),
+                        self.seq_len: [len(batch_features[0])]*batch_size,
                         self.num_features: self.network_data.num_features,
                         self.input_label: np.stack(batch_labeles)
                     }
@@ -231,7 +256,7 @@ class RNNClass:
                         label = train_labels[random_index]
                         tensorboard_feed_dict = {
                             self.input_feature: np.reshape(feature, [1, len(feature), np.shape(feature)[1]]),
-                            self.seq_len: len(train_features[random_index]),
+                            self.seq_len: [len(train_features[random_index])],
                             self.num_features: self.network_data.num_features,
                             self.input_label: np.reshape(label, [1, len(label)])
                         }
@@ -411,7 +436,7 @@ class RNNClass:
                 feature, label = zip(*item)
                 feed_dict = {
                     self.input_feature: feature,
-                    self.seq_len: len(features[0]),
+                    self.seq_len: [len(features[0])],
                     self.num_features: self.network_data.num_features,
                     self.input_label: label
                 }
@@ -433,7 +458,7 @@ class RNNClass:
             self.load_checkpoint(sess)
             feed_dict = {
                 self.input_feature: feature,
-                self.seq_len: len(feature[0]),
+                self.seq_len: [len(feature[0])],
                 self.num_features: self.network_data.num_features,
             }
 

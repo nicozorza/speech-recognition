@@ -12,9 +12,15 @@ class NetworkData:
         self.num_features: int = None
         self.num_classes: int = None
 
+        self.is_bidirectional: bool = False
+
         self.num_cell_units: List[int] = None
         self.rnn_regularizer: float = 0
         self.cell_activation: List[int] = list()
+        self.num_fw_cell_units: List[int] = None
+        self.num_bw_cell_units: List[int] = None
+        self.cell_fw_activation: List[int] = list()
+        self.cell_bw_activation: List[int] = list()
 
         self.keep_dropout: float = None
 

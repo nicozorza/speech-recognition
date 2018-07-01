@@ -18,17 +18,20 @@ network_data.tensorboard_path = project_data.TENSORBOARD_PATH
 network_data.num_classes = 63
 network_data.num_features = 13
 
-network_data.num_cell_units = [128]
-network_data.rnn_regularizer = 0.5
+network_data.is_bidirectional = True
+network_data.rnn_regularizer = 0.2
+network_data.num_fw_cell_units = [64]
+network_data.num_bw_cell_units = [8]
+network_data.cell_fw_activation = [tf.nn.tanh] * len(network_data.num_fw_cell_units)
+network_data.cell_bw_activation = [tf.nn.tanh] * len(network_data.num_bw_cell_units)
 
 network_data.num_dense_layers = 0
-network_data.num_dense_units = [100]
+network_data.num_dense_units = [100] * network_data.num_dense_layers
 network_data.dense_activations = [tf.nn.tanh] * network_data.num_dense_layers
-network_data.dense_regularizers_beta = 0.5
-network_data.dense_regularizers = [l2_regularizer(network_data.dense_regularizers_beta)]
+network_data.dense_regularizer = 0.2
 
 network_data.out_activation = tf.nn.relu
-network_data.out_regularizer_beta = 0.5
+network_data.out_regularizer_beta = 0.0
 network_data.out_regularizer = l2_regularizer(network_data.out_regularizer_beta)
 
 network_data.keep_dropout = None
@@ -49,22 +52,19 @@ val_database = Database.fromFile(project_data.VAL_DATABASE_FILE, project_data)
 train_feats, train_labels, _, _, _, _ = train_database.get_training_sets(1.0, 0.0, 0.0)
 val_feats, val_labels, _, _, _, _ = val_database.get_training_sets(1.0, 0.0, 0.0)
 
-network.train_validate(
+network.train(
     train_features=train_feats,
     train_labels=train_labels,
-    val_features=val_feats,
-    val_labels=val_labels,
-    val_freq=10,
-    restore_run=False,
+    restore_run=True,
     save_partial=True,
     save_freq=10,
-    use_tensorboard=False,
+    use_tensorboard=True,
     tensorboard_freq=10,
-    training_epochs=200,
-    batch_size=20
+    training_epochs=100,
+    batch_size=50
 )
 
-network.validate(val_feats, val_labels)
+network.validate(val_feats, val_labels, show_partial=False)
 
 print(network.predict(val_feats[0]))
 print(val_labels[0])
