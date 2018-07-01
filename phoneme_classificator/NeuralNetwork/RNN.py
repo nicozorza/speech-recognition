@@ -81,7 +81,6 @@ class RNNClass:
                         inputs=self.rnn_outputs,
                         units=self.network_data.num_dense_units[_],
                         activation=self.network_data.dense_activations[_],
-                        kernel_regularizer=self.network_data.dense_regularizers[_],
                         name='dense_layer_{}'.format(_)
                     )
                     tf.summary.histogram('dense_layer', self.rnn_outputs)
@@ -106,11 +105,18 @@ class RNNClass:
                     if var.name.startswith('RNN_cell') and 'kernel' in var.name:
                         rnn_loss += tf.nn.l2_loss(var)
 
-                self.loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
+                dense_loss = 0
+                for var in tf.trainable_variables():
+                    if var.name.startswith('dense_layer') and 'kernel' in var.name:
+                        dense_loss += tf.nn.l2_loss(var)
+
+                loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
                     logits=self.dense_output,
                     labels=self.input_label)
-                logits_loss = tf.reduce_mean(tf.reduce_sum(self.loss) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32)))
-                self.loss = logits_loss + self.network_data.rnn_regularizer * rnn_loss
+                logits_loss = tf.reduce_mean(tf.reduce_sum(loss) / tf.reduce_sum(tf.cast(self.seq_len, tf.float32)))
+                self.loss = logits_loss \
+                            + self.network_data.rnn_regularizer * rnn_loss \
+                            + self.network_data.dense_regularizer * dense_loss
                 tf.summary.scalar('loss', self.loss)
 
             with tf.name_scope("correct"):
