@@ -14,6 +14,8 @@ class NetworkData:
 
         self.num_cell_units: List[int] = None
         self.rnn_regularizer: float = 0
+        self.cell_activation: List[int] = list()
+
         self.keep_dropout: float = None
 
         self.num_dense_layers: int = None
