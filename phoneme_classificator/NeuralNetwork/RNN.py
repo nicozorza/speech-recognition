@@ -56,7 +56,8 @@ class RNNClass:
             with tf.name_scope("RNN_cell"):
                 self.rnn_cell = [tf.nn.rnn_cell.LSTMCell(num_units=self.network_data.num_cell_units[_],
                                                          state_is_tuple=True,
-                                                         name='LSTM_{}'.format(_)
+                                                         name='LSTM_{}'.format(_),
+                                                         activation=self.network_data.cell_activation[_]
                                                          ) for _ in range(len(self.network_data.num_cell_units))]
 
                 self.multi_rrn_cell = tf.nn.rnn_cell.MultiRNNCell(self.rnn_cell, state_is_tuple=True)
@@ -390,7 +391,7 @@ class RNNClass:
 
             sess.close()
 
-    def validate(self, features, labels):
+    def validate(self, features, labels, show_partial: bool=True):
         with self.graph.as_default():
             sess = tf.Session(graph=self.graph)
             sess.run(tf.global_variables_initializer())
@@ -410,7 +411,8 @@ class RNNClass:
                 }
                 accuracy = sess.run(self.correct, feed_dict=feed_dict)
 
-                print("Index %d of %d, acc %f" % (sample_index + 1, len(labels), accuracy))
+                if show_partial:
+                    print("Index %d of %d, acc %f" % (sample_index + 1, len(labels), accuracy))
                 sample_index += 1
                 acum_accuracy += accuracy
             print("Validation accuracy: %f" % (acum_accuracy/len(labels)))
