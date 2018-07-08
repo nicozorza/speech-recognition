@@ -12,6 +12,11 @@ class NetworkData:
         self.num_features: int = None
         self.num_classes: int = None
 
+        self.num_input_dense_layers: int = None
+        self.num_input_dense_units: List[int] = list()
+        self.input_dense_activations: List[int] = list()
+        self.input_dense_regularizer: float = None
+
         self.is_bidirectional: bool = False
 
         self.num_cell_units: List[int] = None

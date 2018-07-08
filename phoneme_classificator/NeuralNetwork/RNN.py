@@ -22,6 +22,7 @@ class RNNClass:
         self.input_label_one_hot = None
         self.rnn_cell = None
         self.multi_rrn_cell = None
+        self.rnn_input = None
         self.rnn_outputs = None
         self.dense_output = None
         self.output_classes = None
@@ -53,6 +54,17 @@ class RNNClass:
                     name="output")
                 self.input_label_one_hot = tf.one_hot(self.input_label, self.network_data.num_classes, dtype=tf.int32)
 
+            self.rnn_input = tf.identity(self.input_feature)
+            with tf.name_scope("input_dense"):
+                for _ in range(self.network_data.num_input_dense_layers):
+                    self.rnn_input = tf.layers.dense(
+                        inputs=self.rnn_input,
+                        units=self.network_data.num_input_dense_units[_],
+                        activation=self.network_data.input_dense_activations[_],
+                        name='input_dense_layer_{}'.format(_)
+                    )
+                    tf.summary.histogram('input_dense_layer', self.rnn_input)
+
             with tf.name_scope("RNN_cell"):
                 if self.network_data.is_bidirectional:
                     # Forward direction cell:
@@ -71,7 +83,7 @@ class RNNClass:
                     self.rnn_outputs, output_state_fw, output_state_bw = tf.contrib.rnn.stack_bidirectional_dynamic_rnn(
                         cells_fw=lstm_fw_cell,
                         cells_bw=lstm_bw_cell,
-                        inputs=self.input_feature,
+                        inputs=self.rnn_input,
                         dtype=tf.float32,
                         time_major=False,
                         sequence_length=self.seq_len,
@@ -89,7 +101,7 @@ class RNNClass:
 
                     self.rnn_outputs, _ = tf.nn.dynamic_rnn(
                         cell=self.multi_rrn_cell,
-                        inputs=self.input_feature,
+                        inputs=self.rnn_input,
                         sequence_length=self.seq_len,
                         dtype=tf.float32,
                         scope="RNN_cell"
@@ -132,7 +144,9 @@ class RNNClass:
 
                 dense_loss = 0
                 for var in tf.trainable_variables():
-                    if var.name.startswith('dense_layer') and 'kernel' in var.name:
+                    if var.name.startswith('dense_layer') or \
+                            var.name.startswith('input_dense_layer') and \
+                            'kernel' in var.name:
                         dense_loss += tf.nn.l2_loss(var)
 
                 loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
