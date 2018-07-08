@@ -63,6 +63,7 @@ class RNNClass:
                         activation=self.network_data.input_dense_activations[_],
                         name='input_dense_layer_{}'.format(_)
                     )
+                    self.rnn_input = tf.layers.batch_normalization(self.rnn_input, name="input_batch_norm_{}".format(_))
                     tf.summary.histogram('input_dense_layer', self.rnn_input)
 
             with tf.name_scope("RNN_cell"):
@@ -120,6 +121,7 @@ class RNNClass:
                         activation=self.network_data.dense_activations[_],
                         name='dense_layer_{}'.format(_)
                     )
+                    self.rnn_outputs = tf.layers.batch_normalization(self.rnn_outputs, name="batch_norm_{}".format(_))
                     tf.summary.histogram('dense_layer', self.rnn_outputs)
 
             with tf.name_scope("dense_output"):
