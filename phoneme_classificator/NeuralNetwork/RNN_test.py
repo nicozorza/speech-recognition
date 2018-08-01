@@ -16,7 +16,11 @@ network_data.checkpoint_path = project_data.CHECKPOINT_PATH
 network_data.tensorboard_path = project_data.TENSORBOARD_PATH
 
 network_data.num_classes = 63
-network_data.num_features = 13
+network_data.num_features = 26
+
+network_data.num_input_dense_layers = 0
+network_data.num_input_dense_units = [100] * network_data.num_input_dense_layers
+network_data.input_dense_activations = [tf.nn.tanh] * network_data.num_input_dense_layers
 
 network_data.is_bidirectional = True
 network_data.rnn_regularizer = 0.2
@@ -55,12 +59,12 @@ val_feats, val_labels, _, _, _, _ = val_database.get_training_sets(1.0, 0.0, 0.0
 network.train(
     train_features=train_feats,
     train_labels=train_labels,
-    restore_run=True,
+    restore_run=False,
     save_partial=True,
     save_freq=10,
     use_tensorboard=True,
     tensorboard_freq=10,
-    training_epochs=100,
+    training_epochs=1,
     batch_size=50
 )
 
