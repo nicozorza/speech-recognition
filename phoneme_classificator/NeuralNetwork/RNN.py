@@ -29,7 +29,7 @@ class RNNClass:
         self.output_one_hot = None
         self.logits_loss = None
         self.loss = None
-        self.correct = None
+        self.accuracy = None
         self.training_op: tf.Operation = None
         self.checkpoint_saver: Saver = None
         self.merged_summary = None
@@ -63,7 +63,8 @@ class RNNClass:
                         activation=self.network_data.input_dense_activations[_],
                         name='input_dense_layer_{}'.format(_)
                     )
-                    self.rnn_input = tf.layers.batch_normalization(self.rnn_input, name="input_batch_norm_{}".format(_))
+                    if self.network_data.use_batch_normalization:
+                        self.rnn_input = tf.layers.batch_normalization(self.rnn_input, name="input_batch_norm_{}".format(_))
                     tf.summary.histogram('input_dense_layer', self.rnn_input)
 
             with tf.name_scope("RNN_cell"):
@@ -121,7 +122,8 @@ class RNNClass:
                         activation=self.network_data.dense_activations[_],
                         name='dense_layer_{}'.format(_)
                     )
-                    self.rnn_outputs = tf.layers.batch_normalization(self.rnn_outputs, name="batch_norm_{}".format(_))
+                    if self.network_data.use_batch_normalization:
+                        self.rnn_outputs = tf.layers.batch_normalization(self.rnn_outputs, name="batch_norm_{}".format(_))
                     tf.summary.histogram('dense_layer', self.rnn_outputs)
 
             with tf.name_scope("dense_output"):
@@ -129,7 +131,7 @@ class RNNClass:
                     inputs=self.rnn_outputs,
                     units=self.network_data.num_classes,
                     activation=self.network_data.out_activation,
-                    kernel_regularizer=self.network_data.out_regularizer,
+                    # kernel_regularizer=self.network_data.out_regularizer,
                     name='dense_output'
                 )
                 tf.summary.histogram('dense_output', self.dense_output)
@@ -160,13 +162,13 @@ class RNNClass:
                             + self.network_data.dense_regularizer * dense_loss
                 tf.summary.scalar('loss', self.loss)
 
-            with tf.name_scope("correct"):
-                self.correct = tf.cast(
+            with tf.name_scope("accuracy"):
+                self.accuracy = tf.cast(
                     tf.equal(self.output_classes, self.input_label), tf.int32)
-                self.correct = \
-                    tf.reduce_mean(tf.reduce_sum(tf.cast(self.correct, tf.float32), axis=1) / tf.reduce_mean(
+                self.accuracy = \
+                    tf.reduce_mean(tf.reduce_sum(tf.cast(self.accuracy, tf.float32), axis=1) / tf.reduce_mean(
                         tf.cast(self.seq_len, tf.float32)))
-                tf.summary.scalar('accuracy', tf.reduce_mean(self.correct))
+                tf.summary.scalar('accuracy', tf.reduce_mean(self.accuracy))
 
             # define the optimizer
             with tf.name_scope("training"):
@@ -257,7 +259,7 @@ class RNNClass:
                         self.input_label: np.stack(batch_labeles)
                     }
 
-                    loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
+                    loss, _, acc = sess.run([self.loss, self.training_op, self.accuracy], feed_dict=feed_dict)
 
                     loss_ep += loss
                     acc_ep += acc
@@ -366,7 +368,7 @@ class RNNClass:
                         self.input_label: np.stack(batch_labeles)
                     }
 
-                    loss, _, acc = sess.run([self.loss, self.training_op, self.correct], feed_dict=feed_dict)
+                    loss, _, acc = sess.run([self.loss, self.training_op, self.accuracy], feed_dict=feed_dict)
 
                     loss_ep += loss
                     acc_ep += acc
@@ -399,7 +401,7 @@ class RNNClass:
                         self.input_label: np.stack(batch_val_labeles)
                     }
 
-                    val_loss, val_acc = sess.run([self.loss, self.correct], feed_dict=val_feed_dict)
+                    val_loss, val_acc = sess.run([self.loss, self.accuracy], feed_dict=val_feed_dict)
 
                     if use_tensorboard:
                         if self.network_data.tensorboard_path is not None:
@@ -456,7 +458,7 @@ class RNNClass:
                     self.num_features: self.network_data.num_features,
                     self.input_label: label
                 }
-                accuracy = sess.run(self.correct, feed_dict=feed_dict)
+                accuracy = sess.run(self.accuracy, feed_dict=feed_dict)
 
                 if show_partial:
                     print("Index %d of %d, acc %f" % (sample_index + 1, len(labels), accuracy))

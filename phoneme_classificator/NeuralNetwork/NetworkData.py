@@ -38,6 +38,8 @@ class NetworkData:
         self.out_regularizer_beta: float = None
         self.out_regularizer = None
 
+        self.use_batch_normalization: bool = False
+
         self.optimizer: Optimizer = None
 
         self.learning_rate: float = None
