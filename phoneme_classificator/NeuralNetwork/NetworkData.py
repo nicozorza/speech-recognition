@@ -15,6 +15,7 @@ class NetworkData:
         self.num_input_dense_layers: int = None
         self.num_input_dense_units: List[int] = list()
         self.input_dense_activations: List[int] = list()
+        self.input_batch_normalization: bool = False
 
         self.is_bidirectional: bool = False
 
@@ -31,14 +32,13 @@ class NetworkData:
         self.num_dense_layers: int = None
         self.num_dense_units: List[int] = list()
         self.dense_activations: List[int] = list()
+        self.dense_batch_normalization: bool = False
 
         self.dense_regularizer: float = None
 
         self.out_activation = None
         self.out_regularizer_beta: float = None
         self.out_regularizer = None
-
-        self.use_batch_normalization: bool = False
 
         self.optimizer: Optimizer = None
 
