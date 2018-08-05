@@ -241,6 +241,8 @@ class RNNClass:
                 train_writer = tf.summary.FileWriter("{}train".format(self.network_data.tensorboard_path), self.graph)
                 train_writer.add_graph(sess.graph)
 
+            loss_ep = 0
+            acc_ep = 0
             for epoch in range(training_epochs):
                 epoch_time = time.time()
                 loss_ep = 0
@@ -304,6 +306,8 @@ class RNNClass:
             self.save_model(sess)
 
             sess.close()
+
+            return acc_ep, loss_ep
 
     def train_validate(self,
                        train_features,
@@ -448,6 +452,7 @@ class RNNClass:
 
             sample_index = 0
             acum_accuracy = 0
+            acum_loss = 0
 
             database = list(zip(features, labels))
             for item in self.create_batch(database, 1):
@@ -458,15 +463,18 @@ class RNNClass:
                     self.num_features: self.network_data.num_features,
                     self.input_label: label
                 }
-                accuracy = sess.run(self.accuracy, feed_dict=feed_dict)
+                accuracy, loss = sess.run([self.accuracy, self.loss], feed_dict=feed_dict)
 
                 if show_partial:
                     print("Index %d of %d, acc %f" % (sample_index + 1, len(labels), accuracy))
                 sample_index += 1
                 acum_accuracy += accuracy
-            print("Validation accuracy: %f" % (acum_accuracy/len(labels)))
+                acum_loss += loss
+            print("Validation accuracy: %f, loss: %f" % (acum_accuracy/len(labels), acum_loss/len(labels)))
 
             sess.close()
+
+            return acum_accuracy/len(labels), acum_loss/len(labels)
 
     def predict(self, feature):
 
