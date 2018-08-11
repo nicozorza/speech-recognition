@@ -27,9 +27,9 @@ val_database = Database.fromFile(project_data.VAL_DATABASE_FILE, project_data)
 train_feats, train_labels, _, _, _, _ = train_database.get_training_sets(1.0, 0.0, 0.0)
 val_feats, val_labels, _, _, _, _ = val_database.get_training_sets(1.0, 0.0, 0.0)
 
-optimization_epochs = 100
-validation_epochs = 200
-space_optimization_evals = 40
+optimization_epochs = 20
+validation_epochs = 20
+space_optimization_evals = 5
 
 space = {
     'input_dense_depth': CategoricalHyperparameter("input_dense_depth", ["1", "2"], default_value="1"),
@@ -47,7 +47,14 @@ space = {
     'bw_2': UniformIntegerHyperparameter("bw_2", 10, 250, default_value=100),
 
     'dense_regularizer': UniformFloatHyperparameter("dense_regularizer", 0, 1, default_value=0.0),
-    'rnn_regularizer': UniformFloatHyperparameter("rnn_regularizer", 0, 1, default_value=0.0)
+    'rnn_regularizer': UniformFloatHyperparameter("rnn_regularizer", 0, 1, default_value=0.0),
+
+    #'use_dropout': CategoricalHyperparameter("use_dropout", [True, False], default_value=True),
+    'input_keep_1': UniformFloatHyperparameter("input_keep_1", 0, 1, default_value=1),
+    'input_keep_2': UniformFloatHyperparameter("input_keep_2", 0, 1, default_value=1),
+    'output_keep_1': UniformFloatHyperparameter("output_keep_1", 0, 1, default_value=1),
+    'output_keep_2': UniformFloatHyperparameter("output_keep_2", 0, 1, default_value=1),
+
 }
 
 
@@ -55,10 +62,11 @@ hyper_space_conditions = [
     InCondition(child=space['input_dense_2'], parent=space['input_dense_depth'], values=["2"]),
     InCondition(child=space['out_dense_2'], parent=space['out_dense_depth'], values=["2"]),
     InCondition(child=space['fw_2'], parent=space['rnn_depth'], values=["2"]),
-    InCondition(child=space['bw_2'], parent=space['rnn_depth'], values=["2"])
+    InCondition(child=space['bw_2'], parent=space['rnn_depth'], values=["2"]),
+    InCondition(child=space['input_keep_2'], parent=space['input_dense_depth'], values=["2"]),
+    InCondition(child=space['output_keep_2'], parent=space['out_dense_depth'], values=["2"]),
 ]
 
-counter = None
 
 def get_network_data(args):
 
@@ -112,6 +120,16 @@ def get_network_data(args):
     network_data.optimizer = tf.train.AdamOptimizer(learning_rate=network_data.learning_rate,
                                                     epsilon=network_data.adam_epsilon)
 
+    network_data.use_dropout = True # args['use_dropout']
+    if network_data.num_input_dense_layers == 1:
+        network_data.keep_dropout_input = [args['input_keep_1']]
+    else:
+        network_data.keep_dropout_input = [args['input_keep_1'], args['input_keep_2']]
+    if network_data.num_dense_layers == 1:
+        network_data.keep_dropout_output = [args['output_keep_1']]
+    else:
+        network_data.keep_dropout_output = [args['output_keep_1'], args['output_keep_2']]
+
     return network_data
 
 
@@ -135,7 +153,7 @@ def objective(args):
 
     acc, loss = network.validate(val_feats, val_labels, show_partial=False)
 
-    return loss
+    return 1/acc
 
 
 # logger = logging.getLogger("Hyperparameter optimization")
