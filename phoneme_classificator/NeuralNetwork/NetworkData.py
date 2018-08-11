@@ -27,7 +27,9 @@ class NetworkData:
         self.cell_fw_activation: List[int] = list()
         self.cell_bw_activation: List[int] = list()
 
-        self.keep_dropout: float = None
+        self.use_dropout: bool = None
+        self.keep_dropout_input: List[float] = None
+        self.keep_dropout_output: List[float] = None
 
         self.num_dense_layers: int = None
         self.num_dense_units: List[int] = list()
