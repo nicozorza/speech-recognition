@@ -70,7 +70,7 @@ class RNNClass:
                     )
                     if self.network_data.input_batch_normalization:
                         self.rnn_input = tf.layers.batch_normalization(self.rnn_input, name="input_batch_norm_{}".format(_))
-                    if self.network_data.use_dropout is not None:
+                    if self.network_data.use_dropout:
                         self.rnn_input = tf.layers.dropout(self.rnn_input,
                                                            1-self.network_data.keep_dropout_input[_],
                                                            training=self.tf_is_traing_pl,
@@ -130,7 +130,7 @@ class RNNClass:
                     )
                     if self.network_data.dense_batch_normalization:
                         self.rnn_outputs = tf.layers.batch_normalization(self.rnn_outputs, name="batch_norm_{}".format(_))
-                    if self.network_data.use_dropout is not None:
+                    if self.network_data.use_dropout:
                         self.rnn_outputs = tf.layers.dropout(self.rnn_outputs,
                                                              1-self.network_data.keep_dropout_output[_],
                                                              training=self.tf_is_traing_pl,

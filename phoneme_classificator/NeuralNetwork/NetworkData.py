@@ -27,7 +27,7 @@ class NetworkData:
         self.cell_fw_activation: List[int] = list()
         self.cell_bw_activation: List[int] = list()
 
-        self.use_dropout: bool = None
+        self.use_dropout: bool = False
         self.keep_dropout_input: List[float] = None
         self.keep_dropout_output: List[float] = None
 
