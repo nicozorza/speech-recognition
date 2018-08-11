@@ -11,7 +11,7 @@ filter_by_len = False
 max_audio_len = 50000
 min_audio_len = 35000
 
-trim_audio_len = 17408
+trim_audio_len = 20000
 
 # Plot audio characteristics
 show_plots = True
@@ -21,12 +21,12 @@ feature_lengths = []
 # Configuration of the features
 feature_config = FeatureConfig()
 feature_config.feature_type = 'mfcc'
-feature_config.nfft = 1024
-feature_config.winlen = 25
+feature_config.nfft = 512
+feature_config.winlen = 20
 feature_config.winstride = 10
 feature_config.preemph = 0.98
-feature_config.num_filters = 26
-feature_config.num_ceps = 13
+feature_config.num_filters = 40
+feature_config.num_ceps = 26
 
 # Load project data
 project_data = ProjectData()
