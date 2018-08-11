@@ -3,304 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6a62531d-3464-45b2-a546-002ac961f893" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/Database" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/TrainDatabase" beforeDir="false" afterPath="$PROJECT_DIR$/audio/TrainDatabase" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/ValidationDatabase" beforeDir="false" afterPath="$PROJECT_DIR$/audio/ValidationDatabase" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SA1.PHN" beforeDir="false" afterPath="$PROJECT_DIR$/audio/phonemes/SA1.PHN" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SA2.PHN" beforeDir="false" afterPath="$PROJECT_DIR$/audio/phonemes/SA2.PHN" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1818.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1826.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1832.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1862.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1868.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1877.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1881.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1928.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1936.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1986.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI1999.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2001.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2013.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2017.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2031.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2032.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2050.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2087.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2100.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2138.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2154.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2156.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2157.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2218.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2229.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2236.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2244.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2256.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2336.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SI2341.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX105.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX108.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX111.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX116.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX120.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX123.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX125.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX128.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX144.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX146.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX148.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX15.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX158.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX163.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX168.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX179.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX18.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX180.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX182.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX183.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX186.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX195.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX198.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX201.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX206.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX21.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX210.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX213.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX218.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX231.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX234.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX236.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX238.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX248.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX249.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX250.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX253.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX255.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX256.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX257.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX258.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX26.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX260.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX261.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX264.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX266.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX269.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX270.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX272.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX273.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX276.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX285.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX288.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX291.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX296.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX30.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX300.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX302.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX303.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX307.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX32.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX322.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX326.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX328.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX33.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX338.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX339.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX340.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX345.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX35.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX351.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX354.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX356.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX360.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX378.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX38.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX381.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX386.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX390.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX392.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX393.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX414.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX416.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX436.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX444.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX446.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX46.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX51.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX56.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX59.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX62.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX68.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX70.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX73.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX75.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX76.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX77.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX78.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX80.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX81.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX84.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX86.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX89.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX90.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX93.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/phonemes/SX96.PHN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SA1.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SA2.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/audio/wav/SA2.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1023.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1228.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1247.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1371.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1409.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1803.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1818.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1826.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1832.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1862.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1868.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1877.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1881.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1928.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1936.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1986.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI1999.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2001.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2013.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2017.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2031.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2032.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2050.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2087.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2100.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2138.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2154.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2156.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2157.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2218.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2229.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2236.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2244.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2256.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2336.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI2341.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI668.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI828.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI926.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SI973.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX105.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX108.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX111.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX116.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX120.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX123.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX125.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX128.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX144.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX146.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX148.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX15.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX158.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX163.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX168.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX179.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX18.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX180.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX182.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX183.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX186.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX195.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX198.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX201.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX206.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX21.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX210.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX213.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX218.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX231.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX234.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX236.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX238.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX248.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX249.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX250.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX253.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX255.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX256.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX257.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX258.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX26.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX260.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX261.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX264.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX266.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX269.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX270.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX272.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX273.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX276.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX285.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX288.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX291.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX296.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX30.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX300.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX302.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX303.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX307.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX32.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX322.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX326.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX328.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX33.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX338.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX339.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX340.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX345.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX35.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX351.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX354.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX356.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX360.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX378.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX38.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX381.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX386.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX390.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX392.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX393.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX414.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX416.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX436.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX444.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX446.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX46.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX51.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX56.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX59.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX62.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX68.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX70.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX73.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX75.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX76.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX77.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX78.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX80.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX81.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX84.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX86.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX89.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX90.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX93.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/wav/SX96.WAV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.meta" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/checkpoint/.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/model/model" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/out/model/model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/out/tensorboard/train/events.out.tfevents.1528761016.nicozorza" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctc_network/SimpleNetwork/DataConversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/NeuralNetwork/DataConversion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctc_network/SimpleNetwork/NetworkStructure.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctc_network/SimpleNetwork/NeuralNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/NeuralNetwork/NeuralNetwork.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctc_network/SimpleNetwork/TestNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctc_network/utils/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/utils/Database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctc_network/utils/ProjectData.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -314,58 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RNN_test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Database.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="157" column="41" selection-start-line="157" selection-start-column="41" selection-end-line="157" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Label.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Label.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2360">
-              <caret line="119" column="61" selection-start-line="119" selection-start-column="61" selection-end-line="119" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GenerateDatabase.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
+        <entry file="file://$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+            <state relative-caret-position="665">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AudioFeature.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="98" column="48" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -374,8 +41,8 @@
       <file leaf-file-name="RNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="363" column="96" selection-start-line="363" selection-start-column="96" selection-end-line="363" selection-end-column="96" />
+            <state relative-caret-position="128">
+              <caret line="282" column="40" lean-forward="true" selection-start-line="278" selection-start-column="20" selection-end-line="282" selection-end-column="40" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -383,11 +50,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetworkData.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
+      <file leaf-file-name="Database.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctc_network/utils/Database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+            <state relative-caret-position="1387">
+              <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ctc_test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Label.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctc_network/utils/Label.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NeuralNetwork.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/NeuralNetwork.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2600">
+              <caret line="170" column="64" selection-start-line="170" selection-start-column="64" selection-end-line="170" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -403,11 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sparseTupleFrom</find>
-      <find>pad</find>
-      <find>lengths</find>
-      <find>sess</find>
-      <find>train_targets</find>
       <find>tuple</find>
       <find>feature</find>
       <find>num_layers</find>
@@ -433,6 +131,11 @@
       <find>create_</find>
       <find>batch</find>
       <find>cut</find>
+      <find>decoder</find>
+      <find>create</find>
+      <find>train_targets</find>
+      <find>batch_s</find>
+      <find>targets</find>
     </findStrings>
     <replaceStrings>
       <replace>indices</replace>
@@ -443,7 +146,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="phoneme_classificator" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -467,10 +170,7 @@
         <option value="$PROJECT_DIR$/CTC Network/utils/ProjectData.py" />
         <option value="$PROJECT_DIR$/CTC Network/SimpleNetwork/TestNetwork.py" />
         <option value="$PROJECT_DIR$/ctc_network/SimpleNetwork/TestNetwork.py" />
-        <option value="$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py" />
-        <option value="$PROJECT_DIR$/ctc_network/utils/Database.py" />
         <option value="$PROJECT_DIR$/ctc_network/SimpleNetwork/NeuralNetwork.py" />
-        <option value="$PROJECT_DIR$/ctc_network/utils/ProjectData.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/Label.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/Database.py" />
@@ -479,14 +179,24 @@
         <option value="$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py" />
         <option value="$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py" />
+        <option value="$PROJECT_DIR$/ctc_network/utils/Database.py" />
+        <option value="$PROJECT_DIR$/ctc_network/utils/AudioFeature.py" />
+        <option value="$PROJECT_DIR$/ctc_network/utils/ProjectData.py" />
+        <option value="$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py" />
+        <option value="$PROJECT_DIR$/ctc_network/utils/Label.py" />
+        <option value="$PROJECT_DIR$/ctc_network/NeuralNetwork/NeuralNetwork.py" />
+        <option value="$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1303" />
+    <option name="y" value="27" />
+    <option name="width" value="1293" />
     <option name="height" value="780" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -504,6 +214,23 @@
             <path>
               <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
               <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="ctc_network" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="ctc_network" type="462c0819:PsiDirectoryNode" />
+              <item name="NeuralNetwork" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="ctc_network" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
               <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -512,25 +239,6 @@
               <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
               <item name="NeuralNetwork" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="tensorboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="phoneme_classificator" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -538,19 +246,21 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spoken-digits-recognition" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ctc_tensorflow_example" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ctc_network/utils" />
+      <recent name="$PROJECT_DIR$/ctc_network/NeuralNetwork" />
+      <recent name="$PROJECT_DIR$/phoneme_classificator/utils" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ctc_network/NeuralNetwork" />
       <recent name="$PROJECT_DIR$/ctc_network/utils" />
       <recent name="$PROJECT_DIR$/phoneme_classificator/utils" />
       <recent name="$PROJECT_DIR$/CTC Network" />
       <recent name="$PROJECT_DIR$/network" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/phoneme_classificator/utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -565,7 +275,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.RNN_test">
+  <component name="RunManager" selected="Python.ctc_test">
+    <configuration name="GenerateDatabase (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="speech-recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="GenerateDatabase" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="speech-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -602,17 +330,37 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="ctc_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="speech-recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list>
       <item itemvalue="Python.RNN_test" />
       <item itemvalue="Python.GenerateDatabase" />
+      <item itemvalue="Python.GenerateDatabase (1)" />
+      <item itemvalue="Python.ctc_test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ctc_test" />
+        <item itemvalue="Python.GenerateDatabase (1)" />
         <item itemvalue="Python.RNN_test" />
         <item itemvalue="Python.GenerateDatabase" />
         <item itemvalue="Python.RNN_test" />
-        <item itemvalue="Python.GenerateDatabase" />
-        <item itemvalue="Python.GenerateDatabase" />
       </list>
     </recent_temporary>
   </component>
@@ -879,11 +627,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5028993" side_tool="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" weight="0.89045554" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49657354" weight="0.45770064" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.3253796" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.40130153" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.46854663" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -894,7 +642,7 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49657354" visible="true" weight="0.89045554" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49657354" visible="true" weight="0.45770064" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.20664206" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -903,7 +651,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286334" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3286334" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.40130153" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.46854663" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49710068" weight="0.3253796" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5028993" side_tool="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -973,29 +721,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py</url>
-          <line>69</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ctc_network/utils/Database.py</url>
-          <line>160</line>
+          <line>148</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ctc_network/utils/Database.py</url>
-          <line>174</line>
+          <line>160</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py</url>
           <line>308</line>
           <option name="timeStamp" value="134" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ctc_network/SimpleNetwork/NeuralNetwork.py</url>
-          <line>147</line>
-          <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py</url>
@@ -1027,6 +765,21 @@
           <line>150</line>
           <option name="timeStamp" value="197" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="199" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ctc_network/NeuralNetwork/NeuralNetwork.py</url>
+          <line>162</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ctc_network/NeuralNetwork/NeuralNetwork.py</url>
+          <line>154</line>
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1035,7 +788,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="198" />
+      <option name="time" value="208" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1044,49 +797,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/google/protobuf/message.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="186" column="6" selection-start-line="186" selection-start-column="6" selection-end-line="186" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/PHONCODE.TXT" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/typing.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="312" column="8" selection-start-line="312" selection-start-column="8" selection-end-line="312" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.6/collections/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="541" column="8" selection-start-line="541" selection-start-column="8" selection-end-line="541" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/utils/Database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="36" lean-forward="true" selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/scipy/signal/spectral.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="427" column="8" selection-start-line="427" selection-start-column="4" selection-end-line="427" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="2373" column="4" selection-start-line="2373" selection-start-column="4" selection-end-line="2373" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1247971763/numpy/core/multiarray.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -1143,49 +853,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/SimpleNetwork/DataConversion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/utils/ProjectData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="23" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/SimpleNetwork/TestNetwork.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorlayer/layers.py" />
-    <entry file="file://$PROJECT_DIR$/ctc_network/SimpleNetwork/NetworkStructure.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/SimpleNetwork/NeuralNetwork.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/training/optimizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-32">
@@ -1336,54 +1004,90 @@
     <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/nn.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Label.py">
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2360">
-          <caret line="119" column="61" selection-start-line="119" selection-start-column="61" selection-end-line="119" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="157" column="41" selection-start-line="157" selection-start-column="41" selection-end-line="157" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="450">
+          <caret line="98" column="48" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/NetworkData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="300">
+          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/hyperopt_optimization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/smac_optimization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1558">
+          <caret line="139" column="26" selection-start-line="139" selection-start-column="26" selection-end-line="139" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1247971763/ConfigSpace/hyperparameters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="354" column="19" selection-start-line="354" selection-start-column="19" selection-end-line="354" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/NetworkStructure.py" />
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="984">
+          <caret line="119" column="61" selection-start-line="119" selection-start-column="61" selection-end-line="119" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/GenerateDatabase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        <state relative-caret-position="532">
+          <caret line="28" column="28" selection-end-line="96" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/AudioFeature.py">
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/Database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="98" column="48" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
+        <state relative-caret-position="857">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
+    <entry file="file://$PROJECT_DIR$/ctc_network/utils/AudioFeature.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="363" column="96" selection-start-line="363" selection-start-column="96" selection-end-line="363" selection-end-column="96" />
+        <state relative-caret-position="513">
+          <caret line="70" column="39" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/utils/ProjectData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/NetworkData.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -1392,8 +1096,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+        <state relative-caret-position="798">
+          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/utils/Database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1387">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/utils/Label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/DataConversion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/RNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="282" column="40" lean-forward="true" selection-start-line="278" selection-start-column="20" selection-end-line="282" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/NeuralNetwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2600">
+          <caret line="170" column="64" selection-start-line="170" selection-start-column="64" selection-end-line="170" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

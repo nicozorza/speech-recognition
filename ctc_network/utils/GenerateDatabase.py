@@ -1,18 +1,22 @@
 import os
-from ctc_network.utils.Database import Database, DatabaseItem
-import matplotlib.pyplot as plt
+from ctc_network.utils.AudioFeature import FeatureConfig
+from ctc_network.utils.Database import DatabaseItem, Database
 from ctc_network.utils.ProjectData import ProjectData
 
-# Printing parameteres
-show_figures = False
-print_debug = False
+# Configuration of the features
+feature_config = FeatureConfig()
+feature_config.feature_type = 'mfcc'
+feature_config.nfft = 512
+feature_config.winlen = 20
+feature_config.winstride = 10
+feature_config.preemph = 0.98
+feature_config.num_filters = 40
+feature_config.num_ceps = 26
 
 # Load project data
 project_data = ProjectData()
 
 database = Database(project_data)
-
-figure = 0
 
 # Get the names of each wav file in the directory
 wav_names = os.listdir(project_data.WAV_DIR)
@@ -21,51 +25,27 @@ for wav_index in range(len(wav_names)):
     # Get filenames
     wav_filename = project_data.WAV_DIR + '/' + wav_names[wav_index]
     label_filename = project_data.TRANSCRIPTION_DIR + '/' + wav_names[wav_index].split(".")[0] + '.TXT'
-    
-    # Create database item
-    item = DatabaseItem.fromFile(wav_name=wav_filename,
-                                 label_name=label_filename)
-    if print_debug:
-        print(
-            item.getMfcc(winlen=project_data.frame_length, winstep=project_data.frame_stride,
-                         numcep=project_data.n_mfcc, nfilt=project_data.num_filters, nfft=project_data.fft_points,
-                         lowfreq=0, highfreq=None, preemph=project_data.preemphasis_coeff)
-        )
-        print(project_data.n_mfcc)
-        print(item.getLabelIndices())
-        print(item.getTranscription())
 
+    # Create database item
+    item = DatabaseItem.fromFile(
+        wav_name=wav_filename,
+        label_name=label_filename,
+        feature_config=feature_config)
+
+    print(len(item))
     # Add the new data to the database
     database.append(item)
 
-    # Print first MFCC
-    if wav_index == 0 and show_figures:
-        plt.figure(num=figure, figsize=(2, 2))
-        figure = figure + 1
-        heatmap = plt.pcolor(item.getMfcc())
-        plt.title(wav_names[wav_index])
-        plt.draw()
-
-    print('Wav: ', wav_names[wav_index], '------', wav_index+1, 'completed out of', len(wav_names))
-
-if show_figures:
-    plt.show()
-
-# Save the database into a file
-database.save(project_data.DATABASE_FILE)
-
-if print_debug:
-    # Load the database
-    database2 = Database.fromFile(project_data.DATABASE_FILE)
-    print(database.getItemFromIndex(0).getLabelIndices())
-    print(database2.getItemFromIndex(0).getLabelIndices())
-    aux = database2.getItemFromIndex(0).getMfcc(winlen=project_data.frame_length, winstep=project_data.frame_stride,
-                             numcep=project_data.n_mfcc, nfilt=project_data.num_filters, nfft=project_data.fft_points,
-                             lowfreq=0, highfreq=None, preemph=project_data.preemphasis_coeff)
-
-    aux2 = database.getItemFromIndex(0).getMfcc(winlen=project_data.frame_length, winstep=project_data.frame_stride,
-                             numcep=project_data.n_mfcc, nfilt=project_data.num_filters, nfft=project_data.fft_points,
-                         lowfreq=0, highfreq=None, preemph=project_data.preemphasis_coeff)
+    percentage = wav_index / len(wav_names) * 100
+    print('Completed ' + str(int(percentage)) + '%')
 
 print("Database generated")
 print("Number of elements in database: " + str(len(database)))
+
+# Save the database into a file
+train_database, val_database, test_database = database.get_training_databases(0.9, 0.1, 0.0)
+train_database.save(project_data.TRAIN_DATABASE_FILE)
+val_database.save(project_data.VAL_DATABASE_FILE)
+test_database.save(project_data.TEST_DATABASE_FILE)
+print("Databases saved")
+
