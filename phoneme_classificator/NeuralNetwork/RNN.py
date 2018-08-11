@@ -24,6 +24,7 @@ class RNNClass:
         self.multi_rrn_cell = None
         self.rnn_input = None
         self.rnn_outputs = None
+        self.dense_output_no_activation = None
         self.dense_output = None
         self.output_classes = None
         self.output_one_hot = None
@@ -127,13 +128,14 @@ class RNNClass:
                     tf.summary.histogram('dense_layer', self.rnn_outputs)
 
             with tf.name_scope("dense_output"):
-                self.dense_output = tf.layers.dense(
+                self.dense_output_no_activation = tf.layers.dense(
                     inputs=self.rnn_outputs,
                     units=self.network_data.num_classes,
                     activation=self.network_data.out_activation,
                     # kernel_regularizer=self.network_data.out_regularizer,
-                    name='dense_output'
+                    name='dense_output_no_activation'
                 )
+                self.dense_output = tf.nn.softmax(self.dense_output_no_activation, name='dense_output')
                 tf.summary.histogram('dense_output', self.dense_output)
 
             with tf.name_scope("output_classes"):
@@ -154,10 +156,10 @@ class RNNClass:
                         dense_loss += tf.nn.l2_loss(var)
 
                 loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
-                    logits=self.dense_output,
+                    logits=self.dense_output_no_activation,
                     labels=self.input_label)
-                logits_loss = tf.reduce_mean(tf.reduce_sum(loss) / tf.reduce_mean(tf.cast(self.seq_len, tf.float32)))
-                self.loss = logits_loss \
+                self.logits_loss = tf.reduce_mean(tf.reduce_sum(loss) / tf.reduce_mean(tf.cast(self.seq_len, tf.float32)))
+                self.loss = self.logits_loss \
                             + self.network_data.rnn_regularizer * rnn_loss \
                             + self.network_data.dense_regularizer * dense_loss
                 tf.summary.scalar('loss', self.loss)
@@ -463,7 +465,7 @@ class RNNClass:
                     self.num_features: self.network_data.num_features,
                     self.input_label: label
                 }
-                accuracy, loss = sess.run([self.accuracy, self.loss], feed_dict=feed_dict)
+                accuracy, loss = sess.run([self.accuracy, self.logits_loss], feed_dict=feed_dict)
 
                 if show_partial:
                     print("Index %d of %d, acc %f" % (sample_index + 1, len(labels), accuracy))
