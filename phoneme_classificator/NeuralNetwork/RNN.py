@@ -35,9 +35,13 @@ class RNNClass:
         self.checkpoint_saver: Saver = None
         self.merged_summary = None
 
+        self.tf_is_traing_pl = None
+
     def create_graph(self):
 
         with self.graph.as_default():
+            self.tf_is_traing_pl = tf.placeholder_with_default(True, shape=(), name='is_training')
+
             with tf.name_scope("input_context"):
                 self.seq_len = tf.placeholder(tf.int32, shape=[None], name="sequence_length")
                 self.num_features = tf.placeholder(tf.int32, name="num_features")
@@ -66,6 +70,11 @@ class RNNClass:
                     )
                     if self.network_data.input_batch_normalization:
                         self.rnn_input = tf.layers.batch_normalization(self.rnn_input, name="input_batch_norm_{}".format(_))
+                    if self.network_data.use_dropout is not None:
+                        self.rnn_input = tf.layers.dropout(self.rnn_input,
+                                                           1-self.network_data.keep_dropout_input[_],
+                                                           training=self.tf_is_traing_pl,
+                                                           name="input_dropout_{}".format(_))
                     tf.summary.histogram('input_dense_layer', self.rnn_input)
 
             with tf.name_scope("RNN_cell"):
@@ -111,10 +120,6 @@ class RNNClass:
                     )
                 tf.summary.histogram('RNN', self.rnn_outputs)
 
-            with tf.name_scope("dropout"):
-                if self.network_data.keep_dropout is not None:
-                    self.rnn_outputs = tf.nn.dropout(self.rnn_outputs, self.network_data.keep_dropout)
-
             with tf.name_scope("dense_layers"):
                 for _ in range(self.network_data.num_dense_layers):
                     self.rnn_outputs = tf.layers.dense(
@@ -125,6 +130,12 @@ class RNNClass:
                     )
                     if self.network_data.dense_batch_normalization:
                         self.rnn_outputs = tf.layers.batch_normalization(self.rnn_outputs, name="batch_norm_{}".format(_))
+                    if self.network_data.use_dropout is not None:
+                        self.rnn_outputs = tf.layers.dropout(self.rnn_outputs,
+                                                             1-self.network_data.keep_dropout_output[_],
+                                                             training=self.tf_is_traing_pl,
+                                                             name="output_dropout_{}".format(_)
+                                                             )
                     tf.summary.histogram('dense_layer', self.rnn_outputs)
 
             with tf.name_scope("dense_output"):
@@ -404,7 +415,8 @@ class RNNClass:
                         self.input_feature: np.stack(batch_val_features),
                         self.seq_len: len(batch_val_features[0]),
                         self.num_features: self.network_data.num_features,
-                        self.input_label: np.stack(batch_val_labeles)
+                        self.input_label: np.stack(batch_val_labeles),
+                        self.tf_is_traing_pl: False
                     }
 
                     val_loss, val_acc = sess.run([self.loss, self.accuracy], feed_dict=val_feed_dict)
@@ -463,7 +475,8 @@ class RNNClass:
                     self.input_feature: feature,
                     self.seq_len: [len(features[0])],
                     self.num_features: self.network_data.num_features,
-                    self.input_label: label
+                    self.input_label: label,
+                    self.tf_is_traing_pl: False
                 }
                 accuracy, loss = sess.run([self.accuracy, self.logits_loss], feed_dict=feed_dict)
 
@@ -488,6 +501,7 @@ class RNNClass:
                 self.input_feature: feature,
                 self.seq_len: [len(feature[0])],
                 self.num_features: self.network_data.num_features,
+                self.tf_is_traing_pl: False
             }
 
             predicted = sess.run(self.output_classes, feed_dict=feed_dict)
