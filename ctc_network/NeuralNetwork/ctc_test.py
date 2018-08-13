@@ -5,7 +5,7 @@ from ctc_network.NeuralNetwork.NetworkData import NetworkData
 from ctc_network.NeuralNetwork.NeuralNetwork import NeuralNetwork
 from ctc_network.utils.Database import Database
 from ctc_network.utils.ProjectData import ProjectData
-
+from ctc_network.NeuralNetwork.DataConversion import indexToStr
 
 ###########################################################################################################
 # Load project data
@@ -71,8 +71,8 @@ network.train(
     batch_size=1
 )
 
-# network.validate(val_feats, val_labels, show_partial=False)
-#
-# print(network.predict(val_feats[0]))
-# print(val_labels[0])
+# network.validate(val_feats, val_labels, show_partial=True)
+
+print(indexToStr(train_labels[0]))
+print(network.predict(train_feats[0]))
 

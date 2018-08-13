@@ -1,5 +1,4 @@
 import tensorflow as tf
-import tensorlayer as tl
 import time
 from ctc_network.NeuralNetwork.NetworkData import NetworkData
 import os
@@ -96,7 +95,7 @@ class NeuralNetwork:
                     self.network_data.learning_rate, 0.9).minimize(self.cost)
 
             with tf.name_scope("decoder"):
-                self.decoded, log_prob = tf.nn.ctc_beam_search_decoder(logits, self.seq_len)
+                self.decoded, log_prob = tf.nn.ctc_greedy_decoder(logits, self.seq_len)
 
             with tf.name_scope("metric"):
                 # Inaccuracy: label error rate
@@ -133,26 +132,21 @@ class NeuralNetwork:
             sess = tf.Session(graph=self.graph)
             sess.run(tf.global_variables_initializer())
 
-            loss_ep = 0
-            acc_ep = 0
+            train_cost = train_ler = 0
+
             for epoch in range(training_epochs):
                 epoch_time = time.time()
-                loss_ep = 0
-                acc_ep = 0
-                n_step = 0
 
                 database = list(zip(train_features, train_labels))
                 train_cost = train_ler = 0
                 for batch in self.create_batch(database, batch_size):
                     batch_features, batch_labeles = zip(*batch)
 
-
                     # Padding input to max_time_step of this batch
                     batch_train_inputs, batch_train_seq_len = padSequences(batch_features)
 
                     # Converting to sparse representation so as to to feed SparseTensor input
                     batch_train_targets = sparseTupleFrom(batch_labeles)
-                    asd = 1
 
                     feed_dict = {
                         self.inputs: batch_train_inputs,
@@ -164,114 +158,82 @@ class NeuralNetwork:
                     train_cost += batch_cost * batch_size
                     train_ler += sess.run(self.ler, feed_dict=feed_dict) * batch_size
 
-                    loss_ep += train_cost
-                    acc_ep += train_ler
-                    n_step += 1
-                loss_ep = loss_ep / (n_step * len(train_features))
-                acc_ep = acc_ep / (n_step * len(train_features))
+                train_cost /= len(train_features)
+                train_ler /= len(train_features)
 
-                print("Epoch %d of %d, loss %f, acc %f, epoch time %.2fmin, ramaining time %.2fmin" %
+
+                print("Epoch %d of %d, loss %f, ler %f, epoch time %.2fmin, ramaining time %.2fmin" %
                       (epoch + 1,
                        training_epochs,
-                       loss_ep,
-                       acc_ep,
+                       train_cost,
+                       train_ler,
                        (time.time()-epoch_time)/60,
                        (training_epochs-epoch-1)*(time.time()-epoch_time)/60))
 
-            # # save result
-            # self.save_checkpoint(sess)
-            # self.save_model(sess)
-            #
-            # sess.close()
-            #
-            # return acc_ep, loss_ep
+            # save result
+            self.save_checkpoint(sess)
+            self.save_model(sess)
 
-    # def train(self,
-    #           train_inputs,
-    #           train_targets,
-    #           test_inputs,
-    #           test_targets,
-    #           num_epochs=200,
-    #           tensorboard_epoch_freq=1,
-    #           print_epoch_freq=1,
-    #           load_checkpoint=False,
-    #           session: tf.Session = None
-    #           ):
-    #
-    #     num_batches_per_epoch = int(len(train_inputs) / 1)
-    #
-    #     sess = session
-    #     if session is None:
-    #         sess = tf.Session(graph=self.graph)
-    #
-    #     with self.graph.as_default():
-    #         # Initializate the weights and biases
-    #         sess.run(tf.global_variables_initializer())
-    #
-    #         for curr_epoch in range(num_epochs):
-    #             train_cost = train_ler = 0
-    #             start = time.time()
-    #
-    #             for batch in range(num_batches_per_epoch):
-    #                 # Getting the index
-    #                 indexes = [i % len(train_inputs) for i in range(batch * self.network_data.batch_size, (batch + 1) * self.network_data.batch_size)]
-    #
-    #                 batch_train_inputs = train_inputs[indexes]
-    #                 # Padding input to max_time_step of this batch
-    #                 batch_train_inputs, batch_train_seq_len = padSequences(batch_train_inputs)
-    #
-    #                 # Converting to sparse representation so as to to feed SparseTensor input
-    #                 batch_train_targets = sparseTupleFrom(train_targets[indexes])
-    #
-    #                 feed = {self.inputs: batch_train_inputs,
-    #                         self.targets: batch_train_targets,
-    #                         self.seq_len: batch_train_seq_len}
-    #
-    #                 batch_cost, _ = sess.run([self.cost, self.optimizer], feed)
-    #                 train_cost += batch_cost * self.network_data.batch_size
-    #                 train_ler += sess.run(self.ler, feed_dict=feed) * self.network_data.batch_size
-    #
-    #             # Shuffle the data
-    #             shuffled_indexes = np.random.permutation(len(train_inputs))
-    #             train_inputs = train_inputs[shuffled_indexes]
-    #             train_targets = train_targets[shuffled_indexes]
-    #
-    #             # Metrics mean
-    #             train_cost /= len(train_inputs)
-    #             train_ler /= len(train_inputs)
-    #
-    #             log = "Epoch {}/{}, train_cost = {:.3f}, train_ler = {:.3f}, time = {:.3f}"
-    #             print(log.format(curr_epoch + 1, num_epochs, train_cost, train_ler, time.time() - start))
-    #
-    #         # Decoding all at once. Note that this isn't the best way
-    #
-    #         # Padding input to max_time_step of this batch
-    #         inputs, seq_len = padSequences(test_inputs)
-    #
-    #         # Converting to sparse representation so as to to feed SparseTensor input
-    #         targets = sparseTupleFrom(test_targets)
-    #
-    #         feed = {self.inputs: inputs,
-    #                 self.targets: targets,
-    #                 self.seq_len: seq_len
-    #                 }
-    #
-    #         # Decoding
-    #         d = sess.run(self.decoded[0], feed_dict=feed)
-    #         dense_decoded = tf.sparse_tensor_to_dense(d, default_value=-1).eval(session=sess)
-    #
-    #         for i, seq in enumerate(dense_decoded):
-    #             # seq = [s for s in seq if s != -1]
-    #             # print('Sequence %d' % i)
-    #             # print('\t Original:\n%s' % train_targets[i])
-    #             # print('\t Decoded:\n%s' % seq)
-    #
-    #             str_orig = indexToStr(train_targets[i])
-    #             str_decoded = indexToStr(dense_decoded[i])
-    #             print('Original: %s' % str_orig)
-    #             print('Decoded: %s' % str_decoded)
-    #             print('---------------------------------------')
+            sess.close()
 
+            return train_ler, train_cost
+
+    def validate(self, features, labels, show_partial: bool=True):
+        with self.graph.as_default():
+            sess = tf.Session(graph=self.graph)
+            sess.run(tf.global_variables_initializer())
+            self.load_checkpoint(sess)
+
+            database = list(zip(features, labels))
+            val_cost = val_ler = 0
+            sample_index = 0
+            for item in self.create_batch(database, 1):
+                feature, label = zip(*item)
+
+                # Padding input to max_time_step of this batch
+                batch_train_inputs, batch_train_seq_len = padSequences(feature)
+
+                # Converting to sparse representation so as to to feed SparseTensor input
+                batch_train_targets = sparseTupleFrom(label)
+                feed_dict = {
+                    self.inputs: batch_train_inputs,
+                    self.seq_len: batch_train_seq_len,
+                    self.targets: batch_train_targets
+                }
+                batch_cost = sess.run(self.cost, feed_dict)
+                val_cost += batch_cost
+                ler = sess.run(self.ler, feed_dict=feed_dict)
+                val_ler += ler
+
+                if show_partial:
+                    print("Index %d of %d, ler %f" % (sample_index + 1, len(labels), ler))
+
+                sample_index += 1
+
+            val_cost /= len(features)
+            val_ler /= len(features)
+            print("Validation ler: %f, loss: %f" % (val_ler/len(labels), val_cost/len(labels)))
+
+            sess.close()
+
+            return val_ler/len(labels), val_cost/len(labels)
+
+    def predict(self, feature):
+        feature = np.reshape(feature, [1, len(feature), np.shape(feature)[1]])
+        with tf.Session(graph=self.graph) as sess:
+            sess.run(tf.global_variables_initializer())
+            self.load_checkpoint(sess)
+            input, seq_len = padSequences(feature)
+            feed_dict = {
+                self.inputs: input,
+                self.seq_len: seq_len,
+            }
+
+            predicted = sess.run(self.decoded, feed_dict=feed_dict)[0]
+
+            sess.close()
+
+            return indexToStr(predicted[1])
 
     def save_checkpoint(self, sess: tf.Session):
         if self.checkpoint_path is not None:
@@ -281,7 +243,7 @@ class NeuralNetwork:
         if self.checkpoint_path is not None and tf.gfile.Exists("{}.meta".format(self.checkpoint_path)):
             self.checkpoint_saver.restore(sess, self.checkpoint_path)
         else:
-            tl.layers.initialize_global_variables(sess)
+            tf.global_variables_initializer(sess)
 
     def save_model(self, sess: tf.Session):
         if self.model_path is not None:
