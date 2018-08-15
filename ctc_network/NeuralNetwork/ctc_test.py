@@ -61,19 +61,19 @@ train_feats, train_labels, _, _, _, _ = train_database.get_training_sets(1.0, 0.
 val_feats, val_labels, _, _, _, _ = val_database.get_training_sets(1.0, 0.0, 0.0)
 
 network.train(
-    train_features=train_feats[0:2],
-    train_labels=train_labels[0:2],
-    restore_run=False,
+    train_features=train_feats,
+    train_labels=train_labels,
+    restore_run=True,
     save_partial=True,
     save_freq=10,
     use_tensorboard=True,
     tensorboard_freq=10,
-    training_epochs=100,
-    batch_size=1
+    training_epochs=50,
+    batch_size=5
 )
 
-# network.validate(val_feats, val_labels, show_partial=True)
+network.validate(val_feats, val_labels, show_partial=True)
 
-# print(indexToStr(train_labels[0]))
-# print(network.predict(train_feats[0]))
+print('Predicted: {}'.format(network.predict(val_feats[0])))
+print('Target: {}'.format(indexToStr(val_labels[0])))
 

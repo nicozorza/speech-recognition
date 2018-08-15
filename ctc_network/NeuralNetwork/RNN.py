@@ -12,15 +12,13 @@ from phoneme_classificator.NeuralNetwork.NetworkData import NetworkData
 
 
 class RNNClass:
-    def __init__(self, network_data: NetworkData):  # , checkpoint_path: str, model_path: str
+    def __init__(self, network_data: NetworkData):
         self.graph: tf.Graph = tf.Graph()
         self.network_data = network_data
 
         self.seq_len = None
-        # self.num_features = None
         self.input_feature = None
         self.input_label = None
-        # self.input_label_one_hot = None
         self.rnn_cell = None
         self.multi_rrn_cell = None
         self.rnn_input = None
@@ -28,10 +26,8 @@ class RNNClass:
         self.dense_output_no_activation = None
         self.dense_output = None
         self.output_classes = None
-        # self.output_one_hot = None
         self.logits_loss = None
         self.loss = None
-        self.accuracy = None
         self.training_op: tf.Operation = None
         self.checkpoint_saver: Saver = None
         self.merged_summary = None
@@ -168,7 +164,7 @@ class RNNClass:
                         dense_loss += tf.nn.l2_loss(var)
 
                 loss = tf.nn.ctc_loss(self.input_label, self.dense_output_no_activation, self.seq_len, time_major=False)
-                self.logits_loss = tf.reduce_mean(tf.reduce_sum(loss)) #/ tf.reduce_mean(tf.cast(self.seq_len, tf.float32)))
+                self.logits_loss = tf.reduce_mean(tf.reduce_sum(loss))
                 self.loss = self.logits_loss \
                             + self.network_data.rnn_regularizer * rnn_loss \
                             + self.network_data.dense_regularizer * dense_loss
@@ -185,7 +181,7 @@ class RNNClass:
             with tf.name_scope("label_error_rate"):
                 # Inaccuracy: label error rate
                 self.ler = tf.reduce_mean(tf.edit_distance(tf.cast(self.decoded[0], tf.int32), self.input_label))
-                tf.summary.scalar('label_error_rate', tf.reduce_mean(self.accuracy))
+                tf.summary.scalar('label_error_rate', tf.reduce_mean(self.ler))
 
             self.checkpoint_saver = tf.train.Saver(save_relative_paths=True)
             self.merged_summary = tf.summary.merge_all()
@@ -239,155 +235,10 @@ class RNNClass:
             sess = tf.Session(graph=self.graph)
             sess.run(tf.global_variables_initializer())
 
-            database = list(zip(train_features, train_labels))
-            for epoch in range(training_epochs):
-                for batch in self.create_batch(database, batch_size):
-                    batch_features, batch_labeles = zip(*batch)
-
-                    # Padding input to max_time_step of this batch
-                    batch_train_inputs, batch_train_seq_len = padSequences(batch_features)
-
-                    # Converting to sparse representation so as to to feed SparseTensor input
-                    batch_train_targets = sparseTupleFrom(batch_labeles)
-
-                    feed_dict = {
-                        self.input_feature: batch_train_inputs,
-                        self.seq_len: batch_train_seq_len,
-                        self.input_label: batch_train_targets
-                    }
-
-                    loss, _, d = sess.run([self.ler, self.training_op, self.decoded], feed_dict=feed_dict)
-                    print(loss)
-                    # print(d[0][1])
-
-                    # print(a)
-                    # print(b)
-                    # break
-            for batch in self.create_batch(database, batch_size):
-                batch_features, batch_labeles = zip(*batch)
-
-                # Padding input to max_time_step of this batch
-                batch_train_inputs, batch_train_seq_len = padSequences(batch_features)
-
-                # Converting to sparse representation so as to to feed SparseTensor input
-                batch_train_targets = sparseTupleFrom(batch_labeles)
-                feed_dict = {
-                    self.input_feature: batch_train_inputs,
-                    self.seq_len: batch_train_seq_len,
-                    self.input_label: batch_train_targets
-                }
-                d = sess.run(self.decoded, feed_dict=feed_dict)
-                print(indexToStr(d[0][1]))
-                print(indexToStr(batch_labeles[0]))
-
-
-            # if restore_run:
-            #     self.load_checkpoint(sess)
-            #
-            # train_writer = None
-            # if use_tensorboard:
-            #     if self.network_data.tensorboard_path is not None:
-            #         # Set up tensorboard summaries and saver
-            #         if tf.gfile.Exists(self.network_data.tensorboard_path + '/train') is not True:
-            #             tf.gfile.MkDir(self.network_data.tensorboard_path + '/train')
-            #         else:
-            #             tf.gfile.DeleteRecursively(self.network_data.tensorboard_path + '/train')
-            #
-            #     train_writer = tf.summary.FileWriter("{}train".format(self.network_data.tensorboard_path), self.graph)
-            #     train_writer.add_graph(sess.graph)
-            #
-            # loss_ep = 0
-            # acc_ep = 0
-            # for epoch in range(training_epochs):
-            #     epoch_time = time.time()
-            #     loss_ep = 0
-            #     acc_ep = 0
-            #     n_step = 0
-            #
-            #     database = list(zip(train_features, train_labels))
-            #
-            #     for batch in self.create_batch(database, batch_size):
-            #         batch_features, batch_labeles = zip(*batch)
-            #
-            #         feed_dict = {
-            #             self.input_feature: np.stack(batch_features),
-            #             self.seq_len: [len(batch_features[0])]*batch_size,
-            #             self.num_features: self.network_data.num_features,
-            #             self.input_label: np.stack(batch_labeles)
-            #         }
-            #
-            #         loss, _, acc = sess.run([self.loss, self.training_op, self.accuracy], feed_dict=feed_dict)
-            #
-            #         loss_ep += loss
-            #         acc_ep += acc
-            #         n_step += 1
-            #     loss_ep = loss_ep / n_step
-            #     acc_ep = acc_ep / n_step
-            #
-            #     if use_tensorboard:
-            #         if epoch % tensorboard_freq == 0 and self.network_data.tensorboard_path is not None:
-            #             random_index = random.randint(0, len(train_features))
-            #             feature = train_features[random_index]
-            #             label = train_labels[random_index]
-            #             tensorboard_feed_dict = {
-            #                 self.input_feature: np.reshape(feature, [1, len(feature), np.shape(feature)[1]]),
-            #                 self.seq_len: [len(train_features[random_index])],
-            #                 self.num_features: self.network_data.num_features,
-            #                 self.input_label: np.reshape(label, [1, len(label)])
-            #             }
-            #             s = sess.run(self.merged_summary, feed_dict=tensorboard_feed_dict)
-            #             train_writer.add_summary(s, epoch)
-            #
-            #     if save_partial:
-            #         if epoch % save_freq == 0:
-            #             self.save_checkpoint(sess)
-            #             self.save_model(sess)
-            #
-            #     if shuffle:
-            #         aux_list = list(zip(train_features, train_labels))
-            #         random.shuffle(aux_list)
-            #         train_features, train_labels = zip(*aux_list)
-            #
-            #     print("Epoch %d of %d, loss %f, acc %f, epoch time %.2fmin, ramaining time %.2fmin" %
-            #           (epoch + 1,
-            #            training_epochs,
-            #            loss_ep,
-            #            acc_ep,
-            #            (time.time()-epoch_time)/60,
-            #            (training_epochs-epoch-1)*(time.time()-epoch_time)/60))
-            #
-            # # save result
-            # self.save_checkpoint(sess)
-            # self.save_model(sess)
-
-            sess.close()
-
-            # return acc_ep, loss_ep
-
-    def train_validate(self,
-                       train_features,
-                       train_labels,
-                       val_features,
-                       val_labels,
-                       batch_size: int,
-                       training_epochs: int,
-                       val_freq: int = 50,
-                       restore_run: bool = True,
-                       save_partial: bool = True,
-                       save_freq: int = 10,
-                       shuffle: bool=True,
-                       use_tensorboard: bool = False,
-                       tensorboard_freq: int = 50):
-
-        with self.graph.as_default():
-            sess = tf.Session(graph=self.graph)
-            sess.run(tf.global_variables_initializer())
-
             if restore_run:
                 self.load_checkpoint(sess)
 
             train_writer = None
-            val_writer = None
             if use_tensorboard:
                 if self.network_data.tensorboard_path is not None:
                     # Set up tensorboard summaries and saver
@@ -395,110 +246,224 @@ class RNNClass:
                         tf.gfile.MkDir(self.network_data.tensorboard_path + '/train')
                     else:
                         tf.gfile.DeleteRecursively(self.network_data.tensorboard_path + '/train')
-                    # Set up tensorboard summaries and saver
-                    if tf.gfile.Exists(self.network_data.tensorboard_path + '/validation') is not True:
-                        tf.gfile.MkDir(self.network_data.tensorboard_path + '/validation')
-                    else:
-                        tf.gfile.DeleteRecursively(self.network_data.tensorboard_path + '/validation')
 
                 train_writer = tf.summary.FileWriter("{}train".format(self.network_data.tensorboard_path), self.graph)
                 train_writer.add_graph(sess.graph)
-                val_writer = tf.summary.FileWriter("{}validation".format(self.network_data.tensorboard_path), self.graph)
-                val_writer.add_graph(sess.graph)
 
-            val_loss = 0
-            val_acc = 0
-
-            train_database = list(zip(train_features, train_labels))
-            val_database = list(zip(val_features, val_labels))
+            loss_ep = 0
+            ler_ep = 0
             for epoch in range(training_epochs):
                 epoch_time = time.time()
                 loss_ep = 0
-                acc_ep = 0
+                ler_ep = 0
                 n_step = 0
 
-                for batch in self.create_batch(train_database, batch_size):
-                    batch_features, batch_labeles = zip(*batch)
+                database = list(zip(train_features, train_labels))
+
+                for batch in self.create_batch(database, batch_size):
+                    batch_features, batch_labels = zip(*batch)
+
+                    # Padding input to max_time_step of this batch
+                    batch_train_features, batch_train_seq_len = padSequences(batch_features)
+
+                    # Converting to sparse representation so as to to feed SparseTensor input
+                    batch_train_labels = sparseTupleFrom(batch_labels)
 
                     feed_dict = {
-                        self.input_feature: np.stack(batch_features),
-                        self.seq_len: len(batch_features[0]),
-                        self.num_features: self.network_data.num_features,
-                        self.input_label: np.stack(batch_labeles)
+                        self.input_feature: batch_train_features,
+                        self.seq_len: batch_train_seq_len,
+                        self.input_label: batch_train_labels
                     }
 
-                    loss, _, acc = sess.run([self.loss, self.training_op, self.accuracy], feed_dict=feed_dict)
+                    loss, _, ler = sess.run([self.loss, self.training_op, self.ler], feed_dict=feed_dict)
 
                     loss_ep += loss
-                    acc_ep += acc
+                    ler_ep += ler
                     n_step += 1
                 loss_ep = loss_ep / n_step
-                acc_ep = acc_ep / n_step
+                ler_ep = ler_ep / n_step
 
                 if use_tensorboard:
                     if epoch % tensorboard_freq == 0 and self.network_data.tensorboard_path is not None:
-                        random_index = random.randint(0, len(train_features))
-                        feature = train_features[random_index]
-                        label = train_labels[random_index]
+                        asd = len(train_features)
+                        random_index = random.randint(0, len(train_features)-1)
+                        feature = [train_features[random_index]]
+                        label = [train_labels[random_index]]
+
+                        # Padding input to max_time_step of this batch
+                        tensorboard_features, tensorboard_seq_len = padSequences(feature)
+
+                        # Converting to sparse representation so as to to feed SparseTensor input
+                        tensorboard_labels = sparseTupleFrom(label)
                         tensorboard_feed_dict = {
-                            self.input_feature: np.reshape(feature, [1, len(feature), np.shape(feature)[1]]),
-                            self.seq_len: len(train_features[random_index]),
-                            self.num_features: self.network_data.num_features,
-                            self.input_label: np.reshape(label, [1, len(label)])
+                            self.input_feature: tensorboard_features,
+                            self.seq_len: tensorboard_seq_len,
+                            self.input_label: tensorboard_labels
                         }
                         s = sess.run(self.merged_summary, feed_dict=tensorboard_feed_dict)
                         train_writer.add_summary(s, epoch)
-
-                if epoch % val_freq == 0:
-                    batch = self.create_batch(val_database, len(val_database))[0]
-                    batch_val_features, batch_val_labeles = zip(*batch)
-
-                    val_feed_dict = {
-                        self.input_feature: np.stack(batch_val_features),
-                        self.seq_len: len(batch_val_features[0]),
-                        self.num_features: self.network_data.num_features,
-                        self.input_label: np.stack(batch_val_labeles),
-                        self.tf_is_traing_pl: False
-                    }
-
-                    val_loss, val_acc = sess.run([self.loss, self.accuracy], feed_dict=val_feed_dict)
-
-                    if use_tensorboard:
-                        if self.network_data.tensorboard_path is not None:
-                            random_index = random.randint(0, len(val_database))
-                            val_feature, val_labeles = zip(*val_database[random_index])
-                            tensorboard_val_feed_dict = {
-                                self.input_feature: np.reshape(val_feature, [1, len(val_feature), np.shape(val_feature)[1]]),
-                                self.seq_len: len(train_features[random_index]),
-                                self.num_features: self.network_data.num_features,
-                                self.input_label: np.reshape(val_labeles, [1, len(val_labeles)])
-                            }
-                            s = sess.run(self.merged_summary, feed_dict=tensorboard_val_feed_dict)
-                            val_writer.add_summary(s, epoch)
-
-                if shuffle:
-                    random.shuffle(train_database)
 
                 if save_partial:
                     if epoch % save_freq == 0:
                         self.save_checkpoint(sess)
                         self.save_model(sess)
 
-                print("Epoch %d of %d, train_loss %f, train_acc %f, val_loss %f, val_acc %f, epoch time %.2fmin, ramaining time %.2fmin" %
+                if shuffle:
+                    aux_list = list(zip(train_features, train_labels))
+                    random.shuffle(aux_list)
+                    train_features, train_labels = zip(*aux_list)
+
+                print("Epoch %d of %d, loss %f, ler %f, epoch time %.2fmin, ramaining time %.2fmin" %
                       (epoch + 1,
                        training_epochs,
                        loss_ep,
-                       acc_ep,
-                       val_loss,
-                       val_acc,
-                       (time.time() - epoch_time) / 60,
-                       (training_epochs - epoch - 1) * (time.time() - epoch_time) / 60))
+                       ler_ep,
+                       (time.time()-epoch_time)/60,
+                       (training_epochs-epoch-1)*(time.time()-epoch_time)/60))
 
             # save result
             self.save_checkpoint(sess)
             self.save_model(sess)
 
             sess.close()
+
+            return ler_ep, loss_ep
+
+    # def train_validate(self,
+    #                    train_features,
+    #                    train_labels,
+    #                    val_features,
+    #                    val_labels,
+    #                    batch_size: int,
+    #                    training_epochs: int,
+    #                    val_freq: int = 50,
+    #                    restore_run: bool = True,
+    #                    save_partial: bool = True,
+    #                    save_freq: int = 10,
+    #                    shuffle: bool=True,
+    #                    use_tensorboard: bool = False,
+    #                    tensorboard_freq: int = 50):
+    #
+    #     with self.graph.as_default():
+    #         sess = tf.Session(graph=self.graph)
+    #         sess.run(tf.global_variables_initializer())
+    #
+    #         if restore_run:
+    #             self.load_checkpoint(sess)
+    #
+    #         train_writer = None
+    #         val_writer = None
+    #         if use_tensorboard:
+    #             if self.network_data.tensorboard_path is not None:
+    #                 # Set up tensorboard summaries and saver
+    #                 if tf.gfile.Exists(self.network_data.tensorboard_path + '/train') is not True:
+    #                     tf.gfile.MkDir(self.network_data.tensorboard_path + '/train')
+    #                 else:
+    #                     tf.gfile.DeleteRecursively(self.network_data.tensorboard_path + '/train')
+    #                 # Set up tensorboard summaries and saver
+    #                 if tf.gfile.Exists(self.network_data.tensorboard_path + '/validation') is not True:
+    #                     tf.gfile.MkDir(self.network_data.tensorboard_path + '/validation')
+    #                 else:
+    #                     tf.gfile.DeleteRecursively(self.network_data.tensorboard_path + '/validation')
+    #
+    #             train_writer = tf.summary.FileWriter("{}train".format(self.network_data.tensorboard_path), self.graph)
+    #             train_writer.add_graph(sess.graph)
+    #             val_writer = tf.summary.FileWriter("{}validation".format(self.network_data.tensorboard_path), self.graph)
+    #             val_writer.add_graph(sess.graph)
+    #
+    #         val_loss = 0
+    #         val_acc = 0
+    #
+    #         train_database = list(zip(train_features, train_labels))
+    #         val_database = list(zip(val_features, val_labels))
+    #         for epoch in range(training_epochs):
+    #             epoch_time = time.time()
+    #             loss_ep = 0
+    #             acc_ep = 0
+    #             n_step = 0
+    #
+    #             for batch in self.create_batch(train_database, batch_size):
+    #                 batch_features, batch_labeles = zip(*batch)
+    #
+    #                 feed_dict = {
+    #                     self.input_feature: np.stack(batch_features),
+    #                     self.seq_len: len(batch_features[0]),
+    #                     self.num_features: self.network_data.num_features,
+    #                     self.input_label: np.stack(batch_labeles)
+    #                 }
+    #
+    #                 loss, _, acc = sess.run([self.loss, self.training_op, self.accuracy], feed_dict=feed_dict)
+    #
+    #                 loss_ep += loss
+    #                 acc_ep += acc
+    #                 n_step += 1
+    #             loss_ep = loss_ep / n_step
+    #             acc_ep = acc_ep / n_step
+    #
+    #             if use_tensorboard:
+    #                 if epoch % tensorboard_freq == 0 and self.network_data.tensorboard_path is not None:
+    #                     random_index = random.randint(0, len(train_features))
+    #                     feature = train_features[random_index]
+    #                     label = train_labels[random_index]
+    #                     tensorboard_feed_dict = {
+    #                         self.input_feature: np.reshape(feature, [1, len(feature), np.shape(feature)[1]]),
+    #                         self.seq_len: len(train_features[random_index]),
+    #                         self.num_features: self.network_data.num_features,
+    #                         self.input_label: np.reshape(label, [1, len(label)])
+    #                     }
+    #                     s = sess.run(self.merged_summary, feed_dict=tensorboard_feed_dict)
+    #                     train_writer.add_summary(s, epoch)
+    #
+    #             if epoch % val_freq == 0:
+    #                 batch = self.create_batch(val_database, len(val_database))[0]
+    #                 batch_val_features, batch_val_labeles = zip(*batch)
+    #
+    #                 val_feed_dict = {
+    #                     self.input_feature: np.stack(batch_val_features),
+    #                     self.seq_len: len(batch_val_features[0]),
+    #                     self.num_features: self.network_data.num_features,
+    #                     self.input_label: np.stack(batch_val_labeles),
+    #                     self.tf_is_traing_pl: False
+    #                 }
+    #
+    #                 val_loss, val_acc = sess.run([self.loss, self.accuracy], feed_dict=val_feed_dict)
+    #
+    #                 if use_tensorboard:
+    #                     if self.network_data.tensorboard_path is not None:
+    #                         random_index = random.randint(0, len(val_database))
+    #                         val_feature, val_labeles = zip(*val_database[random_index])
+    #                         tensorboard_val_feed_dict = {
+    #                             self.input_feature: np.reshape(val_feature, [1, len(val_feature), np.shape(val_feature)[1]]),
+    #                             self.seq_len: len(train_features[random_index]),
+    #                             self.num_features: self.network_data.num_features,
+    #                             self.input_label: np.reshape(val_labeles, [1, len(val_labeles)])
+    #                         }
+    #                         s = sess.run(self.merged_summary, feed_dict=tensorboard_val_feed_dict)
+    #                         val_writer.add_summary(s, epoch)
+    #
+    #             if shuffle:
+    #                 random.shuffle(train_database)
+    #
+    #             if save_partial:
+    #                 if epoch % save_freq == 0:
+    #                     self.save_checkpoint(sess)
+    #                     self.save_model(sess)
+    #
+    #             print("Epoch %d of %d, train_loss %f, train_acc %f, val_loss %f, val_acc %f, epoch time %.2fmin, ramaining time %.2fmin" %
+    #                   (epoch + 1,
+    #                    training_epochs,
+    #                    loss_ep,
+    #                    acc_ep,
+    #                    val_loss,
+    #                    val_acc,
+    #                    (time.time() - epoch_time) / 60,
+    #                    (training_epochs - epoch - 1) * (time.time() - epoch_time) / 60))
+    #
+    #         # save result
+    #         self.save_checkpoint(sess)
+    #         self.save_model(sess)
+    #
+    #         sess.close()
 
     def validate(self, features, labels, show_partial: bool=True):
         with self.graph.as_default():
@@ -507,31 +472,35 @@ class RNNClass:
             self.load_checkpoint(sess)
 
             sample_index = 0
-            acum_accuracy = 0
+            acum_ler = 0
             acum_loss = 0
 
             database = list(zip(features, labels))
             for item in self.create_batch(database, 1):
                 feature, label = zip(*item)
+                # Padding input to max_time_step of this batch
+                batch_features, batch_seq_len = padSequences(feature)
+
+                # Converting to sparse representation so as to to feed SparseTensor input
+                batch_labels = sparseTupleFrom(label)
                 feed_dict = {
-                    self.input_feature: feature,
-                    self.seq_len: [len(features[0])],
-                    self.num_features: self.network_data.num_features,
-                    self.input_label: label,
+                    self.input_feature: batch_features,
+                    self.seq_len: batch_seq_len,
+                    self.input_label: batch_labels,
                     self.tf_is_traing_pl: False
                 }
-                accuracy, loss = sess.run([self.accuracy, self.logits_loss], feed_dict=feed_dict)
+                ler, loss = sess.run([self.ler, self.logits_loss], feed_dict=feed_dict)
 
                 if show_partial:
-                    print("Index %d of %d, acc %f" % (sample_index + 1, len(labels), accuracy))
+                    print("Index %d of %d, ler %f" % (sample_index + 1, len(labels), ler))
                 sample_index += 1
-                acum_accuracy += accuracy
+                acum_ler += ler
                 acum_loss += loss
-            print("Validation accuracy: %f, loss: %f" % (acum_accuracy/len(labels), acum_loss/len(labels)))
+            print("Validation ler: %f, loss: %f" % (acum_ler/len(labels), acum_loss/len(labels)))
 
             sess.close()
 
-            return acum_accuracy/len(labels), acum_loss/len(labels)
+            return acum_ler/len(labels), acum_loss/len(labels)
 
     def predict(self, feature):
 
@@ -539,17 +508,20 @@ class RNNClass:
         with tf.Session(graph=self.graph) as sess:
             sess.run(tf.global_variables_initializer())
             self.load_checkpoint(sess)
+
+            # Padding input to max_time_step of this batch
+            features, seq_len = padSequences(feature)
+
             feed_dict = {
-                self.input_feature: feature,
-                self.seq_len: [len(feature[0])],
-                self.num_features: self.network_data.num_features,
+                self.input_feature: features,
+                self.seq_len: seq_len,
                 self.tf_is_traing_pl: False
             }
 
-            predicted = sess.run(self.output_classes, feed_dict=feed_dict)
+            predicted = sess.run(self.decoded, feed_dict=feed_dict)
 
             sess.close()
 
-            return predicted
+            return indexToStr(predicted[0][1])
 
 
