@@ -47,7 +47,5 @@ class NetworkData:
         self.learning_rate: float = None
         self.adam_epsilon: float = None
 
-        # self.layers: List[LayerData] = list()
-        # self.cost: Callable[[Any, Any], Any] = None
-        # self.metrics: List[Callable[[Any, Any], Any]] = list()
-        # self.optimizer: Optimizer = None
+        self.decoder_function: None
+

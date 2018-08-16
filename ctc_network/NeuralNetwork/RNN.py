@@ -8,7 +8,7 @@ from tensorflow.python.framework import graph_io
 from tensorflow.python.training.saver import Saver
 
 from ctc_network.NeuralNetwork.DataConversion import padSequences, sparseTupleFrom, indexToStr
-from phoneme_classificator.NeuralNetwork.NetworkData import NetworkData
+from ctc_network.NeuralNetwork.NetworkData import NetworkData
 
 
 class RNNClass:
@@ -175,8 +175,8 @@ class RNNClass:
                 self.training_op = self.network_data.optimizer.minimize(self.loss)
 
             with tf.name_scope("decoder"):
-                self.output_time_major = tf.transpose(self.dense_output_no_activation, (1, 0, 2))
-                self.decoded, log_prob = tf.nn.ctc_greedy_decoder(self.output_time_major, self.seq_len)
+                self.output_time_major = tf.transpose(self.dense_output, (1, 0, 2))
+                self.decoded, log_prob = self.network_data.decoder_function(self.output_time_major, self.seq_len)
 
             with tf.name_scope("label_error_rate"):
                 # Inaccuracy: label error rate

@@ -76,9 +76,13 @@ class NeuralNetwork:
                 # Tip: Is tf.zeros_initializer the same?
                 b = tf.Variable(tf.constant(0., shape=[self.network_data.num_classes]))
 
+
             with tf.name_scope("projection"):
                 # Doing the affine projection
-                logits = tf.matmul(self.outputs, W) + b
+                logits = tf.layers.dense(inputs=self.outputs,
+                        units=self.network_data.num_dense_units[0],
+                        activation=tf.nn.tanh)
+                    # tf.matmul(self.outputs, W) + b
 
                 # Reshaping back to the original shape
                 logits = tf.reshape(logits, [batch_s, -1, self.network_data.num_classes])
