@@ -29,23 +29,24 @@ from ctc_network.utils.smac_utils import wait_for_user_input_non_block, remove_i
 
 
 project_data = ProjectData()
-# train_database = Database.fromFile(project_data.TRAIN_DATABASE_FILE, project_data)
-# val_database = Database.fromFile(project_data.VAL_DATABASE_FILE, project_data)
-#
-# # TODO Add a different method for this
-# train_feats, train_labels, _, _, _, _ = train_database.get_training_sets(1.0, 0.0, 0.0)
-# val_feats, val_labels, _, _, _, _ = val_database.get_training_sets(1.0, 0.0, 0.0)
+train_database = Database.fromFile(project_data.TRAIN_DATABASE_FILE, project_data)
+val_database = Database.fromFile(project_data.VAL_DATABASE_FILE, project_data)
+
+# TODO Add a different method for this
+train_feats, train_labels, _, _, _, _ = train_database.get_training_sets(1.0, 0.0, 0.0)
+val_feats, val_labels, _, _, _, _ = val_database.get_training_sets(1.0, 0.0, 0.0)
 
 # -----------------------------------------------------------------------------------------
 optimization_epochs = 1
 validation_epochs = 1
-space_optimization_evals = 2
+# space_optimization_evals = 1
+batch_size = 50
 
 run_folder = 'run'
 
 run_count_step = 1
 
-restore_prev_run = True
+restore_prev_run = False
 restore_prev_run_folder = 'ctc_network/out/smac/run_1/'
 results_dir = 'ctc_network/out/smac/{}/'.format(run_folder)
 # -----------------------------------------------------------------------------------------
@@ -159,21 +160,21 @@ def objective(args):
     network = RNNClass(network_data)
     network.create_graph()
 
-    # network.train(
-    #     train_features=train_feats,
-    #     train_labels=train_labels,
-    #     restore_run=False,
-    #     save_partial=False,
-    #     # save_freq=10,
-    #     use_tensorboard=False,
-    #     # tensorboard_freq=10,
-    #     training_epochs=optimization_epochs,
-    #     batch_size=70
-    # )
-    #
-    # ler, loss = network.validate(val_feats, val_labels, show_partial=False)
+    network.train(
+        train_features=train_feats,
+        train_labels=train_labels,
+        restore_run=False,
+        save_partial=False,
+        # save_freq=10,
+        use_tensorboard=False,
+        # tensorboard_freq=10,
+        training_epochs=optimization_epochs,
+        batch_size=batch_size
+    )
 
-    return 0.1  # loss
+    ler, loss = network.validate(val_feats, val_labels, show_partial=False)
+
+    return loss
 
 
 remove_if_exist(results_dir)
@@ -270,23 +271,23 @@ optimized_net_data = get_network_data(optimized_hyper)
 optimized_net = RNNClass(optimized_net_data)
 optimized_net.create_graph()
 
-# optimized_net.train(
-#     train_features=train_feats,
-#     train_labels=train_labels,
-#     restore_run=False,
-#     save_partial=True,
-#     save_freq=10,
-#     use_tensorboard=True,
-#     tensorboard_freq=10,
-#     training_epochs=validation_epochs,
-#     batch_size=50
-# )
-#
-#
-# optimized_net.validate(val_feats, val_labels, show_partial=False)
-#
-# print('Predicted: {}'.format(optimized_net.predict(val_feats[0])))
-# print('Target: {}'.format(indexToStr(val_labels[0])))
+optimized_net.train(
+    train_features=train_feats,
+    train_labels=train_labels,
+    restore_run=False,
+    save_partial=True,
+    save_freq=10,
+    use_tensorboard=True,
+    tensorboard_freq=10,
+    training_epochs=validation_epochs,
+    batch_size=batch_size
+)
+
+
+optimized_net.validate(val_feats, val_labels, show_partial=False)
+
+print('Predicted: {}'.format(optimized_net.predict(val_feats[0])))
+print('Target: {}'.format(indexToStr(val_labels[0])))
 
 with open(results_dir+'optimized_hyperparameters.txt', 'w') as file:
     for key, value in optimized_hyper.get_dictionary().items():
