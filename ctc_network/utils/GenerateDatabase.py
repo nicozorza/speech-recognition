@@ -32,7 +32,6 @@ for wav_index in range(len(wav_names)):
         label_name=label_filename,
         feature_config=feature_config)
 
-    print(len(item))
     # Add the new data to the database
     database.append(item)
 

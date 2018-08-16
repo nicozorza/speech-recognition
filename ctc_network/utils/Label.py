@@ -1,4 +1,6 @@
+import re
 import numpy as np
+
 
 class Label:
     # Constants
@@ -7,16 +9,16 @@ class Label:
     FIRST_INDEX = ord('a') - 1  # 0 is reserved to space
 
     def __init__(self, transcription: str):
-        transcription = transcription.replace('.', '')
-        transcription = transcription.replace(',', '')
-        transcription = transcription.replace('\'', '')
-        transcription = transcription.replace('-', ' ')
+        transcription = re.sub('[!@#$?.,-_\'\"]', '', transcription)
+
         self.__text: str = transcription
         # Delete blanks at the beginning and the end of the transcription, transform to lowercase,
         # delete numbers in the beginning, etc.
         self.__targets = (' '.join(transcription.strip().lower().split(' ')[2:]).replace('.', '')).replace(' ', '  ').split(' ')
         self.__indices = None
         self.__indices = self.toIndex()
+        if True in (self.__indices < 0):
+            print('Character not supported')
 
     def getTranscription(self) -> str:
         return self.__text

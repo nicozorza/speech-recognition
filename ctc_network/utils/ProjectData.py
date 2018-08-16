@@ -1,4 +1,3 @@
-from phoneme_classificator.utils.Label import Phoneme
 
 class ProjectData:
     def __init__(self):
@@ -20,8 +19,3 @@ class ProjectData:
         self.MODEL_PATH = self.OUT_DIR + '/' + 'model/model'
 
         self.TENSORBOARD_PATH = self.OUT_DIR + '/' + 'tensorboard/'
-
-        # Neural network data
-        self.num_classes = len(Phoneme.phonemes)
-
-
