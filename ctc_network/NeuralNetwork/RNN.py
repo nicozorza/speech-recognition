@@ -465,19 +465,19 @@ class RNNClass:
     #
     #         sess.close()
 
-    def validate(self, features, labels, show_partial: bool=True):
+    def validate(self, features, labels, show_partial: bool=True, batch_size: int = 1):
         with self.graph.as_default():
             sess = tf.Session(graph=self.graph)
             sess.run(tf.global_variables_initializer())
             self.load_checkpoint(sess)
 
-            sample_index = 0
             acum_ler = 0
             acum_loss = 0
-
+            n_step = 0
             database = list(zip(features, labels))
-            for item in self.create_batch(database, 1):
-                feature, label = zip(*item)
+            batch_list = self.create_batch(database, batch_size)
+            for batch in batch_list:
+                feature, label = zip(*batch)
                 # Padding input to max_time_step of this batch
                 batch_features, batch_seq_len = padSequences(feature)
 
@@ -492,11 +492,11 @@ class RNNClass:
                 ler, loss = sess.run([self.ler, self.logits_loss], feed_dict=feed_dict)
 
                 if show_partial:
-                    print("Index %d of %d, ler %f" % (sample_index + 1, len(labels), ler))
-                sample_index += 1
+                    print("Batch %d of %d, ler %f" % (n_step+1, len(batch_list), ler))
                 acum_ler += ler
                 acum_loss += loss
-            print("Validation ler: %f, loss: %f" % (acum_ler/len(labels), acum_loss/len(labels)))
+                n_step += 1
+            print("Validation ler: %f, loss: %f" % (acum_ler/n_step, acum_loss/n_step))
 
             sess.close()
 
