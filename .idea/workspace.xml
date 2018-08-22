@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a62531d-3464-45b2-a546-002ac961f893" name="Default" comment="Added the rest of the methods. Network can learn, validate and predict.">
-      <change afterPath="$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_smac_optimization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ctc_network/utils/smac_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/Database" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/TrainDatabase" beforeDir="false" afterPath="$PROJECT_DIR$/audio/TrainDatabase" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audio/ValidationDatabase" beforeDir="false" afterPath="$PROJECT_DIR$/audio/ValidationDatabase" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_smac_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_smac_optimization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ctc_network/out/checkpoint/.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/out/checkpoint/.data-00000-of-00001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ctc_network/out/checkpoint/.index" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/out/checkpoint/.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ctc_network/out/checkpoint/.meta" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/out/checkpoint/.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ctc_network/out/model/model" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/out/model/model" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctc_network/utils/Label.py" beforeDir="false" afterPath="$PROJECT_DIR$/ctc_network/utils/Label.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,22 +30,10 @@
       <file leaf-file-name="ctc_smac_optimization.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_smac_optimization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="1140">
+              <caret line="87" column="94" selection-start-line="87" selection-start-column="94" selection-end-line="87" selection-end-column="94" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="smac_utils.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ctc_network/utils/smac_utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,20 +42,54 @@
       <file leaf-file-name="ctc_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="80" column="53" selection-start-line="79" selection-end-line="80" selection-end-column="53" />
+            <state relative-caret-position="-60">
+              <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
+                <marker date="1534904424151" expanded="true" signature="2650:2883" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="smac_optimization.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/smac_optimization.py">
+      <file leaf-file-name="GenerateDatabase.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="206" column="20" selection-start-line="186" selection-end-line="206" selection-end-column="20" />
+            <state relative-caret-position="148">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctc_network/utils/Database.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="760">
+              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Label.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ctc_network/utils/Label.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="optimized_hyperparameters.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/optimized_hyperparameters.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -73,8 +97,8 @@
       <file leaf-file-name="RNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/RNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="467" column="8" selection-start-line="467" selection-start-column="8" selection-end-line="467" selection-end-column="8" />
+            <state relative-caret-position="9386">
+              <caret line="504" column="8" selection-start-line="504" selection-start-column="8" selection-end-line="504" selection-end-column="8" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -93,10 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>create_</find>
-      <find>batch</find>
-      <find>cut</find>
-      <find>decoder</find>
       <find>create</find>
       <find>train_targets</find>
       <find>batch_s</find>
@@ -123,6 +143,10 @@
       <find>restori</find>
       <find>res</find>
       <find>wait</find>
+      <find>space_optimization_evals</find>
+      <find>regul</find>
+      <find>tf_is_traing_pl</find>
+      <find>f</find>
     </findStrings>
     <replaceStrings>
       <replace>indices</replace>
@@ -170,15 +194,15 @@
         <option value="$PROJECT_DIR$/ctc_network/utils/AudioFeature.py" />
         <option value="$PROJECT_DIR$/ctc_network/NeuralNetwork/test.py" />
         <option value="$PROJECT_DIR$/ctc_network/NeuralNetwork/NeuralNetwork.py" />
-        <option value="$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py" />
-        <option value="$PROJECT_DIR$/ctc_network/NeuralNetwork/RNN.py" />
         <option value="$PROJECT_DIR$/ctc_network/NeuralNetwork/NetworkData.py" />
         <option value="$PROJECT_DIR$/ctc_network/utils/ProjectData.py" />
-        <option value="$PROJECT_DIR$/ctc_network/utils/Label.py" />
-        <option value="$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py" />
         <option value="$PROJECT_DIR$/ctc_network/utils/wait_for_user_non_block.py" />
         <option value="$PROJECT_DIR$/ctc_network/utils/smac_utils.py" />
+        <option value="$PROJECT_DIR$/ctc_network/NeuralNetwork/RNN.py" />
         <option value="$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_smac_optimization.py" />
+        <option value="$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py" />
+        <option value="$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py" />
+        <option value="$PROJECT_DIR$/ctc_network/utils/Label.py" />
       </list>
     </option>
   </component>
@@ -218,19 +242,6 @@
               <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
               <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
               <item name="ctc_network" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="ctc_network" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="smac" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="speech-recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="speech-recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="ctc_network" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -241,7 +252,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tensorflow_CTC_example" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../arcore-parser" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -271,7 +282,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ctc_smac_optimization">
+  <component name="RunManager" selected="Python.GenerateDatabase (1)">
     <configuration name="GenerateDatabase (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="speech-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -371,9 +382,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ctc_smac_optimization" />
-        <item itemvalue="Python.ctc_test" />
         <item itemvalue="Python.GenerateDatabase (1)" />
+        <item itemvalue="Python.ctc_test" />
+        <item itemvalue="Python.ctc_smac_optimization" />
         <item itemvalue="Python.GenerateDatabase" />
         <item itemvalue="Python.RNN_test" />
       </list>
@@ -663,7 +674,28 @@
       <option name="project" value="LOCAL" />
       <updated>1534385220099</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Add smac optimization scripts. This script can restore previous runs. Only works while debugging">
+      <created>1534392000200</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1534392000200</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Add network training">
+      <created>1534394020417</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1534394020417</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Add batch_size parameter to validation">
+      <created>1534397606555</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1534397606555</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -677,43 +709,42 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4935484" visible="true" weight="0.20664206" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.20664206" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5028993" side_tool="true" weight="0.3286334" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3286334" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49657354" weight="0.4284165" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49657354" weight="0.5140998" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49710068" weight="0.3253796" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.56290674" />
+      <window_info active="true" anchor="bottom" id="Debug" order="4" visible="true" weight="0.44793928" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3286334" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286334" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49657354" visible="true" weight="0.5140998" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935484" weight="0.20664206" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49657354" visible="true" weight="0.4284165" />
-      <window_info anchor="bottom" id="Python Console" order="9" weight="0.3286334" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3286334" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.56290674" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.3286334" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.44793928" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49710068" weight="0.3253796" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5028993" side_tool="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286334" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info id="Favorites" order="2" sideWeight="0.5064516" side_tool="true" weight="0.24972677" />
@@ -749,9 +780,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add new labels. Add database's fromFile method." />
-    <MESSAGE value="Add new items to project data. Delete unnecessary lines" />
-    <MESSAGE value="Change TFRecord to use SequenceExample()" />
     <MESSAGE value="Delete unnecessary lines" />
     <MESSAGE value="WIP: Add RNN network" />
     <MESSAGE value="WIP: Managed to run the network. Not training properly" />
@@ -774,7 +802,10 @@
     <MESSAGE value="Added the rest of the methods. Network can learn, validate and predict." />
     <MESSAGE value="Remove unsupported characters" />
     <MESSAGE value="Fix decoder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix decoder" />
+    <MESSAGE value="Add smac optimization scripts. This script can restore previous runs. Only works while debugging" />
+    <MESSAGE value="Add network training" />
+    <MESSAGE value="Add batch_size parameter to validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add batch_size parameter to validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -840,19 +871,19 @@
           <option name="timeStamp" value="218" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ctc_network/NeuralNetwork/RNN.py</url>
-          <line>288</line>
-          <option name="timeStamp" value="229" />
+          <url>file://$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="239" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ctc_network/utils/Label.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="233" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ctc_network/utils/smac_utils.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="236" />
+          <line>19</line>
+          <option name="timeStamp" value="245" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -862,7 +893,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="237" />
+      <option name="time" value="246" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -871,69 +902,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/nn_impl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="106" column="4" selection-start-line="106" selection-start-column="4" selection-end-line="106" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/numpy/lib/arraypad.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21820">
-          <caret line="1093" column="4" selection-start-line="1093" selection-start-column="4" selection-end-line="1093" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/python_speech_features/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2020">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/gen_math_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1471" column="4" selection-start-line="1471" selection-start-column="4" selection-end-line="1471" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/contrib/layers/python/layers/regularizers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1280">
-          <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/layers/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3140">
-          <caret line="175" column="4" selection-start-line="175" selection-start-column="4" selection-end-line="175" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/lib/io/file_io.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8460">
-          <caret line="437" column="4" selection-start-line="437" selection-start-column="4" selection-end-line="437" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/rnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8740">
-          <caret line="454" column="4" selection-start-line="454" selection-start-column="4" selection-end-line="454" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/rnn_cell_impl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23080">
-          <caret line="1181" column="22" selection-start-line="1181" selection-start-column="10" selection-end-line="1181" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/utils/ProjectData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -1098,43 +1066,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/utils/Database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2218">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ctc_network/utils/AudioFeature.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
           <caret line="91" column="92" selection-start-line="91" selection-start-column="89" selection-end-line="91" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/utils/Label.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1149,55 +1084,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
           <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/RNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="467" column="8" selection-start-line="467" selection-start-column="8" selection-end-line="467" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phoneme_classificator/NeuralNetwork/smac_optimization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
+        <state relative-caret-position="3572">
           <caret line="206" column="20" selection-start-line="186" selection-end-line="206" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py">
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_0/run_1/runhistory.json" />
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run_1/configspace.pcs" />
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_0/run_1/traj_aclib2.json" />
+    <entry file="file://$PROJECT_DIR$/ctc_network/utils/smac_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="80" column="53" selection-start-line="79" selection-end-line="80" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="95">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/optimized_hyperparameters.txt">
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_9/run_1/traj_old.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_0/run_1/runhistory.json">
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_9/run_1/scenario.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run_1/configspace.pcs">
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_9/run_1/stats.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run_1/stats.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_0/run_1/traj_aclib2.json">
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_25/run_1/configspace.pcs" />
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_28/run_1/runhistory.json" />
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_28/run_1/stats.json" />
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_9/run_1/runhistory.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state>
+          <caret column="1158" selection-start-column="1158" selection-end-column="1158" />
         </state>
       </provider>
     </entry>
@@ -1207,22 +1129,84 @@
     <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run_1/traj_aclib2.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run_1/stats.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_7/run_1/stats.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/log_7/run_1/runhistory.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="559" lean-forward="true" selection-start-column="559" selection-end-column="559" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_smac_optimization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="1140">
+          <caret line="87" column="94" selection-start-line="87" selection-start-column="94" selection-end-line="87" selection-end-column="94" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctc_network/utils/smac_utils.py">
+    <entry file="file://$PROJECT_DIR$/ctc_network/out/smac/run/optimized_hyperparameters.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/RNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9386">
+          <caret line="504" column="8" selection-start-line="504" selection-start-column="8" selection-end-line="504" selection-end-column="8" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/utils/Database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/NeuralNetwork/ctc_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1534904424151" expanded="true" signature="2650:2883" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/utils/GenerateDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctc_network/utils/Label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

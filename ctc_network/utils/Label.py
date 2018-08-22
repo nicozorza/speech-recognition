@@ -9,7 +9,7 @@ class Label:
     FIRST_INDEX = ord('a') - 1  # 0 is reserved to space
 
     def __init__(self, transcription: str):
-        transcription = re.sub('[!@#$?.,-_\'\"]', '', transcription)
+        transcription = re.sub('[;:!@#$?.,_\'\"\-]', '', transcription)
 
         self.__text: str = transcription
         # Delete blanks at the beginning and the end of the transcription, transform to lowercase,
@@ -40,5 +40,4 @@ class Label:
     def fromFile(file_name: str):
         with open(file_name, 'r') as f:
             transcription = f.readlines()[0]  # This method assumes that the transcription is in the first line
-
             return Label(transcription)  # Create Label class from transcription
