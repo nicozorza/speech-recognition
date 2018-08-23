@@ -37,8 +37,8 @@ train_feats, train_labels, _, _, _, _ = train_database.get_training_sets(1.0, 0.
 val_feats, val_labels, _, _, _, _ = val_database.get_training_sets(1.0, 0.0, 0.0)
 
 # -----------------------------------------------------------------------------------------
-optimization_epochs = 1
-validation_epochs = 1
+optimization_epochs = 100
+validation_epochs = 200
 # space_optimization_evals = 1
 batch_size = 50
 
@@ -62,8 +62,8 @@ space = {
     'out_dense_2': UniformIntegerHyperparameter("out_dense_2", 50, 250, default_value=100),
 
     'rnn_depth': CategoricalHyperparameter("rnn_depth", ["1", "2"], default_value="1"),
-    'fw_1': UniformIntegerHyperparameter("fw_1", 10, 250, default_value=10),
-    'fw_2': UniformIntegerHyperparameter("fw_2", 10, 250, default_value=10),
+    'fw_1': UniformIntegerHyperparameter("fw_1", 10, 250, default_value=100),
+    'fw_2': UniformIntegerHyperparameter("fw_2", 10, 250, default_value=100),
     'bw_1': UniformIntegerHyperparameter("bw_1", 10, 250, default_value=100),
     'bw_2': UniformIntegerHyperparameter("bw_2", 10, 250, default_value=100),
 
@@ -71,10 +71,11 @@ space = {
     'rnn_regularizer': UniformFloatHyperparameter("rnn_regularizer", 0, 1, default_value=0.0),
 
     #'use_dropout': CategoricalHyperparameter("use_dropout", [True, False], default_value=True),
-    'input_keep_1': UniformFloatHyperparameter("input_keep_1", 0, 1, default_value=1),
-    'input_keep_2': UniformFloatHyperparameter("input_keep_2", 0, 1, default_value=1),
-    'output_keep_1': UniformFloatHyperparameter("output_keep_1", 0, 1, default_value=1),
-    'output_keep_2': UniformFloatHyperparameter("output_keep_2", 0, 1, default_value=1),
+    'input_keep_1': UniformFloatHyperparameter("input_keep_1", 0.5, 1, default_value=1),
+    'input_keep_2': UniformFloatHyperparameter("input_keep_2", 0.5, 1, default_value=1),
+    'output_keep_1': UniformFloatHyperparameter("output_keep_1", 0.5, 1, default_value=1),
+    'output_keep_2': UniformFloatHyperparameter("output_keep_2", 0.5, 1, default_value=1),
+
 
 }
 
@@ -172,9 +173,9 @@ def objective(args):
         batch_size=batch_size
     )
 
-    ler, loss = network.validate(val_feats, val_labels, show_partial=False)
+    ler, loss = network.validate(val_feats, val_labels, show_partial=False, batch_size=batch_size)
 
-    return loss
+    return ler
 
 
 remove_if_exist(results_dir)
