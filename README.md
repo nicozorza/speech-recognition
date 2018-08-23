@@ -27,10 +27,10 @@ Mediante el script **smac_optimization** es posible realizar iteraciones sucesiv
 
 En la carpeta **ctc_network** se tiene el traductor de habla a texto basado en CTC. Al igual que en el caso anterior, se debe generar la base de datos mediante **GenerateDatabase**, y la ejecucición y optimización de la red se realizan mediante los scripts **ctc_test** y **ctc_smac_optimization** respectivamente.
 
+Para ejecutar este repositorio se debe tener descargada la base de datos de TIMIT. Luego se deben crear tres carpetas: **wav**, **phonemes** y **transcriptions** dentro de la carpeta **audio**, donde se colocarán las muestras que correspondan. El script **GenerateDatabase** utiliza dichas carpetas para generar la base de datos.
 
 # Referencias
 
----
 - Framewise Phoneme Classification with Bidirectional LSTM and Other Neural Network Architectures: ftp://ftp.idsia.ch/pub/juergen/nn_2005.pdf
 - Referencias Understanding LSTM Networks: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 - Referencias Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks: ftp://ftp.idsia.ch/pub/juergen/icml2006.pdf
