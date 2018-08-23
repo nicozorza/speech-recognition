@@ -31,9 +31,9 @@ En la carpeta **ctc_network** se tiene el traductor de habla a texto basado en C
 # Referencias
 
 ---
-- Framewise Phoneme Classification with Bidirectional LSTM and Other Neural Network Architectures: ftp://ftp.idsia.ch/pub/juergen/nn_2005.pdf.
-- Referencias Understanding LSTM Networks: http://colah.github.io/posts/2015-08-Understanding-LSTMs/.
-- Referencias Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks ftp://ftp.idsia.ch/pub/juergen/icml2006.pdf.
+- Framewise Phoneme Classification with Bidirectional LSTM and Other Neural Network Architectures: ftp://ftp.idsia.ch/pub/juergen/nn_2005.pdf
+- Referencias Understanding LSTM Networks: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+- Referencias Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks: ftp://ftp.idsia.ch/pub/juergen/icml2006.pdf
 - Referencias TIMIT Acoustic-Phonetic Continuous Speech Corpus: https://catalog.ldc.upenn.edu/ldc93s1.
 - Referencias SPHERE Conversion Tools: https://www.ldc.upenn.edu/language-resources/tools/sphere-conversion-tools
 - Referencias python_speech_features: https://github.com/jameslyons/python_speech_features.
